@@ -34,7 +34,8 @@ class windowsPage(baseConfigure):
     def __init__(self,driver):
         baseConfigure.__init__(self,driver)
         driver.get('http://dkcphweb15/')
-        testadress=driver.find_element_by_link_text('Start Page').get_attribute("href")
+        testadress='https://jabraxpress.jabra.com/'
+        # testadress=driver.find_element_by_link_text('Start Page').get_attribute("href")
         driver.get(testadress+'/windows-desktop')
 
     def clickNextButton(self):

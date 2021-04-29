@@ -45,7 +45,7 @@ def testcase7551():
             if Select(setting):
                 select = Select(setting)
                 selectlen = len(select.options)
-                Select(setting).select_by_index(random.randint(0, selectlen - 1))
+                Select(setting).select_by_index(random.randint(1, selectlen - 1))
                 i = i + 1
                 continue
         elif isInputExist(driver,

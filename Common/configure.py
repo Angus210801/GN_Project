@@ -36,7 +36,7 @@ def borwserConfigure():
     options = webdriver.ChromeOptions()
     prefs = {"download.default_directory": file, "download.prompt_for_download": False}
     options.add_experimental_option('prefs', prefs)
-    options.add_argument('--headless')
+    # options.add_argument('--headless')
     return options
 
 

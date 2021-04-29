@@ -112,7 +112,7 @@ def testcase3969():
     if Select(setting):
         select = Select(setting)
         selectlen = len(select.options)
-        Select(setting).select_by_index(random.randint(0, selectlen - 1))
+        Select(setting).select_by_index(random.randint(1, selectlen - 1))
     #跳转到.msi下载页面
     driver.find_element_by_xpath("//input[@value='NEXT >']").click()
     #跳转到Summary下载页面
