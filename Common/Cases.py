@@ -7,6 +7,7 @@ from TestCase_Linux.case7695 import testcase7695
 from TestCase_Linux.case7555 import testcase7555
 from TestCase_Linux.case7556 import testcase7556
 from TestCase_Linux.case16990 import testcase16990
+from TestCase_Linux.case6098 import testcase6098
 from TestCase_Windows.case10449 import testcase10449
 from TestCase_Windows.case3961 import testcase3961
 from TestCase_Windows.case3965 import testcase3965
@@ -69,3 +70,4 @@ def Linux_cases():
      case10312      = testcase10312l()
      case16990      = testcase16990()
      case16991      = testcase16991()
+     case6098       = testcase6098()
