@@ -13,10 +13,10 @@ if __name__ == '__main__':
      #Begin time
      time_begin=time()
      #author
-     print('*Target:Download the FW package what Jabra Xpress 1.0 test case need\n')
-     print('*Author:Angus Lin\n')
-     print('*Email:extalin@jabra.com\n')
-     print('*Data:12/30/2020\n')
+     print('*Target:Download the FW package what Jabra Xpress 1.0 test case need')
+     print('*Author:Angus Lin')
+     print('*Email:extalin@jabra.com')
+     print('*Data:12/30/2020')
 
      dFile="device.txt"
      pFile="platform.txt"
@@ -54,6 +54,7 @@ if __name__ == '__main__':
           cost=time_end-time_begin
           print('Cost time: %.1f'%cost+'s')
      except Exception as e:
+          print(e)
           print('Not choose device,application will exit.')
           sleep(15)
           sys.exit()

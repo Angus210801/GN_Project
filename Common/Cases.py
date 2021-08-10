@@ -61,13 +61,13 @@ def Windows_cases():
 
 
 def Linux_cases():
-     case6134       = testcase6134()
+     # case6134       = testcase6134()
      case7555       = testcase7555()
-     case7692       = testcase7692()
-     case7695       = testcase7695()
-     case7551       = testcase7551()
-     case7556       = testcase7556()
-     case10312      = testcase10312l()
-     case16990      = testcase16990()
-     case16991      = testcase16991()
-     case6098       = testcase6098()
+     # case7692       = testcase7692()
+     # case7695       = testcase7695()
+     # case7551       = testcase7551()
+     # case7556       = testcase7556()
+     # case10312      = testcase10312l()
+     # case16990      = testcase16990()
+     # case16991      = testcase16991()
+     # case6098       = testcase6098()
