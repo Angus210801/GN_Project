@@ -1,10 +1,5 @@
-from time import sleep
-
-from selenium import webdriver
-from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-
 from Common.configure import baseConfigure
 
 class linuxindexPage(baseConfigure):
@@ -34,8 +29,7 @@ class windowsPage(baseConfigure):
     def __init__(self,driver):
         baseConfigure.__init__(self,driver)
         driver.get('http://dkcphweb15/')
-        testadress='https://jabraxpress.jabra.com/'
-        # testadress=driver.find_element_by_link_text('Start Page').get_attribute("href")
+        testadress=driver.find_element_by_link_text('Start Page').get_attribute("href")
         driver.get(testadress+'/windows-desktop')
 
     def clickNextButton(self):

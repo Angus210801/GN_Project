@@ -5,7 +5,6 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 ################################################
-from Common.Cases import Linux_cases, Windows_cases
 
 items_list=['Jabra BIZ 1500 MS USB Duo',
 'Jabra BIZ 1500 MS USB Mono',

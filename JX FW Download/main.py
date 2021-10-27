@@ -1,11 +1,10 @@
 import sys
-import sys
 import os
 from time import time, sleep
 import shutil
 
 from PyQt5.QtWidgets import QApplication
-from Common.Cases import Windows_cases,Linux_cases
+from Cases import Windows_cases,Linux_cases
 from Common.getDevice import Widget
 
 if __name__ == '__main__':
