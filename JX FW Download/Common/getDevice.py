@@ -15,11 +15,13 @@ items_list=['Jabra BIZ 1500 MS USB Duo',
 'Jabra BIZ 2400 II CC USB Mono',
 'Jabra BIZ 2400 II CC USB Stereo',
 'Jabra BIZ 2400 II Duo',
+'Jabra EVOLVE2 75',
 'Jabra BIZ 2400 II Mono',
 'Jabra BIZ 2400 USB Duo',
 'Jabra BIZ 2400 USB Mono',
 'Jabra DIAL 550',
 'Jabra Engage 50',
+'Jabra PanaCast 20',
 'Jabra Engage 65',
 'Jabra Engage 75',
 'Jabra EVOLVE 20 Mono',
@@ -106,14 +108,12 @@ class Widget(QWidget):
     super(Widget, self).__init__(*args, **kwargs)
     layout = QVBoxLayout(self)
     self.lineedit = QLineEdit(self, minimumWidth=200)
-    # self.combobox = QComboBox(self, minimumWidth=200)
-    # self.combobox.setEditable(True)
 
+#Choose what platform need to downlood
     self.linuxButton=QRadioButton("     Linux")
     self.linuxButton.move(10,10)
     self.winButton  =QRadioButton("     Windows")
     self.bothButton =QRadioButton("     Both")
-
 
     self.submitButton=QPushButton("Submit",minimumWidth=200)
 
@@ -122,8 +122,8 @@ class Widget(QWidget):
     layout.addItem(QSpacerItem(20, 5, QSizePolicy.Expanding, QSizePolicy.Minimum))
 
     layout.addWidget(QLabel("Choose Platform：", self))
-    # layout.addWidget(self.combobox)
 
+  #Create a button group
     self.buttonGroup=QButtonGroup(self)
     self.buttonGroup.addButton(self.linuxButton,11)
     self.buttonGroup.addButton(self.winButton,12)
@@ -135,6 +135,7 @@ class Widget(QWidget):
     layout.addWidget(self.linuxButton,0,Qt.AlignTop)
     layout.addWidget(self.winButton,0,Qt.AlignTop)
     layout.addWidget(self.bothButton,0,Qt.AlignTop)
+
 
     layout.addWidget(self.submitButton)
     #初始化combobox
@@ -157,12 +158,6 @@ class Widget(QWidget):
     self.completer.setCompletionMode(QCompleter.PopupCompletion)
     # 给lineedit设置补全器
     self.lineedit.setCompleter(self.completer)
-
-  # def init_combobox(self):
-  #   # 增加选项元素
-  #   self.combobox.addItem('Windows')
-  #   self.combobox.addItem('Linux')
-  #   self.combobox.addItem('Both')
 
   def submitEvent(self):
     #设置点击按钮时的事件：提交device name、platform、关闭窗口

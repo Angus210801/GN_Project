@@ -6,6 +6,7 @@ import shutil
 from PyQt5.QtWidgets import QApplication
 from Cases import Windows_cases,Linux_cases
 from Common.getDevice import Widget
+from CheckDriverVersion import check_update_chromedriver
 
 if __name__ == '__main__':
 
@@ -16,6 +17,10 @@ if __name__ == '__main__':
      print('*Author:Angus Lin')
      print('*Email:extalin@jabra.com')
      print('*Data:12/30/2020')
+
+     #Check the google driver
+     # check_update_chromedrive=check_update_chromedriver()
+
 
      dFile="device.txt"
      pFile="platform.txt"

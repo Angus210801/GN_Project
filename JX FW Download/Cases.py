@@ -34,11 +34,11 @@ from TestCase_Windows.case5665_32b import testcase5665_32b
 from TestCase_Windows.case10312_w import testcase10312w
 
 def Windows_cases():
-    case3961       = testcase3961()
-    case3965       = testcase3965()
-    case3966       = testcase3966()
-    case3968       = testcase3968()
-    case3969       = testcase3969()
+    # case3961       = testcase3961()
+    # case3965       = testcase3965()
+    # case3966       = testcase3966()
+    # case3968       = testcase3968()
+    # case3969       = testcase3969()
     case4090       = testcase4090()
     case4128_1     = testcase4128_1()
     case4128_2     = testcase4128_2()
@@ -61,13 +61,13 @@ def Windows_cases():
 
 
 def Linux_cases():
-     # case6134       = testcase6134()
+     case6134       = testcase6134()
      case7555       = testcase7555()
-     # case7692       = testcase7692()
-     # case7695       = testcase7695()
-     # case7551       = testcase7551()
-     # case7556       = testcase7556()
-     # case10312      = testcase10312l()
-     # case16990      = testcase16990()
-     # case16991      = testcase16991()
-     # case6098       = testcase6098()
+     case7692       = testcase7692()
+     case7695       = testcase7695()
+     case7551       = testcase7551()
+     case7556       = testcase7556()
+     case10312      = testcase10312l()
+     case16990      = testcase16990()
+     case16991      = testcase16991()
+     case6098       = testcase6098()

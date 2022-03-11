@@ -21,7 +21,7 @@ def get_latest_version(url):
 def get_server_chrome_versions():
     '''return all versions list'''
     versionList=[]
-    url="http://npm.taobao.org/mirrors/chromedriver/"
+    url="https://chromedriver.storage.googleapis.com/index.html"
     rep = requests.get(url).text
     result = re.compile(r'\d.*?/</a>.*?Z').findall(rep)
     for i in result:                                 # 提取时间
@@ -35,7 +35,7 @@ def download_driver(download_url):
     file = requests.get(download_url)
     with open("chromedriver.zip", 'wb') as zip_file:        # 保存文件到脚本所在目录
         zip_file.write(file.content)
-        print('下载成功')
+        print('Download driver successfully')
 
 def get_version():
     '''查询系统内的Chromedriver版本'''
@@ -50,13 +50,15 @@ def unzip_driver(path):
         f.extract(file, path)
 
 def check_update_chromedriver():
+    # The program enterance
+    print("Pre-condition:check the chromedriver...")
     chromeVersion=get_Chrome_version()
     chrome_main_version=int(chromeVersion.split(".")[0]) # chrome主版本号
     driverVersion=get_version()
     driver_main_version=int(driverVersion.split(".")[0]) # chromedriver主版本号
     download_url=""
     if driver_main_version!=chrome_main_version:
-        print("chromedriver版本与chrome浏览器不兼容，更新中>>>")
+        print("chromedriver is old，updating>>>")
         versionList=get_server_chrome_versions()
         if chromeVersion in versionList:
             download_url=f"{url}{chromeVersion}/chromedriver_win32.zip"
@@ -66,15 +68,12 @@ def check_update_chromedriver():
                     download_url=f"{url}{version}/chromedriver_win32.zip"
                     break
             if download_url=="":
-                print("暂无法找到与chrome兼容的chromedriver版本，请在http://npm.taobao.org/mirrors/chromedriver/ 核实。")
+                print("Can't find the chromedriver version match the browser , please go to the http://npm.taobao.org/mirrors/chromedriver/ verify")
 
         download_driver(download_url=download_url)
         path = "C:\Program Files (x86)\Google\Chrome\Application"
         unzip_driver(path)
         os.remove("chromedriver.zip")
-        print('更新后的Chromedriver版本为：', get_version())
+        print('The driver has been update to：', get_version())
     else:
-       print("chromedriver版本与chrome浏览器相兼容，无需更新chromedriver版本！")
-
-if __name__=="__main__":
-    check_update_chromedriver()
+       print("chromedriver is match browser, go ahead!")

@@ -3,7 +3,7 @@ from time import sleep
 from selenium import webdriver
 
 driver = webdriver.Chrome()
-driver.get("http://dkcphweb15/Xpress/31.X.Migration/MDCT/select-devices")
+driver.get("http://dkcphweb15/Xpress/35.X.Development/MDCT/select-devices")
 
 if __name__ == '__main__':
     i=0
