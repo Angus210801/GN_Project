@@ -100,7 +100,7 @@ def testcase7692():
                     continue
             elif isUploadButton(driver,"input[value='Upload']"):
                 try:
-                    driver.find_element_by_css_selector("input[id='configurationViewModel.Devices[0].SelectedFirmware.Settings[20].fileinputId']").send_keys('C:\\Desktop\\Engage75_deskimg.bmp')
+                    driver.find_element_by_css_selector("input[id='configurationViewModel.Devices[0].SelectedFirmware.Settings[34].fileinputId']").send_keys("C:\\download\\cat.bmp")
                     sleep(5)
                     i=i+1
                     continue
