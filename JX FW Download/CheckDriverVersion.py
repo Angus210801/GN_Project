@@ -17,7 +17,10 @@ def get_latest_version(url):
         time_version_dict[time] = version                   # 构建时间和版本号的对应关系，形成字典
         time_list.append(time)                              # 形成时间列表
     latest_version = time_version_dict[max(time_list)][:-1] # 用最大（新）时间去字典中获取最新的版本号
+    print(latest_version)
     return latest_version
+
+
 def get_server_chrome_versions():
     '''return all versions list'''
     versionList=[]
@@ -77,3 +80,7 @@ def check_update_chromedriver():
         print('The driver has been update to：', get_version())
     else:
        print("chromedriver is match browser, go ahead!")
+
+
+if __name__ == '__main__':
+    check_update_chromedriver()
