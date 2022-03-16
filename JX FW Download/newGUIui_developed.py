@@ -276,7 +276,7 @@ class Ui_JX_FW(object):
         self.textBrowser.setGeometry(QtCore.QRect(10, 650, 581, 161))
         self.textBrowser.setObjectName("textBrowser")
         self.textBrowser.ensureCursorVisible()
-        self.lineEdit = QtWidgets.QLineEdit(JX_FW)
+        self.lineEdit = QtWidgets.QLabel(JX_FW)
         self.lineEdit.setGeometry(QtCore.QRect(10, 610, 151, 31))
         font = QtGui.QFont()
         font.setPointSize(9)
