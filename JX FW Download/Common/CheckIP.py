@@ -35,7 +35,7 @@ def get_window_ip4():
     ipaddr = s.getsockname()[0]
     return ipaddr
 
-if __name__ == '__main__':
+def get_Windows_ip():
     iPv4=get_window_ip4()
     if iPv4[0:5]=='10.86':
         print("Supported network")
