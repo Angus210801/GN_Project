@@ -8,7 +8,7 @@ from tqdm import tqdm
 
 my_logg = MyLog().logger
 base_url = 'http://npm.taobao.org/mirrors/chromedriver/'
-version_re = re.compile(r'^[1-9]\d*\.\d*.\d*')  # 匹配前3位版本号的正则表达式
+version_re = re.compile(r'^[1-9]\d*\.\d*.\d*.\d*')  # 匹配前4位版本号的正则表达式
 
 
 def getChromeVersion():
@@ -27,7 +27,6 @@ def getChromeDriverVersion():
     outstd2 = os.popen('chromedriver --version').read()
     try:
         version = outstd2.split(' ')[1]
-        version = ".".join(version.split(".")[:-1])
         return version
     except Exception as e:
         return "0.0.0"
@@ -35,14 +34,17 @@ def getChromeDriverVersion():
 
 def getLatestChromeDriver(version):
     # 获取该chrome版本的最新driver版本号
-    url = f"{base_url}LATEST_RELEASE_{version}"
+    version_tmp = ".".join(version.split(".")[:-1])
+    print(version_tmp)
+    url = f"{base_url}LATEST_RELEASE_{version_tmp}"
     latest_version = requests.get(url).text
     my_logg.info('The latest Chrome Driver version matches the current Chrome:%s',latest_version)
     # 下载chromedriver
     my_logg.info("Start Downloading chromedriver...")
     # url_tmp=f"{base_url}{latest_version}/"
     # print(url_tmp)
-    download_url = f"{base_url}{latest_version}/chromedriver_win32.zip"
+    download_url = f"{base_url}{version}/chromedriver_win32.zip"
+    print(download_url)
     file = requests.get(download_url,stream=True)
     content_size = int(file.headers['Content-Length']) / 1024
     with open("chromedriver.zip", 'wb') as zip_file:  # 保存文件到脚本所在目录
