@@ -1,14 +1,49 @@
 
+#Import PyQt5
 from PyQt5 import QtWidgets,QtCore,QtGui
 from PyQt5.QtWidgets import QWidget,QCompleter
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import QApplication, QMainWindow
-
+#Import Testcase
 from  TestCase_Windows import case3965
 from  TestCase_Windows import case3961
+from TestCase_Linux.case10312_L import testcase10312l
+from TestCase_Linux.case16991 import testcase16991
+from TestCase_Linux.case7692 import testcase7692
+from TestCase_Linux.case6134 import testcase6134
+from TestCase_Linux.case7551 import testcase7551
+from TestCase_Linux.case7695 import testcase7695
+from TestCase_Linux.case7555 import testcase7555
+from TestCase_Linux.case7556 import testcase7556
+from TestCase_Linux.case16990 import testcase16990
+from TestCase_Linux.case6098 import testcase6098
+from TestCase_Windows.case10449 import testcase10449
 from TestCase_Windows.case3961 import testcase3961
 from TestCase_Windows.case3965 import testcase3965
+from TestCase_Windows.case3965_32b import testcase3965_32b
+from TestCase_Windows.case3966 import testcase3966
+from TestCase_Windows.case3968 import testcase3968
+from TestCase_Windows.case3969 import testcase3969
+from TestCase_Windows.case4090 import testcase4090
+from TestCase_Windows.case4090_32b import testcase4090_32b
+from TestCase_Windows.case4128_1 import testcase4128_1
+from TestCase_Windows.case4128_2 import testcase4128_2
+from TestCase_Windows.case4128_3 import testcase4128_3
+from TestCase_Windows.case4153_1 import testcase4153_1
+from TestCase_Windows.case4153_2 import testcase4153_2
+from TestCase_Windows.case5509 import testcase5509
+from TestCase_Windows.case5509_32b import testcase5509_32b
+from TestCase_Windows.case5664 import testcase5664
+from TestCase_Windows.case5665 import testcase5665
+from TestCase_Windows.case7195 import testcase7195
+from TestCase_Windows.case7196 import testcase7196
+from TestCase_Windows.case3966_32b import testcase3966_32b
+from TestCase_Windows.case5664_32b import testcase5664_32b
+from TestCase_Windows.case5665_32b import testcase5665_32b
+from TestCase_Windows.case10312_w import testcase10312w
+
+
 from Common.CheckIP import get_Windows_ip
 from Common.checkChromeDriverwithoutLoging import checkChromeDriverUpdate
 
@@ -144,8 +179,12 @@ class Ui_JX_FW(object):
     def addCase(self,testcase):
         testcase = testcase
         print(testcase)
-        Ui_JX_FW.excuteTestCase.append(testcase)
-        print(Ui_JX_FW.excuteTestCase)
+        if (testcase in Ui_JX_FW.excuteTestCase):
+            Ui_JX_FW.excuteTestCase.remove(testcase)
+            print(Ui_JX_FW.excuteTestCase)
+        else:
+            Ui_JX_FW.excuteTestCase.append(testcase)
+            print(Ui_JX_FW.excuteTestCase)
 
     def checkIP(self):
         get_Windows_ip()
@@ -174,7 +213,7 @@ class Ui_JX_FW(object):
 
     def setupUi(self, JX_FW):
         JX_FW.setObjectName("JX_FW")
-        JX_FW.resize(600, 813)
+        JX_FW.resize(600, 830)
         self.label_chooseDevice = QtWidgets.QLabel(JX_FW)
         self.label_chooseDevice.setGeometry(QtCore.QRect(60, 60, 200, 60))
 
@@ -284,14 +323,49 @@ class Ui_JX_FW(object):
         font.setWeight(75)
         self.lineEdit.setFont(font)
         self.lineEdit.setObjectName("lineEdit")
+        self.case6134 = QtWidgets.QCheckBox(JX_FW)
+        self.case6134.setGeometry(QtCore.QRect(350, 220, 271, 20))
+        self.case6134.setObjectName("case6134")
+        self.case7555 = QtWidgets.QCheckBox(JX_FW)
+        self.case7555.setGeometry(QtCore.QRect(350, 240, 271, 20))
+        self.case7555.setObjectName("case7555")
+        self.Linux_selectAll_chkbox = QtWidgets.QCheckBox(JX_FW)
+        self.Linux_selectAll_chkbox.setGeometry(QtCore.QRect(350, 180, 271, 20))
+        self.Linux_selectAll_chkbox.setObjectName("Linux_selectAll_chkbox")
+        self.case7692 = QtWidgets.QCheckBox(JX_FW)
+        self.case7692.setGeometry(QtCore.QRect(350, 260, 271, 20))
+        self.case7692.setObjectName("case7692")
+        self.case7695 = QtWidgets.QCheckBox(JX_FW)
+        self.case7695.setGeometry(QtCore.QRect(350, 280, 271, 20))
+        self.case7695.setObjectName("case7695")
+        self.case7551 = QtWidgets.QCheckBox(JX_FW)
+        self.case7551.setGeometry(QtCore.QRect(350, 300, 271, 20))
+        self.case7551.setObjectName("case7551")
+        self.case7556 = QtWidgets.QCheckBox(JX_FW)
+        self.case7556.setGeometry(QtCore.QRect(350, 320, 271, 20))
+        self.case7556.setObjectName("case7556")
+        self.case10312 = QtWidgets.QCheckBox(JX_FW)
+        self.case10312.setGeometry(QtCore.QRect(350, 340, 271, 20))
+        self.case10312.setObjectName("case10312")
+        self.case16990 = QtWidgets.QCheckBox(JX_FW)
+        self.case16990.setGeometry(QtCore.QRect(350, 360, 271, 20))
+        self.case16990.setObjectName("case16990")
+        self.case16991 = QtWidgets.QCheckBox(JX_FW)
+        self.case16991.setGeometry(QtCore.QRect(350, 380, 271, 20))
+        self.case16991.setObjectName("case16991")
+        self.case6098 = QtWidgets.QCheckBox(JX_FW)
+        self.case6098.setGeometry(QtCore.QRect(350, 200, 271, 20))
+        self.case6098.setObjectName("case6098")
+
         self.actionCheckall = QtWidgets.QAction(JX_FW)
         self.actionCheckall.setObjectName("actionCheckall")
 
-        #处理事件
+
         self.retranslateUi(JX_FW)
         self.init_input_choosedevice()
         self.CheckNetwork.clicked.connect(lambda:self.checkIP())
         self.checkChromeDriverBtn.clicked.connect(lambda:self.checkChromeDriver())
+        #处理Windwows case全选
         self.checkBox.clicked.connect(self.checkBox_2.click)
         self.checkBox.clicked.connect(self.checkBox_3.click)
         self.checkBox.clicked.connect(self.checkBox_4.click)
@@ -306,8 +380,53 @@ class Ui_JX_FW(object):
         self.checkBox.clicked.connect(self.checkBox_13.click)
         self.checkBox.clicked.connect(self.checkBox_14.click)
         self.checkBox.clicked.connect(self.checkBox_15.click)
+        self.checkBox.clicked.connect(self.checkBox_16.click)
+        self.checkBox.clicked.connect(self.checkBox_17.click)
+        self.checkBox.clicked.connect(self.checkBox_18.click)
+        self.checkBox.clicked.connect(self.checkBox_19.click)
+        #处理Linux case全选
+        self.Linux_selectAll_chkbox.clicked.connect(self.case6098.click)
+        self.Linux_selectAll_chkbox.clicked.connect(self.case7556.click)
+        self.Linux_selectAll_chkbox.clicked.connect(self.case7551.click)
+        self.Linux_selectAll_chkbox.clicked.connect(self.case6134.click)
+        self.Linux_selectAll_chkbox.clicked.connect(self.case7692.click)
+        self.Linux_selectAll_chkbox.clicked.connect(self.case7695.click)
+        self.Linux_selectAll_chkbox.clicked.connect(self.case7555.click)
+        self.Linux_selectAll_chkbox.clicked.connect(self.case10312.click)
+        self.Linux_selectAll_chkbox.clicked.connect(self.case16991.click)
+        self.Linux_selectAll_chkbox.clicked.connect(self.case16990.click)
+
+        #发送选中Windows Case到列表中
         self.checkBox_2.clicked.connect(lambda:self.addCase(self.checkBox_2.text()))
         self.checkBox_3.clicked.connect(lambda:self.addCase(self.checkBox_3.text()))
+        self.checkBox_4.clicked.connect(lambda:self.addCase(self.checkBox_4.text()))
+        self.checkBox_5.clicked.connect(lambda:self.addCase(self.checkBox_5.text()))
+        self.checkBox_6.clicked.connect(lambda:self.addCase(self.checkBox_6.text()))
+        self.checkBox_7.clicked.connect(lambda:self.addCase(self.checkBox_7.text()))
+        self.checkBox_8.clicked.connect(lambda:self.addCase(self.checkBox_8.text()))
+        self.checkBox_9.clicked.connect(lambda:self.addCase(self.checkBox_9.text()))
+        self.checkBox_10.clicked.connect(lambda:self.addCase(self.checkBox_10.text()))
+        self.checkBox_11.clicked.connect(lambda:self.addCase(self.checkBox_11.text()))
+        self.checkBox_12.clicked.connect(lambda:self.addCase(self.checkBox_12.text()))
+        self.checkBox_13.clicked.connect(lambda:self.addCase(self.checkBox_13.text()))
+        self.checkBox_14.clicked.connect(lambda:self.addCase(self.checkBox_14.text()))
+        self.checkBox_15.clicked.connect(lambda:self.addCase(self.checkBox_15.text()))
+        self.checkBox_16.clicked.connect(lambda:self.addCase(self.checkBox_16.text()))
+        self.checkBox_17.clicked.connect(lambda:self.addCase(self.checkBox_17.text()))
+        self.checkBox_18.clicked.connect(lambda:self.addCase(self.checkBox_18.text()))
+        self.checkBox_19.clicked.connect(lambda:self.addCase(self.checkBox_19.text()))
+        #发送选中Linux Case到列表中
+        self.case6098.clicked.connect(lambda:self.addCase(self.case6098.text()))
+        self.case7556.clicked.connect(lambda:self.addCase(self.case7556.text()))
+        self.case7551.clicked.connect(lambda:self.addCase(self.case7551.text()))
+        self.case6134.clicked.connect(lambda:self.addCase(self.case6134.text()))
+        self.case7692.clicked.connect(lambda:self.addCase(self.case7692.text()))
+        self.case7695.clicked.connect(lambda:self.addCase(self.case7695.text()))
+        self.case7555.clicked.connect(lambda:self.addCase(self.case7555.text()))
+        self.case10312.clicked.connect(lambda:self.addCase(self.case10312.text()))
+        self.case16991.clicked.connect(lambda:self.addCase(self.case16991.text()))
+        self.case16990.clicked.connect(lambda:self.addCase(self.case16990.text()))
+
         self.pushButton.clicked.connect(lambda:self.pushbuttonEvent())
 
 
@@ -343,6 +462,17 @@ class Ui_JX_FW(object):
         self.checkBox_19.setText(_translate("JX_FW", "case3965_32b"))
         self.pushButton.setText(_translate("JX_FW", "Start"))
         self.lineEdit.setText(_translate("JX_FW", "Download progress"))
+        self.case6134.setText(_translate("JX_FW", "Case6134"))
+        self.case7555.setText(_translate("JX_FW", "Case7555"))
+        self.Linux_selectAll_chkbox.setText(_translate("JX_FW", "Select All"))
+        self.case7692.setText(_translate("JX_FW", "Case7692"))
+        self.case7695.setText(_translate("JX_FW", "Case7695"))
+        self.case7551.setText(_translate("JX_FW", "Case7551"))
+        self.case7556.setText(_translate("JX_FW", "Case7556"))
+        self.case10312.setText(_translate("JX_FW", "Case10312"))
+        self.case16990.setText(_translate("JX_FW", "Case16990"))
+        self.case16991.setText(_translate("JX_FW", "Case16991"))
+        self.case6098.setText(_translate("JX_FW", "Case6098"))
         self.actionCheckall.setText(_translate("JX_FW", "Checkall"))
 
 
