@@ -1,9 +1,11 @@
 import os
 import re
 import winreg
+import time
 import zipfile
 import requests
 from sel_def_logger import MyLog
+from tqdm import tqdm
 
 my_logg = MyLog().logger
 base_url = 'http://npm.taobao.org/mirrors/chromedriver/'
@@ -39,10 +41,14 @@ def getLatestChromeDriver(version):
     my_logg.info('与当前chrome匹配的最新chromedriver版本为:%s',latest_version)
     # 下载chromedriver
     my_logg.info("开始下载chromedriver...")
+    # url_tmp=f"{base_url}{latest_version}/"
+    # print(url_tmp)
     download_url = f"{base_url}{latest_version}/chromedriver_win32.zip"
-    file = requests.get(download_url)
+    file = requests.get(download_url,stream=True)
+    content_size = int(file.headers['Content-Length']) / 1024
     with open("chromedriver.zip", 'wb') as zip_file:  # 保存文件到脚本所在目录
-        zip_file.write(file.content)
+        for data in tqdm(iterable=file.iter_content(1024), total=content_size, unit='k', desc="chromedriver.zip"):
+            zip_file.write(data)
     my_logg.info("下载完成.")
     # 解压
     f = zipfile.ZipFile("chromedriver.zip", 'r')
@@ -71,4 +77,3 @@ def checkChromeDriverUpdate():
 
 if __name__ == "__main__":
     checkChromeDriverUpdate()
-
