@@ -148,6 +148,7 @@ class Widget(QWidget):
 
   def init_lineedit(self):
     # 增加自动补全
+
     self.completer = QCompleter(items_list)
     # 设置匹配模式 有三种： Qt.MatchStartsWith 开头匹配（默认） Qt.MatchContains 内容匹配 Qt.MatchEndsWith 结尾匹配
     self.completer.setFilterMode(Qt.MatchContains)
@@ -163,7 +164,7 @@ class Widget(QWidget):
 
 
   def saveDeviceName(self):
-      DeviceName=self.lineedit.text()
+      DeviceName=self.lineedit.text().capitalize()
       print("Test device is " + DeviceName)
       fo = open("device.txt", "wt")
       fo.write(DeviceName)
