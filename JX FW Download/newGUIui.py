@@ -25,7 +25,7 @@ class Ui_JX_FW(object):
         self.input_choosedevice = QtWidgets.QLineEdit(JX_FW)
         self.input_choosedevice.setGeometry(QtCore.QRect(290, 70, 300, 50))
         font = QtGui.QFont()
-        font.setPointSize(14)
+        font.setPointSize(24)
         font.setBold(True)
         font.setWeight(75)
         self.input_choosedevice.setFont(font)

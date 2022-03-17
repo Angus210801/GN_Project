@@ -1,0 +1,38 @@
+2022-03-17 15:07:12 Check.py [line:63] INFO: Current Chrome Version: 99.0.4844.51
+2022-03-17 15:07:15 Check.py [line:65] INFO: Current chromedriver Version: 99.0.4844.35
+2022-03-17 15:07:15 Check.py [line:69] INFO: Lower Version for chromedriver version,updating
+2022-03-17 15:07:15 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-17 15:07:16 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 302 145
+2022-03-17 15:07:16 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-17 15:07:31 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 200 12
+2022-03-17 15:07:31 Check.py [line:41] INFO: The latest Chrome Driver version matches the current Chrome:99.0.4844.35
+2022-03-17 15:07:31 Check.py [line:43] INFO: Start Downloading chromedriver...
+2022-03-17 15:07:31 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-17 15:07:31 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/99.0.4844.51/chromedriver_win32.zip HTTP/1.1" 302 145
+2022-03-17 15:07:31 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-17 15:11:02 Check.py [line:63] INFO: Current Chrome Version: 99.0.4844.51
+2022-03-17 15:11:02 Check.py [line:65] INFO: Current chromedriver Version: 99.0.4844.35
+2022-03-17 15:11:02 Check.py [line:69] INFO: Lower Version for chromedriver version,updating
+2022-03-17 15:11:02 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-17 15:11:02 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 302 145
+2022-03-17 15:11:02 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-17 15:11:11 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 200 12
+2022-03-17 15:11:11 Check.py [line:41] INFO: The latest Chrome Driver version matches the current Chrome:99.0.4844.35
+2022-03-17 15:11:11 Check.py [line:43] INFO: Start Downloading chromedriver...
+2022-03-17 15:11:11 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-17 15:11:11 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/99.0.4844.51/chromedriver_win32.zip HTTP/1.1" 302 145
+2022-03-17 15:11:11 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-17 15:11:14 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/99.0.4844.51/chromedriver_win32.zip HTTP/1.1" 200 6295278
+2022-03-17 15:11:14 Check.py [line:76] ERROR: Chromedriver Download Failed For Unknown Reason: 'EmittingStr' object has no attribute 'flush'
+2022-03-17 15:13:54 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-17 15:13:54 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 302 145
+2022-03-17 15:13:55 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-17 15:14:03 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 200 12
+2022-03-17 15:14:03 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-17 15:14:03 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/99.0.4844.51/chromedriver_win32.zip HTTP/1.1" 302 145
+2022-03-17 15:14:03 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-17 15:14:05 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/99.0.4844.51/chromedriver_win32.zip HTTP/1.1" 200 6295278
+2022-03-17 15:14:05 Check.py [line:76] ERROR: Chromedriver Download Failed For Unknown Reason: 'EmittingStr' object has no attribute 'flush'
+2022-03-17 15:19:15 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-17 15:19:15 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 302 145
+2022-03-17 15:19:15 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443

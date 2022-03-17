@@ -3,12 +3,12 @@ import re
 import winreg
 import zipfile
 import requests
-from sel_def_logger import MyLog
+from Ella.sel_def_logger import MyLog
 from tqdm import tqdm
 
-my_logg = MyLog().logger
+# my_logg = MyLog().logger
 base_url = 'http://npm.taobao.org/mirrors/chromedriver/'
-version_re = re.compile(r'^[1-9]\d*\.\d*.\d*')  # 匹配前3位版本号的正则表达式
+version_re = re.compile(r'^[1-9]\d*\.\d*.\d*.\d*')  # 匹配前4位版本号的正则表达式
 
 
 def getChromeVersion():
@@ -27,7 +27,6 @@ def getChromeDriverVersion():
     outstd2 = os.popen('chromedriver --version').read()
     try:
         version = outstd2.split(' ')[1]
-        version = ".".join(version.split(".")[:-1])
         return version
     except Exception as e:
         return "0.0.0"
@@ -35,43 +34,49 @@ def getChromeDriverVersion():
 
 def getLatestChromeDriver(version):
     # 获取该chrome版本的最新driver版本号
-    url = f"{base_url}LATEST_RELEASE_{version}"
+    version_tmp = ".".join(version.split(".")[:-1])
+    #print(version_tmp)
+    url = f"{base_url}LATEST_RELEASE_{version_tmp}"
     latest_version = requests.get(url).text
-    my_logg.info('The latest Chrome Driver version matches the current Chrome:%s',latest_version)
+    print('The latest Chrome Driver version matches the current Chrome:%s',latest_version)
     # 下载chromedriver
-    my_logg.info("Start Downloading chromedriver...")
+    print("Start Downloading chromedriver...")
     # url_tmp=f"{base_url}{latest_version}/"
     # print(url_tmp)
-    download_url = f"{base_url}{latest_version}/chromedriver_win32.zip"
-    file = requests.get(download_url,stream=True)
-    content_size = int(file.headers['Content-Length']) / 1024
-    with open("chromedriver.zip", 'wb') as zip_file:  # 保存文件到脚本所在目录
-        for data in tqdm(iterable=file.iter_content(1024), total=content_size, unit='k', desc="chromedriver.zip"):
-            zip_file.write(data)
-    my_logg.info("Download successfully")
+    download_url = f"{base_url}{version}/chromedriver_win32.zip"
+    file = requests.get(download_url)
+    try:
+        content_size = int(file.headers['Content-Length']) / 1024
+        with open("chromedriver.zip", 'wb') as zip_file:  # 保存文件到脚本所在目录
+            #for data in tqdm(iterable=file.iter_content(1024), total=content_size, unit='k', desc="chromedriver.zip"):
+            zip_file.write(file.content)
+        print("Download successfully")
+    except:
+        print("Failed")
     # 解压
     f = zipfile.ZipFile("chromedriver.zip", 'r')
     for file in f.namelist():
         f.extract(file)
-    my_logg.info("Unzip completed")
+    print("Unzip completed")
 
 
 def checkChromeDriverUpdate():
     chrome_version = getChromeVersion()
-    my_logg.info(f'Current Chrome Version: {chrome_version}')
+    print(f'Current Chrome Version: {chrome_version}')
     driver_version = getChromeDriverVersion()
-    my_logg.info(f'Current chromedriver Version: {driver_version}')
+    print(f'Current chromedriver Version: {driver_version}')
     if chrome_version == driver_version:
-        my_logg.info("Same Version,No need to update")
+        print("Same Version,No need to update")
         return
-    my_logg.info("Lower Version for chromedriver version,updating")
+    print("Lower Version for chromedriver version,updating")
     try:
         getLatestChromeDriver(chrome_version)
-        my_logg.info("Chromedriver Updated successfully!")
+        print("Chromedriver Updated successfully!")
     except requests.exceptions.Timeout:
-        my_logg.error("Chromedriver Download Failed,Check The Internet Connection And Try Again")
+        print("Chromedriver Download Failed,Check The Internet Connection And Try Again")
     except Exception as e:
-        my_logg.error(f"Chromedriver Download Failed For Unknown Reason: {e}")
+        print(f"Chromedriver Download Failed For Unknown Reason: {e}")
 
 if __name__ == "__main__":
     checkChromeDriverUpdate()
+#

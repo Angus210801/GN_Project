@@ -6,7 +6,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
-from newGUIui_developed import Ui_JX_FW
+from main import Ui_JX_FW
 
 
 class EmittingStr(QtCore.QObject):

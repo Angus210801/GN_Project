@@ -3,7 +3,7 @@ import re
 import winreg
 import zipfile
 import requests
-# from sel_def_logger import MyLog
+from sel_def_logger import MyLog
 
 my_logg = MyLog().logger
 base_url = 'http://npm.taobao.org/mirrors/chromedriver/'
