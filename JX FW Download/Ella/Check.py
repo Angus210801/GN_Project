@@ -1,7 +1,6 @@
 import os
 import re
 import winreg
-import time
 import zipfile
 import requests
 from sel_def_logger import MyLog
@@ -17,7 +16,7 @@ def getChromeVersion():
     try:
         key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, 'Software\\Google\\Chrome\\BLBeacon')
         value, t = winreg.QueryValueEx(key, 'version')
-        return version_re.findall(value)[0]  # 返回前3位版本号
+        return version_re.findall(value)[0]  # 返回前4位版本号
     except WindowsError as e:
         # 没有安装chrome浏览器
         return "1.1.1"
@@ -38,9 +37,9 @@ def getLatestChromeDriver(version):
     # 获取该chrome版本的最新driver版本号
     url = f"{base_url}LATEST_RELEASE_{version}"
     latest_version = requests.get(url).text
-    my_logg.info('与当前chrome匹配的最新chromedriver版本为:%s',latest_version)
+    my_logg.info('The latest Chrome Driver version matches the current Chrome:%s',latest_version)
     # 下载chromedriver
-    my_logg.info("开始下载chromedriver...")
+    my_logg.info("Start Downloading chromedriver...")
     # url_tmp=f"{base_url}{latest_version}/"
     # print(url_tmp)
     download_url = f"{base_url}{latest_version}/chromedriver_win32.zip"
@@ -49,31 +48,30 @@ def getLatestChromeDriver(version):
     with open("chromedriver.zip", 'wb') as zip_file:  # 保存文件到脚本所在目录
         for data in tqdm(iterable=file.iter_content(1024), total=content_size, unit='k', desc="chromedriver.zip"):
             zip_file.write(data)
-    my_logg.info("下载完成.")
+    my_logg.info("Download successfully")
     # 解压
     f = zipfile.ZipFile("chromedriver.zip", 'r')
     for file in f.namelist():
         f.extract(file)
-    my_logg.info("解压完成.")
+    my_logg.info("Unzip completed")
 
 
 def checkChromeDriverUpdate():
     chrome_version = getChromeVersion()
-    my_logg.info(f'当前chrome版本: {chrome_version}')
+    my_logg.info(f'Current Chrome Version: {chrome_version}')
     driver_version = getChromeDriverVersion()
-    my_logg.info(f'当前chromedriver版本: {driver_version}')
+    my_logg.info(f'Current chromedriver Version: {driver_version}')
     if chrome_version == driver_version:
-        my_logg.info("版本兼容，无需更新.")
+        my_logg.info("Same Version,No need to update")
         return
-    my_logg.info("chromedriver版本与chrome浏览器不兼容，更新中>>>")
+    my_logg.info("Lower Version for chromedriver version,updating")
     try:
         getLatestChromeDriver(chrome_version)
-        my_logg.info("chromedriver更新成功!")
+        my_logg.info("Chromedriver Updated successfully!")
     except requests.exceptions.Timeout:
-        my_logg.error("chromedriver下载失败，请检查网络后重试！")
+        my_logg.error("Chromedriver Download Failed,Check The Internet Connection And Try Again")
     except Exception as e:
-        my_logg.error(f"chromedriver未知原因更新失败: {e}")
-
+        my_logg.error(f"Chromedriver Download Failed For Unknown Reason: {e}")
 
 if __name__ == "__main__":
     checkChromeDriverUpdate()
