@@ -4,7 +4,7 @@ import random
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.configure import renameAndclose,borwserConfigure
+from Common.function_Configure import renameAndclose,borwserConfigure
 
 
 #JX-Direct : Select Device FW as "Managed by Jabra".
@@ -16,7 +16,7 @@ def testcase3968():
     options=borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)
-    from Page.indexPage import windowsPage
+    from Common.function_Basic import windowsPage
     windowsPage = windowsPage(driver)
     # 进入到选择device页
     windowsPage.clickNextButton()

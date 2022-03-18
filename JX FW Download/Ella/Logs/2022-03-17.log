@@ -1,8 +1,0 @@
-2022-03-17 15:14:37 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
-2022-03-17 15:14:38 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 302 145
-2022-03-17 15:14:38 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
-2022-03-17 15:14:39 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 200 12
-2022-03-17 15:14:39 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
-2022-03-17 15:14:39 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/99.0.4844.51/chromedriver_win32.zip HTTP/1.1" 302 145
-2022-03-17 15:14:39 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
-2022-03-17 15:14:40 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/99.0.4844.51/chromedriver_win32.zip HTTP/1.1" 200 6295278

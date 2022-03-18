@@ -1,13 +1,10 @@
 import sys
 import os
-import shutil
-import zipfile
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Page.configurationPage import isElementExist
 
-from Common.configure import borwserConfigure, renameAndclose
+from Common.function_Configure import borwserConfigure, renameAndclose
 
 
 def testcase10312w():
@@ -19,7 +16,7 @@ def testcase10312w():
         options = borwserConfigure()
         global driver
         driver = webdriver.Chrome(chrome_options=options)
-        from Page.indexPage import windowsPage
+        from Common.function_Basic import windowsPage
         windowsPage = windowsPage(driver)
         #Select device页
         windowsPage.clickNextButton()

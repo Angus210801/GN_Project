@@ -3,7 +3,7 @@ import os
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.configure import renameAndclose,borwserConfigure
+from Common.function_Configure import renameAndclose,borwserConfigure
 
 #Jabra Direct Diagnostic Report plug-in version and s/n verification [19903]（配置设置项为default）
 def testcase3961():
@@ -13,7 +13,7 @@ def testcase3961():
     options=borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)
-    from Page.indexPage import windowsPage
+    from Common.function_Basic import windowsPage
     windowsPage = windowsPage(driver)
     # 进入到选择device页
     windowsPage.clickNextButton()

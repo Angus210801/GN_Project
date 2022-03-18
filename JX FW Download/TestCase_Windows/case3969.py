@@ -4,8 +4,8 @@ import random
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.configure import renameAndclose,borwserConfigure
-from Page.configurationPage import isElementExist, isInputExist, isUploadButton
+from Common.function_Configure import renameAndclose,borwserConfigure
+from Common.function_Judge import isElementExist, isInputExist, isUploadButton
 
 
 # JX-Direct: Device settings configuration with all setings to random/defalut value but FW as "LEAVE UNCHANGED".(Protect Setting = Not Protected)
@@ -16,7 +16,7 @@ def testcase3969():
     options=borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)
-    from Page.indexPage import windowsPage
+    from Common.function_Basic import windowsPage
     windowsPage = windowsPage(driver)
     # 进入到选择device页
     windowsPage.clickNextButton()

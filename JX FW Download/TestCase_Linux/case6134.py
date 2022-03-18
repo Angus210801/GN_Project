@@ -6,7 +6,7 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
 
-from Common.configure import borwserConfigure
+from Common.function_Configure import borwserConfigure
 
 
 def testcase6134():
@@ -16,7 +16,7 @@ def testcase6134():
     options = borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)
-    from Page.indexPage import linuxindexPage
+    from Common.function_Basic import linuxindexPage
     linuxindexPage = linuxindexPage(driver)
     #Select device页
     linuxindexPage.clickNextButton()

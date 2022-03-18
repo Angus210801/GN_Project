@@ -9,4 +9,5 @@ if __name__ == '__main__':
     i=0
     while i<=90:
         driver.find_element_by_xpath("//p[@data-order=\""+str(i)+"\"]").click()
+        sleep(1)
         i=i+1

@@ -6,8 +6,8 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
 
-from Common.configure import borwserConfigure
-from Page.configurationPage import isElementExist, isInputExist,isUploadButton
+from Common.function_Configure import borwserConfigure
+from Common.function_Judge import isElementExist, isInputExist,isUploadButton
 
 #All settings n the device an e chan from default value to min value with installation of zip file at the end user PC, no FW change.
 def testcase7692():
@@ -17,7 +17,7 @@ def testcase7692():
     options = borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)
-    from Page.indexPage import linuxindexPage
+    from Common.function_Basic import linuxindexPage
     linuxindexPage = linuxindexPage(driver)
     # 进入到选择device页
     linuxindexPage.clickNextButton()

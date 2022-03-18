@@ -7,9 +7,9 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
 
-from Common.configure import borwserConfigure
+from Common.function_Configure import borwserConfigure
 # Install a Zip file on end user environment with a later FW and set all settings are changed.
-from Page.configurationPage import isUploadButton, isElementExist, isInputExist
+from Common.function_Judge import isUploadButton, isElementExist, isInputExist
 
 
 def testcase7551():
@@ -19,7 +19,7 @@ def testcase7551():
     options = borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)
-    from Page.indexPage import linuxindexPage
+    from Common.function_Basic import linuxindexPage
     linuxindexPage = linuxindexPage(driver)
     # 进入到选择device页
     linuxindexPage.clickNextButton()

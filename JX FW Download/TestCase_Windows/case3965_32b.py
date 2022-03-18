@@ -1,12 +1,10 @@
 import sys
 import os
 import random
-import shutil
-import zipfile
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.configure import borwserConfigure, renameAndclose
+from Common.function_Configure import borwserConfigure, renameAndclose
 
 # Device settings configuration with all setings and FW as LEAVE UNCHANGED but Protected.
 def testcase3965_32b():
@@ -16,7 +14,7 @@ def testcase3965_32b():
     options=borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)
-    from Page.indexPage import windowsPage
+    from Common.function_Basic import windowsPage
     windowsPage = windowsPage(driver)
     # 进入到选择device页
     windowsPage.clickNextButton()
