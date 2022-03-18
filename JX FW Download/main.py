@@ -8,6 +8,7 @@ from PyQt5.QtWidgets import QApplication
 #Import Testcase
 from Common.function_checkDriver_Ella import checkChromeDriverUpdate
 from Common.function_CheckIP import get_Windows_ip
+from TestCase_Windows.case3961 import testcase3961
 
 
 items_list=['Jabra BIZ 1500 MS USB Duo',
