@@ -1,7 +1,7 @@
 
 #Import PyQt5
 from PyQt5 import QtWidgets,QtCore,QtGui
-from PyQt5.QtWidgets import QCompleter
+from PyQt5.QtWidgets import QCompleter, QFileDialog
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import QApplication
@@ -191,6 +191,11 @@ class Ui_JX_FW(object):
 
     def checkIP(self):
         get_Windows_ip()
+
+    def chooseDir(self):
+        dir_choose=QFileDialog.getExistingDirectory()
+        file=dir_choose
+        print(file)
 
     def checkChromeDriver(self):
         self.checkDriver=checkGoogleDriver()
@@ -384,7 +389,7 @@ class Ui_JX_FW(object):
 
         self.retranslateUi(JX_FW)
         self.init_input_choosedevice()
-        self.CheckNetwork.clicked.connect(lambda:self.checkIP())
+        self.CheckNetwork.clicked.connect(lambda:self.chooseDir())
         self.checkChromeDriverBtn.clicked.connect(lambda:self.checkChromeDriver())
         #处理Windwows case全选
         self.checkBox.clicked.connect(self.checkBox_2.click)
