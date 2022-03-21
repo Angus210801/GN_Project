@@ -14,3 +14,5 @@ Refresh logging code - Logger.debug won't print into the consle
 Delete progress bar cause the pyqt5 cannot use it  
 Add logging function into all cases  
 -------------------------------------------------------------
+Add download file in specific path  
+-------------------------------------------------------------
