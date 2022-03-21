@@ -38,6 +38,8 @@ def get_window_ip4():
 def get_Windows_ip():
     iPv4=get_window_ip4()
     if iPv4[0:5]=='10.86':
-        print("Supported network")
+        return True
     else:
-        print("Unsupported netwrok")
+        return False
+
+

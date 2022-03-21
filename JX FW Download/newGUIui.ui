@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>713</width>
-    <height>847</height>
+    <width>717</width>
+    <height>879</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,9 +16,9 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 222);</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_4">
+  <layout class="QVBoxLayout" name="Layout_global">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <layout class="QHBoxLayout" name="HLayout_first">
      <item>
       <widget class="QLabel" name="label_theCurrentVersion">
        <property name="font">
@@ -48,16 +48,16 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <layout class="QHBoxLayout" name="HLayout_second">
      <item>
-      <widget class="QLabel" name="label_6">
+      <widget class="QLabel" name="label_empty_1">
        <property name="text">
         <string/>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_7">
+      <widget class="QLabel" name="label_empty_2">
        <property name="text">
         <string/>
        </property>
@@ -66,9 +66,9 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,3,3,3">
+    <layout class="QHBoxLayout" name="HLayout_third" stretch="3,3,3,3">
      <item>
-      <widget class="QLabel" name="label_4">
+      <widget class="QLabel" name="label_empty_3">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -109,7 +109,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_5">
+      <widget class="QLabel" name="label_empty_4">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -121,7 +121,7 @@
     </layout>
    </item>
    <item>
-    <layout class="QGridLayout" name="gridLayout" columnstretch="3,1,3" columnminimumwidth="5,1,5">
+    <layout class="QGridLayout" name="HLayout_forth" columnstretch="3,1,3" columnminimumwidth="5,1,5">
      <property name="rightMargin">
       <number>200</number>
      </property>
@@ -149,7 +149,7 @@
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLabel" name="label_notMean">
+      <widget class="QLabel" name="label_empty_5">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -193,19 +193,9 @@
     </layout>
    </item>
    <item>
-    <widget class="QLabel" name="label_2">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="4,3">
+    <layout class="QHBoxLayout" name="HLayout_fifth" stretch="0,0">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QVBoxLayout" name="VLayout_win">
        <item>
         <widget class="QCheckBox" name="checkBox_checkAll_win">
          <property name="text">
@@ -235,114 +225,114 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_5">
+        <widget class="QCheckBox" name="checkBox_case3969">
          <property name="text">
-          <string>Case3969</string>
+          <string>case3969</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_9">
+        <widget class="QCheckBox" name="checkBox_case4090">
          <property name="text">
-          <string>Case4090</string>
+          <string>case4090</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_6">
+        <widget class="QCheckBox" name="checkBox_case4128">
          <property name="text">
           <string>Case4128</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_7">
+        <widget class="QCheckBox" name="checkBox_case5509">
          <property name="text">
           <string>Case5509</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_11">
+        <widget class="QCheckBox" name="checkBox_case7196">
          <property name="text">
           <string>Case7196</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_8">
+        <widget class="QCheckBox" name="checkBox_case5665">
          <property name="text">
           <string>Case5665</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_10">
+        <widget class="QCheckBox" name="checkBox_case7195">
          <property name="text">
           <string>Case7195</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_12">
+        <widget class="QCheckBox" name="checkBox_case10449">
          <property name="text">
           <string>Case10449</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_13">
+        <widget class="QCheckBox" name="checkBox_case10312">
          <property name="text">
           <string>Case10312</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_14">
+        <widget class="QCheckBox" name="checkBox_case3965_32b">
          <property name="text">
           <string>Case3965_32b</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_15">
+        <widget class="QCheckBox" name="checkBox_case3966_32b">
          <property name="text">
           <string>Case3966_32b</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_16">
+        <widget class="QCheckBox" name="checkBox_case4090_32b">
          <property name="text">
           <string>Case4090_32b</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_17">
+        <widget class="QCheckBox" name="checkBox_case5664_32b">
          <property name="text">
-          <string>Case3965_32b</string>
+          <string>case5664_32b</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_18">
+        <widget class="QCheckBox" name="checkBox_case5509_32b">
          <property name="text">
-          <string>Case3965_32b</string>
+          <string>case5509_32b</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_19">
+        <widget class="QCheckBox" name="checkBox_case5665_32b">
          <property name="text">
-          <string>Case3965_32b</string>
+          <string>case5665_32b</string>
          </property>
         </widget>
        </item>
       </layout>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <layout class="QVBoxLayout" name="VLayout_linux">
        <item>
         <widget class="QCheckBox" name="checkbox_selectAll_linux">
          <property name="text">
@@ -351,70 +341,70 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="case6098">
+        <widget class="QCheckBox" name="checkBox_case6098">
          <property name="text">
           <string>Case6098</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="case6134">
+        <widget class="QCheckBox" name="checkBox_case6134">
          <property name="text">
           <string>Case6134</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="case7555">
+        <widget class="QCheckBox" name="checkBox_case7555">
          <property name="text">
           <string>Case7555</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="case7695">
+        <widget class="QCheckBox" name="checkBox_case7695">
          <property name="text">
           <string>Case7695</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="case7692">
+        <widget class="QCheckBox" name="checkBox_case7692">
          <property name="text">
           <string>Case7692</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="case7551">
+        <widget class="QCheckBox" name="checkBox_case7551">
          <property name="text">
           <string>Case7551</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="case7556">
+        <widget class="QCheckBox" name="checkBox_case7556">
          <property name="text">
           <string>Case7556</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="case10312">
+        <widget class="QCheckBox" name="checkBox_case10312_2">
          <property name="text">
           <string>Case10312</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="case16990">
+        <widget class="QCheckBox" name="checkBox_case16990">
          <property name="text">
           <string>Case16990</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="case16991">
+        <widget class="QCheckBox" name="checkBox_case16991">
          <property name="text">
           <string>Case16991</string>
          </property>
@@ -425,7 +415,7 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_6">
+    <layout class="QHBoxLayout" name="HLayout_sixth">
      <item>
       <widget class="QLabel" name="label_8">
        <property name="text">
@@ -434,7 +424,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="button_start">
        <property name="minimumSize">
         <size>
          <width>10</width>
@@ -456,7 +446,7 @@
     </layout>
    </item>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
+    <layout class="QVBoxLayout" name="HLayout_seventh">
      <item>
       <widget class="QLabel" name="label">
        <property name="font">
@@ -472,7 +462,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QTextEdit" name="textEdit"/>
+      <widget class="QTextEdit" name="textbox_progress"/>
      </item>
     </layout>
    </item>

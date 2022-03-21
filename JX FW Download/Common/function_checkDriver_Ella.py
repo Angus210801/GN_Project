@@ -1,25 +1,23 @@
 import os
 import re
+import time
 import winreg
 import zipfile
-import time
 import requests
+from Common.sel_def_logger import MyLog
 
-# from Common.sel_def_logger import Log
-
-# Mylog=Log()
+my_logg = MyLog().logger
 base_url = 'http://npm.taobao.org/mirrors/chromedriver/'
-version_re = re.compile(r'^[1-9]\d*\.\d*.\d*')  # 匹配前3位版本号的正则表达式
+version_re = re.compile(r'^[1-9]\d*\.\d*.\d*.\d*')  # 匹配前4位版本号的正则表达式
 
-def onefloat(num):
-    return '{:.1f}'.format(num)
 
 def getChromeVersion():
     """通过注册表查询chrome版本"""
     try:
         key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, 'Software\\Google\\Chrome\\BLBeacon')
         value, t = winreg.QueryValueEx(key, 'version')
-        return version_re.findall(value)[0]  # 返回前3位版本号
+        version = ".".join(value.split(".")[:-1])
+        return version  # 返回前4位版本号
     except WindowsError as e:
         # 没有安装chrome浏览器
         return "1.1.1"
@@ -34,15 +32,21 @@ def getChromeDriverVersion():
         return version
     except Exception as e:
         return "0.0.0"
-
+def onefloat(num):
+    return '{:.1f}'.format(num)
 
 def getLatestChromeDriver(version):
     # 获取该chrome版本的最新driver版本号
-    url = f"{base_url}LATEST_RELEASE_{version}"
+    version_tmp = ".".join(version.split(".")[:-1])
+    print(version_tmp)
+    url = f"{base_url}LATEST_RELEASE_{version_tmp}"
     latest_version = requests.get(url).text
-    # Mylog.info(f"与当前chrome匹配的最新chromedriver版本为: {latest_version}")
+    my_logg.info('The latest Chrome Driver version matches the current Chrome:%s',latest_version)
     # 下载chromedriver
-    # Mylog.info("开始下载chromedriver...")
+    my_logg.info("Start Downloading chromedriver...")
+    # url_tmp=f"{base_url}{latest_version}/"
+    # print(url_tmp)
+    download_url = f"{base_url}{version}/chromedriver_win32.zip"
     download_url = f"{base_url}{latest_version}/chromedriver_win32.zip"
     with requests.get(download_url,stream=True) as file, open(r'chromedriver.zip', 'wb') as zip_file:# 保存文件到脚本所在目录
         total_size = int(file.headers['content-length'])
@@ -71,40 +75,40 @@ def getLatestChromeDriver(version):
                 speed = content_size - temp_size
                 # KB级下载速度处理
                 if 0 <= speed < (1024 ** 2):
-                    print('\r',onefloat(plan), '%', onefloat(speed / 1024), 'KB/s', end='', flush=True,)
+                    print('\r',onefloat(plan), '%', onefloat(speed / 1024), 'KB/s', end='')
                 # MB级下载速度处理
                 elif (1024 ** 2) <= speed < (1024 ** 3):
-                    print('\r', onefloat(plan), '%', onefloat(speed / (1024 ** 2)), 'MB/s', end='', flush=True)
+                    print('\r', onefloat(plan), '%', onefloat(speed / (1024 ** 2)), 'MB/s', end='')
                 # 重置以下载大小
                 temp_size = content_size
     print('\n')
-    # Mylog.info("100%,下载完成.")
+    print("100%,downloaded!")
     # 解压
     f = zipfile.ZipFile("chromedriver.zip", 'r')
     for file in f.namelist():
         f.extract(file)
-    # Mylog.info("解压完成.")
+    print("Unzip successfully")
 
 
 def checkChromeDriverUpdate():
     chrome_version = getChromeVersion()
-    # Mylog.info(f'当前chrome版本: {chrome_version}')
+    my_logg.info(f'Current Chrome Version: {chrome_version}')
     driver_version = getChromeDriverVersion()
-    # Mylog.info(f'当前chromedriver版本: {driver_version}')
+    my_logg.info(f'Current chromedriver Version: {driver_version}')
     if chrome_version == driver_version:
-        # Mylog.info("版本兼容，无需更新.")
+        print("Same Version,No need to update")
+        my_logg.info("Same Version,No need to update")
+        print("\n")
+        print("Click the bottom button to selece the location that the test package should save.")
         return
-    # Mylog.info("chromedriver版本与chrome浏览器不兼容，更新中>>>")
+    my_logg.info("Lower Version for chromedriver version,updating")
     try:
         getLatestChromeDriver(chrome_version)
-        # Mylog.info("chromedriver更新成功!")
+        my_logg.info("Chromedriver Updated successfully!")
     except requests.exceptions.Timeout:
-        print("chromedriver未知原因更新失败: {e}")
+        my_logg.error("Chromedriver Download Failed,Check The Internet Connection And Try Again")
     except Exception as e:
-        print("chromedriver未知原因更新失败: {e}")
-        # Mylog.error(f"chromedriver未知原因更新失败: {e}")
-
+        my_logg.error(f"Chromedriver Download Failed For Unknown Reason: {e}")
 
 if __name__ == "__main__":
     checkChromeDriverUpdate()
-
