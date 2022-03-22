@@ -29,6 +29,7 @@ class MyLog(object):
     def get_console_handler(self):
         console_handler = logging.StreamHandler(sys.stdout)
         console_handler.setFormatter(self.formatter)
+<<<<<<< HEAD
         return console_handler
 import logging
 import time
@@ -99,3 +100,6 @@ log = Log()
 
 if __name__ == '__main__':
     pass
+=======
+        return console_handler
+>>>>>>> 8e2d7fc8053d0fb269ef6a348ed20dc07a7ccdb1
