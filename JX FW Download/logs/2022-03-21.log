@@ -1,0 +1,506 @@
+2022-03-21 13:47:26 function_checkDriver_Ella.py [line:63] INFO: Current Chrome Version: 99.0.4844.74
+2022-03-21 13:47:26 function_checkDriver_Ella.py [line:65] INFO: Current chromedriver Version: 98.0.4758.102
+2022-03-21 13:47:26 function_checkDriver_Ella.py [line:69] INFO: Lower Version for chromedriver version,updating
+2022-03-21 13:47:26 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 13:47:27 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 302 145
+2022-03-21 13:47:27 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 13:47:32 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 200 12
+2022-03-21 13:47:32 function_checkDriver_Ella.py [line:41] INFO: The latest Chrome Driver version matches the current Chrome:99.0.4844.35
+2022-03-21 13:47:32 function_checkDriver_Ella.py [line:43] INFO: Start Downloading chromedriver...
+2022-03-21 13:47:32 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 13:47:33 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/99.0.4844.74/chromedriver_win32.zip HTTP/1.1" 302 145
+2022-03-21 13:47:33 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 13:47:34 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/99.0.4844.74/chromedriver_win32.zip HTTP/1.1" 404 315
+2022-03-21 13:47:34 function_checkDriver_Ella.py [line:76] ERROR: Chromedriver Download Failed For Unknown Reason: 'EmittingStr' object has no attribute 'flush'
+2022-03-21 13:50:12 function_checkDriver_Ella.py [line:91] INFO: Current Chrome Version: 99.0.4844.74
+2022-03-21 13:50:12 function_checkDriver_Ella.py [line:93] INFO: Current chromedriver Version: 98.0.4758.102
+2022-03-21 13:50:12 function_checkDriver_Ella.py [line:97] INFO: Lower Version for chromedriver version,updating
+2022-03-21 13:50:12 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 13:50:12 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 302 145
+2022-03-21 13:50:12 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 13:50:14 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 200 12
+2022-03-21 13:50:14 function_checkDriver_Ella.py [line:43] INFO: The latest Chrome Driver version matches the current Chrome:99.0.4844.35
+2022-03-21 13:50:14 function_checkDriver_Ella.py [line:45] INFO: Start Downloading chromedriver...
+2022-03-21 13:50:14 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 13:50:14 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 302 145
+2022-03-21 13:50:14 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 13:50:15 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 200 6292501
+2022-03-21 13:50:17 function_checkDriver_Ella.py [line:104] ERROR: Chromedriver Download Failed For Unknown Reason: 'EmittingStr' object has no attribute 'flush'
+2022-03-21 13:51:13 function_checkDriver_Ella.py [line:91] INFO: Current Chrome Version: 99.0.4844.74
+2022-03-21 13:51:13 function_checkDriver_Ella.py [line:93] INFO: Current chromedriver Version: 98.0.4758.102
+2022-03-21 13:51:13 function_checkDriver_Ella.py [line:97] INFO: Lower Version for chromedriver version,updating
+2022-03-21 13:51:13 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 13:51:13 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 302 145
+2022-03-21 13:51:13 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 13:51:16 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 200 12
+2022-03-21 13:51:16 function_checkDriver_Ella.py [line:43] INFO: The latest Chrome Driver version matches the current Chrome:99.0.4844.35
+2022-03-21 13:51:16 function_checkDriver_Ella.py [line:45] INFO: Start Downloading chromedriver...
+2022-03-21 13:51:16 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 13:51:16 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 302 145
+2022-03-21 13:51:16 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 13:51:20 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 200 6292501
+2022-03-21 13:55:14 function_checkDriver_Ella.py [line:100] INFO: Chromedriver Updated successfully!
+2022-03-21 13:57:24 function_checkDriver_Ella.py [line:97] INFO: Current Chrome Version: 99.0.4844.74
+2022-03-21 13:57:24 function_checkDriver_Ella.py [line:99] INFO: Current chromedriver Version: 98.0.4758.102
+2022-03-21 13:57:24 function_checkDriver_Ella.py [line:103] INFO: Lower Version for chromedriver version,updating
+2022-03-21 13:57:24 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 13:57:24 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 302 145
+2022-03-21 13:57:24 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 13:57:27 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 200 12
+2022-03-21 13:57:27 function_checkDriver_Ella.py [line:43] INFO: The latest Chrome Driver version matches the current Chrome:99.0.4844.35
+2022-03-21 13:57:27 function_checkDriver_Ella.py [line:45] INFO: Start Downloading chromedriver...
+2022-03-21 13:57:27 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 13:57:28 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 302 145
+2022-03-21 13:57:28 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 13:57:31 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 200 6292501
+2022-03-21 13:59:26 function_checkDriver_Ella.py [line:106] INFO: Chromedriver Updated successfully!
+2022-03-21 14:00:29 function_checkDriver_Ella.py [line:94] INFO: Current Chrome Version: 99.0.4844.74
+2022-03-21 14:00:32 function_checkDriver_Ella.py [line:96] INFO: Current chromedriver Version: 99.0.4844.35
+2022-03-21 14:00:32 function_checkDriver_Ella.py [line:100] INFO: Lower Version for chromedriver version,updating
+2022-03-21 14:00:32 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 14:00:32 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 302 145
+2022-03-21 14:00:32 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 14:00:36 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 200 12
+2022-03-21 14:00:36 function_checkDriver_Ella.py [line:43] INFO: The latest Chrome Driver version matches the current Chrome:99.0.4844.35
+2022-03-21 14:00:36 function_checkDriver_Ella.py [line:45] INFO: Start Downloading chromedriver...
+2022-03-21 14:00:36 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 14:00:37 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 302 145
+2022-03-21 14:00:37 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 14:00:41 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 200 6292501
+2022-03-21 14:12:22 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844.74
+2022-03-21 14:12:22 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:12:22 function_checkDriver_Ella.py [line:101] INFO: Lower Version for chromedriver version,updating
+2022-03-21 14:12:22 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 14:12:22 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 302 145
+2022-03-21 14:12:22 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 14:12:25 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 200 12
+2022-03-21 14:12:25 function_checkDriver_Ella.py [line:44] INFO: The latest Chrome Driver version matches the current Chrome:99.0.4844.35
+2022-03-21 14:12:25 function_checkDriver_Ella.py [line:46] INFO: Start Downloading chromedriver...
+2022-03-21 14:12:25 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 14:12:25 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 302 145
+2022-03-21 14:12:25 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 14:12:28 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 200 6292501
+2022-03-21 14:15:57 function_checkDriver_Ella.py [line:99] INFO: Current Chrome Version: 99.0.4844.74
+2022-03-21 14:15:57 function_checkDriver_Ella.py [line:101] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:15:57 function_checkDriver_Ella.py [line:105] INFO: Lower Version for chromedriver version,updating
+2022-03-21 14:15:57 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 14:15:57 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 302 145
+2022-03-21 14:15:57 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 14:16:00 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 200 12
+2022-03-21 14:16:00 function_checkDriver_Ella.py [line:48] INFO: The latest Chrome Driver version matches the current Chrome:99.0.4844.35
+2022-03-21 14:16:00 function_checkDriver_Ella.py [line:50] INFO: Start Downloading chromedriver...
+2022-03-21 14:16:00 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 14:16:00 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 302 145
+2022-03-21 14:16:00 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 14:16:02 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 200 6292501
+2022-03-21 14:16:17 function_checkDriver_Ella.py [line:99] INFO: Current Chrome Version: 99.0.4844.74
+2022-03-21 14:16:17 function_checkDriver_Ella.py [line:101] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:16:17 function_checkDriver_Ella.py [line:105] INFO: Lower Version for chromedriver version,updating
+2022-03-21 14:16:17 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 14:16:17 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 302 145
+2022-03-21 14:16:17 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 14:16:18 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 200 12
+2022-03-21 14:16:18 function_checkDriver_Ella.py [line:48] INFO: The latest Chrome Driver version matches the current Chrome:99.0.4844.35
+2022-03-21 14:16:18 function_checkDriver_Ella.py [line:50] INFO: Start Downloading chromedriver...
+2022-03-21 14:16:18 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 14:16:18 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 302 145
+2022-03-21 14:16:18 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 14:16:20 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 200 6292501
+2022-03-21 14:18:14 function_checkDriver_Ella.py [line:101] INFO: Current Chrome Version: 99.0.4844.74
+2022-03-21 14:18:14 function_checkDriver_Ella.py [line:103] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:18:14 function_checkDriver_Ella.py [line:107] INFO: Lower Version for chromedriver version,updating
+2022-03-21 14:18:14 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 14:18:14 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 302 145
+2022-03-21 14:18:14 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 14:18:22 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 200 12
+2022-03-21 14:18:22 function_checkDriver_Ella.py [line:50] INFO: The latest Chrome Driver version matches the current Chrome:99.0.4844.35
+2022-03-21 14:18:22 function_checkDriver_Ella.py [line:52] INFO: Start Downloading chromedriver...
+2022-03-21 14:18:22 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 14:18:22 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 302 145
+2022-03-21 14:18:22 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 14:18:27 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 200 6292501
+2022-03-21 14:23:31 function_checkDriver_Ella.py [line:102] INFO: Current Chrome Version: 99.0.4844.74
+2022-03-21 14:23:31 function_checkDriver_Ella.py [line:104] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:23:31 function_checkDriver_Ella.py [line:108] INFO: Lower Version for chromedriver version,updating
+2022-03-21 14:23:31 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 14:23:32 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 302 145
+2022-03-21 14:23:32 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 14:23:35 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/LATEST_RELEASE_99.0.4844 HTTP/1.1" 200 12
+2022-03-21 14:23:35 function_checkDriver_Ella.py [line:51] INFO: The latest Chrome Driver version matches the current Chrome:99.0.4844.35
+2022-03-21 14:23:35 function_checkDriver_Ella.py [line:53] INFO: Start Downloading chromedriver...
+2022-03-21 14:23:35 connectionpool.py [line:226] DEBUG: Starting new HTTP connection (1): npm.taobao.org:80
+2022-03-21 14:23:35 connectionpool.py [line:433] DEBUG: http://npm.taobao.org:80 "GET /mirrors/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 302 145
+2022-03-21 14:23:35 connectionpool.py [line:937] DEBUG: Starting new HTTPS connection (1): cdn.npmmirror.com:443
+2022-03-21 14:23:39 connectionpool.py [line:433] DEBUG: https://cdn.npmmirror.com:443 "GET /binaries/chromedriver/99.0.4844.35/chromedriver_win32.zip HTTP/1.1" 200 6292501
+2022-03-21 14:23:55 function_checkDriver_Ella.py [line:102] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 14:23:55 function_checkDriver_Ella.py [line:104] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:23:55 function_checkDriver_Ella.py [line:106] INFO: Same Version,No need to update
+2022-03-21 14:24:27 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 14:24:27 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:24:27 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 14:25:56 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 14:25:56 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:25:56 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 14:36:05 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 14:36:05 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:36:05 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 14:36:22 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 14:36:22 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:36:22 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 14:37:02 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 14:37:02 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:37:02 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 14:37:46 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 14:37:46 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:37:46 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 14:38:40 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 14:38:40 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:38:40 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 14:41:39 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 14:41:39 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:41:39 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 14:43:31 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 14:43:31 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:43:31 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 14:49:30 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 14:49:31 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:49:31 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 14:51:24 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 14:51:24 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:51:24 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 14:51:58 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 14:51:59 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:51:59 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 14:53:10 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 14:53:10 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:53:10 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 14:53:34 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 14:53:34 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:53:34 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 14:53:51 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 14:53:51 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:53:51 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 14:53:57 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 14:53:57 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 14:53:57 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:02:27 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:02:28 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:02:28 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:03:43 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:03:43 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:03:43 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:04:03 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:04:03 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:04:03 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:04:45 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:04:45 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:04:45 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:06:08 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:06:08 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:06:08 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:06:27 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:06:27 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:06:27 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:07:53 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:07:54 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:07:54 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:10:36 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:10:36 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:10:36 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:13:52 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:13:52 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:13:52 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:16:09 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:16:09 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:16:09 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:17:16 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:17:16 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:17:16 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:18:08 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:18:08 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:18:08 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:22:25 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:22:25 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:22:25 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:22:46 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:22:46 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:22:46 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:23:21 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:23:21 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:23:21 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:24:20 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:24:20 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:24:20 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:26:04 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:26:05 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:26:05 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:29:27 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:29:27 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:29:27 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:35:42 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:35:42 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:35:42 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:36:14 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:36:14 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:36:14 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:37:18 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:37:18 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:37:18 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:38:13 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:38:13 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:38:13 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:38:30 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:38:30 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:38:30 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:39:26 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:39:26 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:39:26 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:40:37 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:40:37 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:40:37 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:41:23 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:41:23 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:41:23 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:41:37 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:41:37 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:41:37 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:44:08 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:44:09 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:44:09 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:45:27 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:45:27 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:45:27 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:45:41 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:45:41 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:45:41 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:46:46 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:46:47 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:46:47 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:50:41 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:50:41 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:50:41 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:52:37 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:52:37 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:52:37 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:55:12 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:55:12 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:55:12 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:56:21 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:56:21 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:56:21 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:57:12 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:57:12 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:57:12 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 15:58:04 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 15:58:04 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 15:58:04 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 16:17:59 function_checkDriver_Ella.py [line:96] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 16:17:59 function_checkDriver_Ella.py [line:98] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 16:17:59 function_checkDriver_Ella.py [line:101] INFO: Same Version,No need to update
+2022-03-21 16:39:15 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 16:39:15 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 16:39:15 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 16:46:32 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 16:46:32 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 16:46:32 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 16:47:40 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 16:47:40 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 16:47:40 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 16:49:22 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 16:49:22 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 16:49:22 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 16:54:08 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 16:54:08 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 16:54:08 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 16:59:30 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 16:59:30 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 16:59:30 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 16:59:59 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 16:59:59 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 16:59:59 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:01:59 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:01:59 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:01:59 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:03:39 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:03:39 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:03:39 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:19:59 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:19:59 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:19:59 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:20:35 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:20:35 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:20:35 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:21:19 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:21:19 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:21:19 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:22:31 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:22:31 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:22:31 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:24:09 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:24:09 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:24:09 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:25:40 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:25:40 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:25:40 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:26:33 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:26:35 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:26:35 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:28:32 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:28:32 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:28:32 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:29:19 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:29:19 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:29:19 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:29:42 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:29:43 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:29:43 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:32:03 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:32:03 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:32:03 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:32:22 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:32:22 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:32:22 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:33:24 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:33:24 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:33:24 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:35:13 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:35:13 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:35:13 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:54:26 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:54:27 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:54:27 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:56:10 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:56:10 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:56:10 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:56:59 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:56:59 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:56:59 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:57:26 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:57:26 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:57:26 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:58:23 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:58:23 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:58:23 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:58:44 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:58:45 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:58:45 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 17:59:52 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 17:59:52 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 17:59:52 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:01:07 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:01:07 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:01:07 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:02:43 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:02:43 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:02:43 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:03:19 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:03:20 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:03:20 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:04:06 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:04:06 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:04:06 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:04:48 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:04:48 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:04:48 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:06:12 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:06:12 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:06:12 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:08:49 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:08:49 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:08:49 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:09:27 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:09:27 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:09:27 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:11:23 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:11:23 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:11:23 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:12:45 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:12:45 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:12:45 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:14:30 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:14:31 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:14:31 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:15:29 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:15:29 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:15:29 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:17:26 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:17:26 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:17:26 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:20:40 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:20:40 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:20:40 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:21:03 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:21:03 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:21:03 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:25:42 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:25:42 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:25:42 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:26:08 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:26:08 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:26:08 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:26:36 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:26:36 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:26:36 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:27:20 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:27:20 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:27:20 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:28:31 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:28:31 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:28:31 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:29:56 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:29:57 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:29:57 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:34:28 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:34:29 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:34:29 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 18:37:19 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 18:37:19 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 18:37:19 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 19:07:11 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 19:07:12 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 19:07:12 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 19:07:48 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 19:07:48 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 19:07:48 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 19:08:37 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 19:08:37 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 19:08:37 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 19:11:38 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 19:11:38 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 19:11:38 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 19:13:36 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 19:13:36 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 19:13:36 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 19:13:55 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 19:13:55 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 19:13:55 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 19:14:32 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 19:14:32 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 19:14:32 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 19:15:32 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 19:15:32 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 19:15:32 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 19:17:01 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 19:17:01 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 19:17:01 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 19:17:15 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 19:17:15 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 19:17:15 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 19:21:06 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 19:21:07 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 19:21:07 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 19:34:06 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 19:34:06 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 19:34:06 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 19:34:19 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 19:34:19 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 19:34:19 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 19:38:33 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 19:38:33 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 19:38:33 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 19:39:19 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 19:39:19 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 19:39:19 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
+2022-03-21 19:40:04 function_checkDriver_Ella.py [line:95] INFO: Current Chrome Version: 99.0.4844
+2022-03-21 19:40:04 function_checkDriver_Ella.py [line:97] INFO: Current chromedriver Version: 99.0.4844
+2022-03-21 19:40:04 function_checkDriver_Ella.py [line:100] INFO: Same Version,No need to update
