@@ -23,21 +23,34 @@ class baseConfigure(object):
         self.geometry("+%d+%d" % (x, y))
         self.mainloop()
 
-def getDeivceName():
-    fo = open("device.txt", "rt")
-    lastingDevicename = fo.read()
-    file = "C:\\download\\" +lastingDevicename
-    options = borwserConfigure()
+# def getDeivceName():
+#     fo = open("device.txt", "rt")
+#     lastingDevicename = fo.read()
+#     file = getLocation() +lastingDevicename
+#     options = borwserConfigure()
+
+def getLocation():
+    fo=open("saveDir.txt","rt")
+    saveDir=fo.read()+"/"
+    saveDir=saveDir.replace('/','\\\\')
+    return saveDir
 
 def borwserConfigure():
     fo = open("device.txt", "rt")
     lastingDevicename = fo.read()
-    file = "C:\\download\\" + lastingDevicename
+    file = getLocation()
+    file=file.replace('\\\\','\\')
+    file= file+lastingDevicename
+    # file2="C:\\download\\" +lastingDevicename
     options = webdriver.ChromeOptions()
+    # print(file2)
+    # print(file)
     prefs = {"download.default_directory": file, "download.prompt_for_download": False}
     options.add_experimental_option('prefs', prefs)
-    #options.add_argument('--headless')
+    options.add_argument('--headless')
     return options
+
+
 
 
 def renameAndclose(self, summary, renamesummary):

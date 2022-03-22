@@ -4,14 +4,14 @@ import random
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.function_Configure import renameAndclose,borwserConfigure
+from Common.function_Configure import renameAndclose,borwserConfigure,getLocation
 from Common.function_Judge import isElementExist, isInputExist
 
 # JX-SET: All settings in the device can be change from default value to max. value with installation of a .MSI or zip file at the end user PC, no FW change. (All JX supported Jabra device).
 def testcase5664_32b():
     fo = open("device.txt", "rt")
     lastingDevicename = fo.read()
-    file = "C:\\download\\" +lastingDevicename
+    file = getLocation() +lastingDevicename
     options=borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)

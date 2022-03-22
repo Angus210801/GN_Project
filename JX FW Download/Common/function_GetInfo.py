@@ -1,6 +1,8 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
+from Common.function_Basic import *
+from selenium import webdriver
 ################################################
 
 items_list=['Jabra BIZ 1500 MS USB Duo',
@@ -97,6 +99,7 @@ items_list=['Jabra BIZ 1500 MS USB Duo',
 'Jabra UC VOICE 750a MS Mono (Version A)',
 'Jabra EVOLVE2 30'
 ]
+
 
 ################################################
 class Widget(QWidget):
@@ -197,3 +200,27 @@ class Widget(QWidget):
     self.setWindowTitle('JX_FW_DOWNLOAD')
     self.setWindowIcon(QIcon('jabra.ico'))
     self.show()
+
+class getCurrentVersion(baseConfigure):
+
+    def __init__(self,driver):
+        baseConfigure.__init__(self,driver)
+        driver.get('http://dkcphweb15/')
+        testadress=driver.find_element_by_link_text('Start Page').get_attribute("href")
+
+def getXpressVersion():
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')
+    driver = webdriver.Chrome(chrome_options=options)
+    global getCurrentVersion
+    getCurrentVersion=getCurrentVersion(driver)
+    driver.find_element_by_link_text('Start Page').click()
+    concurrentversion = driver.find_element_by_xpath(".//span[@id='footer-text']").text
+    global xpress_version
+    xpress_version = concurrentversion
+    xpress_version = xpress_version[13:21]
+    # return xpress_version
+
+if __name__ == '__main__':
+    test=getXpressVersion()
+    print(xpress_version[13:21])

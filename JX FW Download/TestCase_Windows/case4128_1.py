@@ -3,14 +3,14 @@ import random
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.function_Configure import renameAndclose,borwserConfigure
+from Common.function_Configure import renameAndclose,borwserConfigure,getLocation
 
 
 # All settings in the device can be change with installation of an MS file at the end user PC
 def testcase4128_1():
     fo = open("device.txt", "rt")
     lastingDevicename = fo.read()
-    file = "C:\\download\\" +lastingDevicename
+    file = getLocation() +lastingDevicename
     options=borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)

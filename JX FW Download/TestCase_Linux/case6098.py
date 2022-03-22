@@ -4,7 +4,7 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
 
-from Common.function_Configure import borwserConfigure
+from Common.function_Configure import renameAndclose,borwserConfigure,getLocation,getLocation
 
 # Install a Zip file on end user environment with a later FW and no setting change.
 from Common.function_Judge import isElementExist, isInputExist
@@ -13,7 +13,7 @@ from Common.function_Judge import isElementExist, isInputExist
 def testcase6098():
     fo = open("device.txt", "rt")
     lastingDevicename = fo.read()
-    file = "C:\\download\\" +lastingDevicename
+    file = getLocation() +lastingDevicename
     options = borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)

@@ -3,13 +3,14 @@ import os
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.function_Configure import renameAndclose,borwserConfigure
+from Common.function_Configure import renameAndclose,borwserConfigure,getLocation,getLocation
 
 #Jabra Direct Diagnostic Report plug-in version and s/n verification [19903]（配置设置项为default）
 def testcase3961():
     fo = open("device.txt", "rt")
     lastingDevicename = fo.read()
-    file = "C:\\download\\" +lastingDevicename
+    file = getLocation() +lastingDevicename
+    # print(file)
     options=borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)

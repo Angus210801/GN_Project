@@ -11,7 +11,6 @@ class linuxindexPage(baseConfigure):
         testadress=driver.find_element_by_link_text('Start Page').get_attribute("href")
         driver.get(testadress+'/thin-client')
 
-
     def clickNextButton(self):
         button = (By.CLASS_NAME, 'button-container')
         self.click(*button)
@@ -44,3 +43,6 @@ class windowsPage(baseConfigure):
         self.click(*device)
         self.driver.find_element(By.ID,'btnAdd').send_keys(Keys.ENTER)
         self.driver.find_element(By.XPATH,"//input[@value='NEXT >']").click()
+
+
+

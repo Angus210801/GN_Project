@@ -4,14 +4,14 @@ import random
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.function_Configure import renameAndclose,borwserConfigure
+from Common.function_Configure import renameAndclose,borwserConfigure,getLocation
 from TestCase_Windows.case4153_3 import testcase4153_3
 
 
 def testcase4153_2():
     fo = open("device.txt", "rt")
     lastingDevicename = fo.read()
-    file = "C:\\download\\" +lastingDevicename
+    file = getLocation() +lastingDevicename
     options=borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)

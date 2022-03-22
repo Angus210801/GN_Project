@@ -6,13 +6,13 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
 
-from Common.function_Configure import borwserConfigure
+from Common.function_Configure import renameAndclose,borwserConfigure,getLocation,getLocation
 
 #Disconnect the DUT during the FW udpate. [Use X Package) [Not allow downgrade
 def testcase16991():
     fo = open("device.txt", "rt")
     lastingDevicename = fo.read()
-    file = "C:\\download\\" +lastingDevicename
+    file = getLocation() +lastingDevicename
     options = borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)

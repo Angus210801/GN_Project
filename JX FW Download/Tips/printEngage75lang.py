@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-from Common.function_Configure import borwserConfigure
+from Common.function_Configure import renameAndclose,borwserConfigure,getLocation,getLocation
 
 driver = webdriver.Chrome()
 driver.get("http://dkcphweb15/Xpress/31.X.Migration/MDCT/select-devices")

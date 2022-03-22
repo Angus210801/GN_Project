@@ -3,14 +3,14 @@ import os
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.function_Configure import renameAndclose,borwserConfigure
+from Common.function_Configure import renameAndclose,borwserConfigure,getLocation
 
 
 # Make a package with higher FW version, DU settings as leave uncaged.(DUT has lower version).
 def testcase5509_32b():
     fo = open("device.txt", "rt")
     lastingDevicename = fo.read()
-    file = "C:\\download\\" +lastingDevicename
+    file = getLocation() +lastingDevicename
     options=borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)

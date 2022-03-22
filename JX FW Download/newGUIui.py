@@ -7,6 +7,42 @@ from PyQt5.QtWidgets import QFileDialog
 from Common.function_CheckIP import get_Windows_ip
 from Common.function_checkDriver_Ella import checkChromeDriverUpdate
 
+from TestCase_Linux.case10312_L import testcase10312l
+from TestCase_Linux.case16991 import testcase16991
+from TestCase_Linux.case7692 import testcase7692
+from TestCase_Linux.case6134 import testcase6134
+from TestCase_Linux.case7551 import testcase7551
+from TestCase_Linux.case7695 import testcase7695
+from TestCase_Linux.case7555 import testcase7555
+from TestCase_Linux.case7556 import testcase7556
+from TestCase_Linux.case16990 import testcase16990
+from TestCase_Linux.case6098 import testcase6098
+from TestCase_Windows.case10449 import testcase10449
+from TestCase_Windows.case3961 import testcase3961
+from TestCase_Windows.case3965 import testcase3965
+from TestCase_Windows.case3965_32b import testcase3965_32b
+from TestCase_Windows.case3966 import testcase3966
+from TestCase_Windows.case3968 import testcase3968
+from TestCase_Windows.case3969 import testcase3969
+from TestCase_Windows.case4090 import testcase4090
+from TestCase_Windows.case4090_32b import testcase4090_32b
+from TestCase_Windows.case4128_1 import testcase4128_1
+from TestCase_Windows.case4128_2 import testcase4128_2
+from TestCase_Windows.case4128_3 import testcase4128_3
+from TestCase_Windows.case4153_1 import testcase4153_1
+from TestCase_Windows.case4153_2 import testcase4153_2
+from TestCase_Windows.case5509 import testcase5509
+from TestCase_Windows.case5509_32b import testcase5509_32b
+from TestCase_Windows.case5664 import testcase5664
+from TestCase_Windows.case5665 import testcase5665
+from TestCase_Windows.case7195 import testcase7195
+from TestCase_Windows.case7196 import testcase7196
+from TestCase_Windows.case3966_32b import testcase3966_32b
+from TestCase_Windows.case5664_32b import testcase5664_32b
+from TestCase_Windows.case5665_32b import testcase5665_32b
+from TestCase_Windows.case10312_w import testcase10312w
+from Common.function_Configure import getLocation
+from Common.function_GetInfo import getXpressVersion
 items_list=[
 'Jabra BIZ 1500 MS USB Duo',
 'Jabra BIZ 1500 MS USB Mono',
@@ -121,19 +157,24 @@ class checkGoogleDriver(QThread):
     def run(self):
         checkChromeDriverUpdate()
 
-class uijxfw(QThread):
+
+class startdownloadThread(QThread):
     def __init__(self):
-        sys.stdout = EmittingStr(textWritten=Ui_JX_FW.onUpdateText2())
-        sys.stderr = EmittingStr(textWritten=Ui_JX_FW.onUpdateText2())
+        super().__init__()
 
-    def onUpdateText2(self, text):
-        cursor = self.textbox_progress.textCursor()
-        cursor.movePosition(QtGui.QTextCursor.End)
-        cursor.insertText(text)
-        self.textbox_progress.setTextCursor(cursor)
-        self.textbox_progress.ensureCursorVisible()
+    def run(self):
+        testcaselist = Ui_JX_FW.excuteTestCase
+        for testcase in testcaselist:
+            testcase = "test" + testcase
+            # print(testcase)
+            eval(testcase)()
 
+class getXpressVersionThread(QThread):
+    def __init__(self):
+        super().__init__()
 
+    def run(self):
+        getXpressVersion()
 
 class Ui_TesteEnviromentCheck(object):
 
@@ -149,6 +190,7 @@ class Ui_TesteEnviromentCheck(object):
         self.textBrowser.ensureCursorVisible()
 
     def slot_btn_chooseDir(self):
+        print("Wait a few second.....")
         dir_choose = QFileDialog.getExistingDirectory()  # 起始路径
         file = dir_choose
         if dir_choose == " ":
@@ -156,10 +198,13 @@ class Ui_TesteEnviromentCheck(object):
             saveDir = open("saveDir.txt", "wt")
             saveDir.write(file)
             saveDir.close()
+            print("You have choose this location that test package will keep:"+file)
         else:
             saveDir = open("saveDir.txt", "wt")
             saveDir.write(file)
             saveDir.close()
+            print("You have choose this location that test package will keep:"+file)
+            self.chooseSaveDir2.setEnabled(True)
 
     def gotomainwindow(self):
         TesteEnviromentCheck.close()
@@ -167,6 +212,10 @@ class Ui_TesteEnviromentCheck(object):
         jx = Ui_JX_FW()
         jx.setupUi(JX_FW)
         JX_FW.show()
+
+    def rungetversion(self):
+        self.currentversion = getXpressVersionThread()
+        self.currentversion.run()
 
     def setupUi(self, TesteEnviromentCheck):
         TesteEnviromentCheck.setObjectName("TesteEnviromentCheck")
@@ -189,7 +238,13 @@ class Ui_TesteEnviromentCheck(object):
         self.verticalLayout.addWidget(self.chooseSaveDir2)
         self.verticalLayout_2.addLayout(self.verticalLayout)
         self.chooseSaveDir.clicked.connect(lambda:self.slot_btn_chooseDir())
+        self.chooseSaveDir.clicked.connect(lambda:self.rungetversion())
         self.chooseSaveDir2.clicked.connect(lambda:self.gotomainwindow())
+        self.chooseSaveDir2.setEnabled(False)
+        self.font=QtGui.QFont()
+        self.font.setPointSize(8)
+        self.font.setFamily("SimHei")
+        self.textBrowser.setFont(self.font)
         self.retranslateUi(TesteEnviromentCheck)
         QtCore.QMetaObject.connectSlotsByName(TesteEnviromentCheck)
 
@@ -216,16 +271,36 @@ class Ui_JX_FW(object):
     excuteTestCase = []
 
 
+    #Add test case that user select to Ui_JX_FW.excuteTestCase
     def addCase(self,testcase):
-        print(testcase)
         testcase = testcase
-        print(testcase)
         if (testcase in Ui_JX_FW.excuteTestCase):
             Ui_JX_FW.excuteTestCase.remove(testcase)
-            print(Ui_JX_FW.excuteTestCase)
+            # print(Ui_JX_FW.excuteTestCase)
         else:
             Ui_JX_FW.excuteTestCase.append(testcase)
-            print(Ui_JX_FW.excuteTestCase)
+            # print(Ui_JX_FW.excuteTestCase)
+
+    #Define the download function - - Start the new Thread.
+    def startNewThread(self):
+        self.startNewThread=startdownloadThread()
+        # print("thread created")
+        self.startNewThread.start()
+
+    def saveDeviceName(self):
+        DeviceName = self.combox_chooseDevice.currentText()
+        print("Test device is " + DeviceName)
+        fo = open("device.txt", "wt")
+        fo.write(DeviceName)
+        fo.close()
+
+    def startbuttonevent(self):
+        self.button_start.setEnabled(False)
+        self.saveDeviceName()
+        print("Download will start......")
+        self.startNewThread()
+        # self.currentversion()
+
 
     def setupUi(self, JX_FW):
         JX_FW.setObjectName("JX_FW")
@@ -468,9 +543,14 @@ class Ui_JX_FW(object):
         self.Layout_global.addLayout(self.HLayout_seventh)
         self.actionCheckall = QtWidgets.QAction(JX_FW)
         self.actionCheckall.setObjectName("actionCheckall")
-
+        self.font=QtGui.QFont()
+        self.font.setPointSize(12)
+        self.font.setFamily("SimHei")
+        self.textbox_progress.setFont(self.font)
+        # self.combox_chooseDevice.setCurrentText("Choose test device")
+        from Common.function_GetInfo import xpress_version
+        self.label_theCurrentVersionSet.setText(xpress_version)
         self.retranslateUi(JX_FW)
-        self.checkBox_checkAll_win.clicked.connect(self.checkBox_case3961.click)
         QtCore.QMetaObject.connectSlotsByName(JX_FW)
 
         # Define widget function
@@ -508,7 +588,7 @@ class Ui_JX_FW(object):
         self.checkbox_selectAll_linux.clicked.connect(self.checkBox_case10312_2.click)
         self.checkbox_selectAll_linux.clicked.connect(self.checkBox_case16990.click)
         self.checkbox_selectAll_linux.clicked.connect(self.checkBox_case16991.click)
-        # Define function for every checkbox
+        # Define function for Windows case checkbox
         self.checkBox_case3961.clicked.connect(lambda:self.addCase(self.checkBox_case3961.text()))
         self.checkBox_case3965.clicked.connect(lambda:self.addCase(self.checkBox_case3965.text()))
         self.checkBox_case3966.clicked.connect(lambda:self.addCase(self.checkBox_case3966.text()))
@@ -525,15 +605,26 @@ class Ui_JX_FW(object):
         self.checkBox_case5664_32b.clicked.connect(lambda:self.addCase(self.checkBox_case5664_32b.text()))
         self.checkBox_case5509_32b.clicked.connect(lambda:self.addCase(self.checkBox_case5509_32b.text()))
         self.checkBox_case5665_32b.clicked.connect(lambda:self.addCase(self.checkBox_case5664_32b.text()))
-        # self.checkBox_case3961.clicked.connect(lambda:self.addCase(self.checkBox_18.text()))
-        # self.checkBox_case3961.clicked.connect(lambda:self.addCase(self.checkBox_19.text()))
+        # Define function for Linux case checkbox
+        self.checkBox_case6098.clicked.connect(lambda:self.addCase(self.checkBox_case6098.text()))
+        self.checkBox_case6134.clicked.connect(lambda:self.addCase(self.checkBox_case6134.text()))
+        self.checkBox_case7555.clicked.connect(lambda:self.addCase(self.checkBox_case7555.text()))
+        self.checkBox_case7695.clicked.connect(lambda:self.addCase(self.checkBox_case7695.text()))
+        self.checkBox_case7692.clicked.connect(lambda:self.addCase(self.checkBox_case7692.text()))
+        self.checkBox_case7551.clicked.connect(lambda:self.addCase(self.checkBox_case7551.text()))
+        self.checkBox_case7556.clicked.connect(lambda:self.addCase(self.checkBox_case7556.text()))
+        self.checkBox_case10312_2.clicked.connect(lambda:self.addCase(self.checkBox_case10312_2.text()))
+        self.checkBox_case16990.clicked.connect(lambda:self.addCase(self.checkBox_case16990.text()))
+        self.checkBox_case16991.clicked.connect(lambda:self.addCase(self.checkBox_case16991.text()))
+
+        self.button_start.clicked.connect(lambda:self.startbuttonevent())
 
 
     def retranslateUi(self, JX_FW):
         _translate = QtCore.QCoreApplication.translate
         JX_FW.setWindowTitle(_translate("JX_FW", "Jabra Xpress Downlod tool"))
         self.label_theCurrentVersion.setText(_translate("JX_FW", "                The current version of Jabra Xpress:"))
-        self.label_theCurrentVersionSet.setText(_translate("JX_FW", "TextLabel"))
+        # self.label_theCurrentVersionSet.setText(_translate("JX_FW", "TextLabel"))
         self.label_chooseDevice.setText(_translate("JX_FW", "Choose Device   :"))
         self.combox_chooseDevice.setCurrentText(_translate("JX_FW", "Choose test device"))
         self.label_Windows.setText(_translate("JX_FW", "Windows Cases"))
@@ -573,7 +664,6 @@ class Ui_JX_FW(object):
         self.actionCheckall.setText(_translate("JX_FW", "Checkall"))
         JX_FW.setWindowIcon(QIcon('jabra.ico'))
 
-
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
@@ -596,7 +686,6 @@ if __name__ == "__main__":
         print("Start check Google Chrome driver....")
         checkDriver=checkGoogleDriver()
         checkDriver.start()
-
     else:
         print("Unsupported netwrok")
         print("Supported network list:")
@@ -607,5 +696,4 @@ if __name__ == "__main__":
 
     sys.exit(app.exec_())
     sys.exit(app2.exec_())
-
 

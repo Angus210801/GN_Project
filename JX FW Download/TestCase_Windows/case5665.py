@@ -4,7 +4,7 @@ import random
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.function_Configure import renameAndclose,borwserConfigure
+from Common.function_Configure import renameAndclose,borwserConfigure,getLocation
 from Common.function_Judge import isElementExist, isInputExist, isUploadButton
 
 
@@ -16,7 +16,7 @@ ROOT_DIR=ROOT_DIR+"\TestCase_Windows\cat.bmp"
 def testcase5665():
     fo = open("device.txt", "rt")
     lastingDevicename = fo.read()
-    file = "C:\\download\\" +lastingDevicename
+    file = getLocation() +lastingDevicename
     options=borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)

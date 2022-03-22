@@ -29,8 +29,9 @@ class MyLog(object):
     def get_console_handler(self):
         console_handler = logging.StreamHandler(sys.stdout)
         console_handler.setFormatter(self.formatter)
-<<<<<<< HEAD
         return console_handler
+# !usr/bin/python
+# -*- coding: utf-8 -*-
 import logging
 import time
 import os
@@ -41,11 +42,13 @@ import os
 
 # 创建logs文件夹
 cur_path = os.path.dirname(os.path.realpath(__file__))
-log_path = os.path.join(cur_path, '../logs')
+log_path = os.path.join(cur_path, 'logs')
 # 如果不存在这个logs文件夹，就自动创建一个
 if not os.path.exists(log_path): os.mkdir(log_path)
 
 
+def flush(self):  # 这情况下, 不需要作任何事
+    pass
 class Log(object):
     def __init__(self):
         # 文件的命名
@@ -55,7 +58,8 @@ class Log(object):
         self.logger.setLevel(logging.INFO)
         self.logger.propagate = False
         # 日志输出格式
-        self.formatter = logging.Formatter('[%(asctime)s] - %(levelname)s: %(message)s')
+        self.formatter = logging.Formatter('[%(asctime)s] - %(filename)s - %(levelname)s: %(message)s')
+
     def __console(self, level, message):
         # 创建一个FileHandler，用于写到本地
         fh = logging.FileHandler(self.logname, 'a', encoding='utf-8')  # 这个是python3的
@@ -98,8 +102,5 @@ class Log(object):
 
 log = Log()
 
-if __name__ == '__main__':
-    pass
-=======
-        return console_handler
->>>>>>> 8e2d7fc8053d0fb269ef6a348ed20dc07a7ccdb1
+# if __name__ == '__main__':
+#     pass
