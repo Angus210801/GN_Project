@@ -47,6 +47,7 @@ def borwserConfigure():
     # print(file)
     prefs = {"download.default_directory": file, "download.prompt_for_download": False}
     options.add_experimental_option('prefs', prefs)
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
     options.add_argument('--headless')
     return options
 

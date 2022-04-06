@@ -5,9 +5,6 @@ import zipfile
 import time
 import requests
 
-from Common.sel_def_logger import Log
-
-Mylog=Log()
 base_url = 'http://npm.taobao.org/mirrors/chromedriver/'
 version_re = re.compile(r'^[1-9]\d*\.\d*.\d*')  # 匹配前3位版本号的正则表达式
 
@@ -40,7 +37,7 @@ def getLatestChromeDriver(version):
     # 获取该chrome版本的最新driver版本号
     url = f"{base_url}LATEST_RELEASE_{version}"
     latest_version = requests.get(url).text
-    print(f"The latest Chrome Driver version matches the current Chrome:%s': {latest_version}")
+    print(f"The latest Chrome Driver version matches the current Chrome:{latest_version}")
     # 下载chromedriver
     print("Start Downloading chromedriver...")
     download_url = f"{base_url}{latest_version}/chromedriver_win32.zip"
@@ -78,12 +75,12 @@ def getLatestChromeDriver(version):
                 # 重置以下载大小
                 temp_size = content_size
     print('\n')
-    print("100%,downloaded!")
+    print(" 100%,downloaded!")
     # 解压
     f = zipfile.ZipFile("chromedriver.zip", 'r')
     for file in f.namelist():
         f.extract(file)
-    print("Unzip successfully")
+    print(" Unzip successfully")
 
 
 def checkChromeDriverUpdate():
@@ -95,6 +92,7 @@ def checkChromeDriverUpdate():
         print("Same Version,No need to update.")
         return
     print("Lower Version for chromedriver version,updating>>>")
+
     try:
         getLatestChromeDriver(chrome_version)
         print("chromedriver Updated successfully!")

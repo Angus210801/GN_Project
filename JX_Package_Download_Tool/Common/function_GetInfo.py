@@ -211,6 +211,7 @@ class getCurrentVersion(baseConfigure):
 def getXpressVersion():
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
     driver = webdriver.Chrome(chrome_options=options)
     global getCurrentVersion
     getCurrentVersion=getCurrentVersion(driver)
