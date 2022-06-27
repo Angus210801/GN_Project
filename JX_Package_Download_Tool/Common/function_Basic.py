@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+# from function_Configure import baseConfigure
 from Common.function_Configure import baseConfigure
 
 class linuxindexPage(baseConfigure):
@@ -30,6 +31,8 @@ class windowsPage(baseConfigure):
         driver.get('http://dkcphweb15/')
         testadress=driver.find_element_by_link_text('Start Page').get_attribute("href")
         driver.get(testadress+'/windows-desktop')
+
+
 
     def clickNextButton(self):
 

@@ -10,9 +10,9 @@ from Common.function_Judge import isElementExist, isInputExist, isUploadButton
 
 #JX-SET: All settings in the device can be change from default value to min. value with installation of a .MSI or zip file at the end user PC, no FW change. (All JX supported Jabra device).
 ROOT_DIR = os.path.dirname(os.path.abspath("cat.bmp"))
-#print(ROOT_DIR)
+print(ROOT_DIR)
 ROOT_DIR=ROOT_DIR+"\TestCase_Windows\cat.bmp"
-#print(ROOT_DIR)
+print(ROOT_DIR)
 def testcase5665():
     fo = open("device.txt", "rt")
     lastingDevicename = fo.read()

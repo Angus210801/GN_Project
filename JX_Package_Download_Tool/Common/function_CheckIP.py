@@ -30,10 +30,12 @@ def get_window_ip3():
     return [a for a in os.popen('route print').readlines() if ' 0.0.0.0 ' in a][0].split()[-2]
 
 def get_window_ip4():
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.connect(('baidu.com', 0))
-    ipaddr = s.getsockname()[0]
-    return ipaddr
+    # s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    # s.connect(('baidu.com', 0))
+    # ipaddr = s.getsockname()[0]
+    # return ipaddr
+    IP = socket.gethostbyname(socket.gethostname())
+    return IP
 
 def get_Windows_ip():
     iPv4=get_window_ip4()

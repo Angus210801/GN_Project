@@ -2,7 +2,8 @@ import sys
 import os
 import sys
 from time import sleep
-
+from Common.function_Basic import *
+from selenium import webdriver
 from selenium import webdriver
 
 
@@ -41,13 +42,12 @@ def borwserConfigure():
     file = getLocation()
     file=file.replace('\\\\','\\')
     file= file+lastingDevicename
-    # file2="C:\\download\\" +lastingDevicename
     options = webdriver.ChromeOptions()
     # print(file2)
     # print(file)
     prefs = {"download.default_directory": file, "download.prompt_for_download": False}
     options.add_experimental_option('prefs', prefs)
-    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    # options.add_experimental_option('excludeSwitches', ['enable-logging'])
     options.add_argument('--headless')
     return options
 
