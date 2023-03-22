@@ -42,8 +42,7 @@ from TestCase_Windows.case3966_32b import testcase3966_32b
 from TestCase_Windows.case5664_32b import testcase5664_32b
 from TestCase_Windows.case5665_32b import testcase5665_32b
 from TestCase_Windows.case10312_w import testcase10312w
-items_list=[
-'Jabra BIZ 1500 MS USB Duo',
+items_list=['Jabra BIZ 1500 MS USB Duo',
 'Jabra BIZ 1500 MS USB Mono',
 'Jabra BIZ 1500 USB Duo',
 'Jabra BIZ 1500 USB Mono',
@@ -57,6 +56,8 @@ items_list=[
 'Jabra BIZ 2400 USB Duo',
 'Jabra BIZ 2400 USB Mono',
 'Jabra DIAL 550',
+'Jabra Engage 40',
+'Jabra Engage 50 II',
 'Jabra Engage 50',
 'Jabra PanaCast 20',
 'Jabra Engage 65',
@@ -76,9 +77,6 @@ items_list=[
 'Jabra Evolve 65e',
 'Jabra Evolve 75',
 'Jabra Evolve 75e',
-'Jabra Evolve 75 SE',
-'Jabra EVOLVE 65 SE Stereo',
-'Jabra EVOLVE 65 SE Mono',
 'Jabra EVOLVE2 40',
 'Jabra Evolve2 65 Deskstand',
 'Jabra EVOLVE2 65 Mono',
@@ -101,11 +99,14 @@ items_list=[
 'Jabra LINK 370',
 'Jabra LINK 370 MS Teams',
 'Jabra Link 380a',
+'Jabra LINK 400',
 'Jabra LINK 380c',
+'Jabra LINK 400',
 'Jabra LINK 850',
 'Jabra LINK 860',
 'Jabra LINK 950',
 'Jabra MOTION OFFICE',
+'Jabra PanaCast 20',
 'Jabra MOTION UC',
 'Jabra PRO 925 Dual Connectivity',
 'Jabra PRO 925 Single Connectivity',
@@ -256,8 +257,9 @@ class Ui_TesteEnviromentCheck(object):
         jx.setupUi(JX_FW)
         JX_FW.show()
 
-        from function_GetInfo import getXpressVersion
-        xpressversion = getXpressVersion()
+        # from function_GetInfo import getXpressVersion
+        xpressversion="36.0.1.4"
+        # xpressversion = getXpressVersion()
         print("The Xpress newest test version:"+xpressversion)
         # sys.exit(app.exec_())
 
@@ -855,8 +857,8 @@ if __name__ == "__main__":
         print("   -GN-Wifi")
         print("Please Switch to the Supported network and restart the APP")
         print("\n")
-        # checkDriver=checkGoogleDriver()
-        # checkDriver.start()
+        checkDriver=checkGoogleDriver()
+        checkDriver.start()
 
     sys.exit(app.exec_())
     sys.exit(app2.exec_())

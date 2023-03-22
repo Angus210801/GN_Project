@@ -9,7 +9,8 @@ class linuxindexPage(baseConfigure):
     def __init__(self,driver):
         baseConfigure.__init__(self,driver)
         driver.get('http://dkcphweb15/')
-        testadress=driver.find_element_by_link_text('Start Page').get_attribute("href")
+        testadress=driver.find_element(By.LINK_TEXT,'Start Page').get_attribute("href")
+        # testadress="http://dkcphweb15/Xpress/36.X.Development/MDCT"
         driver.get(testadress+'/thin-client')
 
     def clickNextButton(self):
@@ -29,13 +30,11 @@ class windowsPage(baseConfigure):
     def __init__(self,driver):
         baseConfigure.__init__(self,driver)
         driver.get('http://dkcphweb15/')
-        testadress=driver.find_element_by_link_text('Start Page').get_attribute("href")
+        testadress=driver.find_element(By.LINK_TEXT,'Start Page').get_attribute("href")
+        # testadress="http://dkcphweb15/Xpress/36.X.Development/MDCT"
         driver.get(testadress+'/windows-desktop')
 
-
-
     def clickNextButton(self):
-
         button = (By.CLASS_NAME, 'button-container')
         self.click(*button)
 

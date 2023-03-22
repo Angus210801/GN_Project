@@ -19,6 +19,10 @@ items_list=['Jabra BIZ 1500 MS USB Duo',
 'Jabra BIZ 2400 USB Duo',
 'Jabra BIZ 2400 USB Mono',
 'Jabra DIAL 550',
+'Jabra Engage 40 Mono',
+'Jabra Engage 40 Stereo',
+'Jabra Engage 50 II Mono',
+'Jabra Engage 50 II Stereo',
 'Jabra Engage 50',
 'Jabra PanaCast 20',
 'Jabra Engage 65',
@@ -65,6 +69,7 @@ items_list=['Jabra BIZ 1500 MS USB Duo',
 'Jabra LINK 860',
 'Jabra LINK 950',
 'Jabra MOTION OFFICE',
+'Jabra PanaCast 20',
 'Jabra MOTION UC',
 'Jabra PRO 925 Dual Connectivity',
 'Jabra PRO 925 Single Connectivity',
@@ -201,23 +206,17 @@ class Widget(QWidget):
     self.setWindowIcon(QIcon('Common/jabra.ico'))
     self.show()
 
-class getCurrentVersion(baseConfigure):
-
-    def __init__(self,driver):
-        baseConfigure.__init__(self,driver)
-        driver.get('http://dkcphweb15/')
-        testadress=driver.find_element_by_link_text('Start Page').get_attribute("href")
 
 def getXpressVersion():
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
-    # options.add_experimental_option('excludeSwitches', ['enable-logging'])
-    # driver_path=".\chromedriver.exe"
     driver = webdriver.Chrome(chrome_options=options)
-    global getCurrentVersion
-    getCurrentVersion=getCurrentVersion(driver)
-    driver.find_element_by_link_text('Start Page').click()
-    concurrentversion = driver.find_element_by_xpath(".//span[@id='footer-text']").text
+    # global getCurrentVersion
+    # getCurrentVersion=getCurrentVersion(driver)
+    # driver.find_element_by_link_text('Start Page').click()
+    # concurrentversion = driver.find_element_by_xpath(".//span[@id='footer-text']").text
+
+    concurrentversion="hello"
 
     xpress_version = concurrentversion
     xpress_version = xpress_version[13:21]

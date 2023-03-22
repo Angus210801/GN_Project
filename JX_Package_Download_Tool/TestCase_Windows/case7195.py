@@ -109,7 +109,7 @@ def testcase7195():
                     driver.find_element_by_css_selector(
                         "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
                             i) + "].SelectedValue']").send_keys(
-                        "C:\\download\\cat.bmp")
+                        "C:\\download\\001.bmp")
                     sleep(5)
                     i = i + 1
                     continue

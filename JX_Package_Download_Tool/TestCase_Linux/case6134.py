@@ -27,6 +27,8 @@ def testcase6134():
         "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[0].SelectedValue']")
     Select(setting).select_by_index("1")
 
+
+
     print(lastingDevicename+' '+sys._getframe().f_code.co_name+' Configure finish')
     # #进入softphone配置页
     driver.find_element_by_xpath("//input[@value='NEXT >']").click()
@@ -35,6 +37,7 @@ def testcase6134():
     # 下载Summary
     driver.find_element_by_xpath("//input[@value='DOWNLOAD SUMMARY']").click()
     # 重命名summary文件
+
     sleep(5)
     summary = file + '\\summary.html'
     renamesummary = file + '\\6134.html'

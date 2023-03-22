@@ -99,8 +99,8 @@ def testcase4090_32b():
                 elif isUploadButton(driver, "input[value='Upload']"):
                     try:
                         driver.find_element_by_css_selector(
-                            "input[id='configurationViewModel.Devices[0].SelectedFirmware.Settings[34].fileinputId']").send_keys(
-                            "C:\\download\\cat.bmp")
+                            "input[id='configurationViewModel.Devices[0].SelectedFirmware.Settings[36].fileinputId']").send_keys(
+                            "C:\\download\\001.bmp")
                         sleep(5)
                         i = i + 1
                         continue
@@ -140,8 +140,8 @@ def testcase4090_32b():
             elif isUploadButton(driver, "input[value='Upload']"):
                 try:
                     driver.find_element_by_css_selector(
-                        "input[id='configurationViewModel.Devices[0].SelectedFirmware.Settings[34].fileinputId']").send_keys(
-                        "C:\\download\\cat.bmp")
+                        "input[id='configurationViewModel.Devices[0].SelectedFirmware.Settings[36].fileinputId']").send_keys(
+                        "C:\\download\\001.bmp")
                     sleep(5)
                     i = i + 1
                     continue
