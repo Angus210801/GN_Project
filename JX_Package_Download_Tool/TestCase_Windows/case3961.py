@@ -10,7 +10,7 @@ def testcase3961():
     fo = open("device.txt", "rt")
     lastingDevicename = fo.read()
     file = getLocation() +lastingDevicename
-    # print(file)
+
     options=borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)

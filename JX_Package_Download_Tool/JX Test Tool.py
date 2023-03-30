@@ -42,107 +42,7 @@ from TestCase_Windows.case3966_32b import testcase3966_32b
 from TestCase_Windows.case5664_32b import testcase5664_32b
 from TestCase_Windows.case5665_32b import testcase5665_32b
 from TestCase_Windows.case10312_w import testcase10312w
-items_list=['Jabra BIZ 1500 MS USB Duo',
-'Jabra BIZ 1500 MS USB Mono',
-'Jabra BIZ 1500 USB Duo',
-'Jabra BIZ 1500 USB Mono',
-'Jabra BIZ 2300 USB Duo',
-'Jabra BIZ 2300 USB Mono',
-'Jabra BIZ 2400 II CC USB Mono',
-'Jabra BIZ 2400 II CC USB Stereo',
-'Jabra BIZ 2400 II Duo',
-'Jabra EVOLVE2 75',
-'Jabra BIZ 2400 II Mono',
-'Jabra BIZ 2400 USB Duo',
-'Jabra BIZ 2400 USB Mono',
-'Jabra DIAL 550',
-'Jabra Engage 40',
-'Jabra Engage 50 II',
-'Jabra Engage 50',
-'Jabra PanaCast 20',
-'Jabra Engage 65',
-'Jabra Engage 75',
-'Jabra EVOLVE 20 Mono',
-'Jabra EVOLVE 20 SE Mono',
-'Jabra EVOLVE 20 SE Stereo',
-'Jabra EVOLVE 20 Stereo',
-'Jabra EVOLVE 30 II Mono',
-'Jabra EVOLVE 30 II Stereo',
-'Jabra EVOLVE 30 Mono',
-'Jabra EVOLVE 30 Stereo',
-'Jabra EVOLVE 40 Mono',
-'Jabra EVOLVE 40/80 Stereo',
-'Jabra EVOLVE 65 Mono',
-'Jabra EVOLVE 65 Stereo',
-'Jabra Evolve 65e',
-'Jabra Evolve 75',
-'Jabra Evolve 75e',
-'Jabra EVOLVE2 40',
-'Jabra Evolve2 65 Deskstand',
-'Jabra EVOLVE2 65 Mono',
-'Jabra EVOLVE2 65 Stereo',
-'Jabra EVOLVE2 85',
-'Jabra Evolve2 85 Deskstand',
-'Jabra GN2000 MS USB Mono / Duo',
-'Jabra GN2000 USB Mono / Duo',
-'Jabra GO 6470',
-'Jabra HANDSET 450',
-'Jabra LINK 220 QD to USB Adapter',
-'Jabra LINK 220a QD to USB Adapter',
-'Jabra LINK 230 QD to USB Adapter',
-'Jabra LINK 260 MS QD to USB Adapter',
-'Jabra LINK 260 QD to USB Adapter',
-'Jabra LINK 265 QD to USB Training Adapter',
-'Jabra LINK 280 QD to USB Adapter',
-'Jabra LINK 350 (GO 6430)',
-'Jabra LINK 360',
-'Jabra LINK 370',
-'Jabra LINK 370 MS Teams',
-'Jabra Link 380a',
-'Jabra LINK 400',
-'Jabra LINK 380c',
-'Jabra LINK 400',
-'Jabra LINK 850',
-'Jabra LINK 860',
-'Jabra LINK 950',
-'Jabra MOTION OFFICE',
-'Jabra PanaCast 20',
-'Jabra MOTION UC',
-'Jabra PRO 925 Dual Connectivity',
-'Jabra PRO 925 Single Connectivity',
-'Jabra PRO 930',
-'Jabra PRO 935 Dual Connectivity',
-'Jabra PRO 935 Single Connectivity',
-'Jabra PRO 9450 Series',
-'Jabra PRO 9460 Series',
-'Jabra PRO 9465 / 9470',
-'Jabra SPEAK 410',
-'Jabra SPEAK 450 Cisco',
-'Jabra SPEAK 510',
-'Jabra SPEAK 710',
-'Jabra SPEAK 750 MS Teams',
-'Jabra SPEAK 750 UC',
-'Jabra SPEAK 810',
-'Jabra STEALTH UC',
-'Jabra SUPREME UC',
-'Jabra UC VOICE 150a Duo (Version A)',
-'Jabra UC VOICE 150a Mono (Version A)',
-'Jabra UC VOICE 150a MS Duo (Version A)',
-'Jabra UC VOICE 150a MS Mono (Version A)',
-'Jabra UC VOICE 250a (Version A)',
-'Jabra UC VOICE 250a MS (Version A)',
-'Jabra UC VOICE 550a Duo (Version A)',
-'Jabra UC VOICE 550a Mono (Version A)',
-'Jabra UC VOICE 550a MS Duo (Version A)',
-'Jabra UC VOICE 550a MS Mono (Version A)',
-'Jabra UC VOICE 750a Duo (Version A)',
-'Jabra UC VOICE 750a Mono (Version A)',
-'Jabra UC VOICE 750a MS Duo (Version A)',
-'Jabra UC VOICE 750a MS Mono (Version A)',
-'Jabra EVOLVE2 30'
-]
-
-
+from devices_name import items_list
 class EmittingStr(QtCore.QObject):
     textWritten = QtCore.pyqtSignal(str) #定义一个发送str的信号
     def write(self, text):
@@ -176,6 +76,7 @@ class startdownloadThread(QThread):
             print('Start configure '+testcase)
             eval(testcase)()
         print("All the test package that you choose is downloaded!")
+
 
 class getXpressVersionThread(QThread):
     def __init__(self):
@@ -243,11 +144,6 @@ class Ui_TesteEnviromentCheck(object):
             saveDir.close()
             print("You have choose this location that test package will keep:"+file)
             self.chooseSaveDir2.setEnabled(True)
-        # try:
-        #     currentversion = getXpressVersionThread()
-        #     currentversion.run()
-        # except Exception as e:
-        #     print(e)
 
 
     def gotomainwindow(self):
@@ -257,11 +153,6 @@ class Ui_TesteEnviromentCheck(object):
         jx.setupUi(JX_FW)
         JX_FW.show()
 
-        # from function_GetInfo import getXpressVersion
-        xpressversion="36.0.1.4"
-        # xpressversion = getXpressVersion()
-        print("The Xpress newest test version:"+xpressversion)
-        # sys.exit(app.exec_())
 
     def setupUi(self, TesteEnviromentCheck):
         TesteEnviromentCheck.setObjectName("TesteEnviromentCheck")
@@ -287,8 +178,9 @@ class Ui_TesteEnviromentCheck(object):
         self.chooseSaveDir2.clicked.connect(lambda:self.gotomainwindow())
         self.chooseSaveDir2.setEnabled(False)
         self.font=QtGui.QFont()
-        self.font.setPointSize(10)
-        self.font.setFamily("SimHei")
+        #Setup Font_size and Font Family
+        self.font.setPointSize(12)
+        self.font.setFamily("Arial")
         self.textBrowser.setFont(self.font)
         self.retranslateUi(TesteEnviromentCheck)
         QtCore.QMetaObject.connectSlotsByName(TesteEnviromentCheck)
@@ -830,9 +722,9 @@ if __name__ == "__main__":
     #Check network
     ipaddress=get_Windows_ip()
     print("INTRODUCE:")
-    print("this Software is a test tool to help tester download the package that testcase required;")
-    print("this windows will check the running environment.")
-    print("\n")
+    print("This test tool to help tester download the Xpress package")
+    print("This windows will check the running environment.")
+    # print("\n")
     # time.sleep(1)
     print("1、Check Network : ")
 
@@ -857,6 +749,7 @@ if __name__ == "__main__":
         print("   -GN-Wifi")
         print("Please Switch to the Supported network and restart the APP")
         print("\n")
+        print("2、Start check Google Chrome driver....")
         checkDriver=checkGoogleDriver()
         checkDriver.start()
 
