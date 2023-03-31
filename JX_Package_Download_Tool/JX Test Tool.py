@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QFileDialog
 from Common.function_Basic import *
 from selenium import webdriver
 from Common.function_CheckIP import get_Windows_ip
-from function_checkDriver_Ella import checkChromeDriverUpdate
+from Common.function_check_chromedriver import checkChromeDriverUpdate
 from function_GetInfo import getXpressVersion
 from TestCase_Linux.case10312_L import testcase10312l
 from TestCase_Linux.case16991 import testcase16991
@@ -60,9 +60,9 @@ class checkGoogleDriver(QThread):
     def run(self):
         checkChromeDriverUpdate()
         print("\n")
-        print("3、Please click the 1st button to choose the location that test package should save.")
+        print("3.Please click the 1st button to choose the location that test package should save.")
         print("\n")
-        print("4、Then click the 2nd button to the main windows - Download the test package！")
+        print("4.Then click the 2nd button to the main windows - Download the test package！")
 
 
 class startdownloadThread(QThread):
@@ -156,7 +156,8 @@ class Ui_TesteEnviromentCheck(object):
 
     def setupUi(self, TesteEnviromentCheck):
         TesteEnviromentCheck.setObjectName("TesteEnviromentCheck")
-        TesteEnviromentCheck.setStyleSheet("background-color: rgb(255, 255, 222);")
+        # TesteEnviromentCheck.setStyleSheet("background-color: rgb(255, 255, 222);")
+        # TesteEnviromentCheck.setPalette(palette)
         TesteEnviromentCheck.resize(600, 600)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(TesteEnviromentCheck)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -187,7 +188,7 @@ class Ui_TesteEnviromentCheck(object):
 
     def retranslateUi(self, TesteEnviromentCheck):
         _translate = QtCore.QCoreApplication.translate
-        TesteEnviromentCheck.setWindowTitle(_translate("TesteEnviromentCheck", "Test Enviroment check"))
+        TesteEnviromentCheck.setWindowTitle(_translate("TesteEnviromentCheck", "Xpress Package Download Tool - Test Enviroment check"))
         TesteEnviromentCheck.setWindowIcon(QIcon('jabra.ico'))
         self.chooseSaveDir.setText(_translate("TesteEnviromentCheck", "Select the folder to save test package"))
         self.chooseSaveDir2.setText(_translate("TesteEnviromentCheck", "Go to the Main Window"))
@@ -268,7 +269,7 @@ class Ui_JX_FW(object):
     def setupUi(self, JX_FW):
         JX_FW.setObjectName("JX_FW")
         JX_FW.resize(800, 879)
-        JX_FW.setStyleSheet("background-color: rgb(255, 255, 222);")
+        # JX_FW.setStyleSheet("background-color: rgb(255, 255, 222);")
         self.Layout_global = QtWidgets.QVBoxLayout(JX_FW)
         self.Layout_global.setObjectName("Layout_global")
         self.HLayout_first = QtWidgets.QHBoxLayout()
@@ -276,18 +277,12 @@ class Ui_JX_FW(object):
         self.label_theCurrentVersion = QtWidgets.QLabel(JX_FW)
         font = QtGui.QFont()
         font.setPointSize(12)
-        # self.label_theCurrentVersion.setFont(font)
-        # self.label_theCurrentVersion.setObjectName("label_theCurrentVersion")
-        # self.HLayout_first.addWidget(self.label_theCurrentVersion)
-        # self.label_theCurrentVersionSet = QtWidgets.QLabel(JX_FW)
+
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
-        # self.label_theCurrentVersionSet.setFont(font)
-        # self.label_theCurrentVersionSet.setObjectName("label_theCurrentVersionSet")
-        # self.HLayout_first.addWidget(self.label_theCurrentVersionSet)
-        # self.Layout_global.addLayout(self.HLayout_first)
+
         self.HLayout_second = QtWidgets.QHBoxLayout()
         self.HLayout_second.setObjectName("HLayout_second")
         self.label_empty_1 = QtWidgets.QLabel(JX_FW)
@@ -309,15 +304,19 @@ class Ui_JX_FW(object):
         self.label_chooseDevice = QtWidgets.QLabel(JX_FW)
         font = QtGui.QFont()
         font.setPointSize(16)
+
         self.label_chooseDevice.setFont(font)
         self.label_chooseDevice.setWordWrap(True)
         self.label_chooseDevice.setObjectName("label_chooseDevice")
         self.HLayout_third.addWidget(self.label_chooseDevice)
+
         self.combox_chooseDevice = QtWidgets.QComboBox(JX_FW)
         self.combox_chooseDevice.setMinimumSize(QtCore.QSize(0, 35))
         self.combox_chooseDevice.setEditable(True)
         self.combox_chooseDevice.setObjectName("combox_chooseDevice")
         self.HLayout_third.addWidget(self.combox_chooseDevice)
+        self.combox_chooseDevice.setStyleSheet("background-color: grey;")
+
         self.label_empty_4 = QtWidgets.QLabel(JX_FW)
         self.label_empty_4.setEnabled(False)
         self.label_empty_4.setText("")
@@ -341,16 +340,9 @@ class Ui_JX_FW(object):
         self.label_Windows.setToolTipDuration(0)
         self.label_Windows.setObjectName("label_Windows")
         self.HLayout_forth.addWidget(self.label_Windows, 0, 0, 1, 1)
-        # self.label_empty_5 = QtWidgets.QLabel(JX_FW)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        # sizePolicy.setHeightForWidth(self.label_empty_5.sizePolicy().hasHeightForWidth())
-        # self.label_empty_5.setSizePolicy(sizePolicy)
-        # self.label_empty_5.setMinimumSize(QtCore.QSize(20, 10))
-        # self.label_empty_5.setText("")
-        # self.label_empty_5.setObjectName("label_empty_5")
-        # self.HLayout_forth.addWidget(self.label_empty_5, 0, 1, 1, 1)
         self.label_Linux = QtWidgets.QLabel(JX_FW)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -711,6 +703,7 @@ if __name__ == "__main__":
     TesteEnviromentCheck = QtWidgets.QWidget()
     ui = Ui_TesteEnviromentCheck()
     ui.setupUi(TesteEnviromentCheck)
+    TesteEnviromentCheck.setStyleSheet("background-image: url(Background.png);color: white;")
     TesteEnviromentCheck.show()
 
     # Get the xpress version nned.
@@ -718,21 +711,22 @@ if __name__ == "__main__":
     #Define the Main Window
     app2 = QtWidgets.QApplication(sys.argv)
     JX_FW = QtWidgets.QWidget()
-
+    JX_FW.setStyleSheet("background-image: url(Background.png);color: white;")
     #Check network
     ipaddress=get_Windows_ip()
     print("INTRODUCE:")
-    print("This test tool to help tester download the Xpress package")
-    print("This windows will check the running environment.")
+    print("     THIS TEST TOOL to help Tester download the Xpress package")
+    print("\n")
+    print("Before downlaod,we need check the running environment:")
     # print("\n")
     # time.sleep(1)
-    print("1、Check Network : ")
+    print(" 1.Check Network : ")
 
 
     if ipaddress==True:
-        print("Supported network")
+        print("  Supported network")
         print("\n")
-        print("2、Start check Google Chrome driver....")
+        print("2.Start check Google Chrome driver....")
         # currentversion = getXpressVersionThread()
         # currentversion.run()
         checkDriver=checkGoogleDriver()
@@ -742,14 +736,12 @@ if __name__ == "__main__":
         # currentversion.run()
 
     else:
-        print("Unsupported netwrok")
-        print("Supported network list:")
-        print("   -Intra-gnn.com")
-        print("   -Rand-gnn.com")
-        print("   -GN-Wifi")
-        print("Please Switch to the Supported network and restart the APP")
+        print("     Unsupported netwrok")
+        print("     Please Switch to the Supported network and restart the APP:")
+        print("     -Intra-gnn.com")
+        print("     -GN-Wifi")
         print("\n")
-        print("2、Start check Google Chrome driver....")
+        print("2.Start check Google Chrome driver....")
         checkDriver=checkGoogleDriver()
         checkDriver.start()
 

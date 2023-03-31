@@ -8,7 +8,8 @@ from selenium.webdriver.support.select import Select
 
 from Common.function_Configure import renameAndclose,borwserConfigure,getLocation,getLocation
 
-#Disconnect the DUT during the FW udpate. [Use X Package) [Not allow downgrade
+#Disconnect the DUT during the FW udpate. [Use X Package) [Not allow downgrade]
+
 def testcase16991():
     fo = open("device.txt", "rt")
     lastingDevicename = fo.read()

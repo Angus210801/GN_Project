@@ -22,27 +22,25 @@ def getChromeVersion():
         return "1.1.1"
 
 
-def getChromeDriverVersion():
-    """查询Chromedriver版本"""
-    outstd2 = os.popen('chromedriver --version').read()
-    # print(outstd2)
+def get_chromedriver_version():
+    """查询当前目录下的chromedriver版本"""
     try:
+        outstd2 = os.popen('chromedriver --version').read()
         version = outstd2.split(' ')[1]
         version = ".".join(version.split(".")[:-1])
         return version
     except Exception as e:
         return "0.0.0"
 
-
 def getLatestChromeDriver(version):
     # Get the newest chromedrive version from website
     url = f"{base_url}LATEST_RELEASE_{version}"
     latest_version = requests.get(url).text
-    print(f"The latest Chrome Driver version matches the current Chrome:{latest_version}")
+    print(f"    The latest Chrome Driver version matches the current Chrome:{latest_version}")
     # 下载chromedriver
-    print("Start Downloading chromedriver...")
+    print("     Start Downloading chromedriver...")
     download_url = f"{base_url}{latest_version}/chromedriver_win32.zip"
-    with requests.get(download_url,stream=True) as file, open(r'Common/chromedriver.zip', 'wb') as zip_file:# 保存文件到脚本所在目录
+    with requests.get(download_url,stream=True) as file, open(r'chromedriver.zip', 'wb') as zip_file:# 保存文件到脚本所在目录
         total_size = int(file.headers['content-length'])
         # 请求文件的大小单位字节B
         total_size = int(file.headers['content-length'])
@@ -76,23 +74,23 @@ def getLatestChromeDriver(version):
                 # 重置以下载大小
                 temp_size = content_size
     print('\n')
-    print("100%,downloaded!")
+    print(" 100%,downloaded!")
     # 解压
     f = zipfile.ZipFile("Common/chromedriver.zip", 'r')
     for file in f.namelist():
         f.extract(file)
-    print("Unzip successfully")
+    print(" Unzip successfully")
 
 
 def checkChromeDriverUpdate():
     chrome_version = getChromeVersion()
-    print(f'Current Chrome Version: {chrome_version}')
-    driver_version = getChromeDriverVersion()
-    print(f'Current chromedriver Version: {driver_version}')
+    print(f'        Current Chrome Version: {chrome_version}')
+    driver_version = get_chromedriver_version()
+    print(f'        Current chromedriver Version: {driver_version}')
     if chrome_version == driver_version:
-        print("Same Version,No need to update.")
+        print("     Same Version,No need to update.")
         return
-    print("Lower Version for chromedriver version,updating>>>")
+    print("   Lower Version for chromedriver version,updating>>>")
 
     try:
         getLatestChromeDriver(chrome_version)

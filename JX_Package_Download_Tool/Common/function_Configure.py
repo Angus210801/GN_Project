@@ -2,7 +2,7 @@ import sys
 import os
 import sys
 from time import sleep
-from Common.function_Basic import *
+# from Common.function_Basic import *
 from selenium import webdriver
 from selenium import webdriver
 

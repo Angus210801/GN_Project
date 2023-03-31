@@ -2,21 +2,14 @@ import sys
 import os
 import random
 from time import sleep
-from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.function_Configure import renameAndclose,borwserConfigure,getLocation
+from Common.function_Configure import renameAndclose
+from page.index import setup_driver
 
 
 # Device settings configuration with all setings as LEAVE UNCHANGED and a specific and password as leave Unchnaged
 def testcase3966():
-    fo = open("device.txt", "rt")
-    lastingDevicename = fo.read()
-    file = getLocation() +lastingDevicename
-    options=borwserConfigure()
-    global driver
-    driver = webdriver.Chrome(chrome_options=options)
-    from Common.function_Basic import windowsPage
-    windowsPage = windowsPage(driver)
+    driver, windowsPage,lastingDevicename,file = setup_driver()
     # 进入到选择device页
     windowsPage.clickNextButton()
     #输入Device

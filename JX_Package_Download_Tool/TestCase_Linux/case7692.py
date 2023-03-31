@@ -8,7 +8,8 @@ from selenium.webdriver.support.select import Select
 from Common.function_Configure import renameAndclose,borwserConfigure,getLocation,getLocation
 from Common.function_Judge import isElementExist, isInputExist,isUploadButton
 
-#All settings n the device an e chan from default value to min value with installation of zip file at the end user PC, no FW change.
+#JX-ThinC:All settings in the device can be change from default value to min.value with installation of .zip file at the end user PC,no FW change.
+
 def testcase7692():
     fo = open("device.txt", "rt")
     lastingDevicename = fo.read()

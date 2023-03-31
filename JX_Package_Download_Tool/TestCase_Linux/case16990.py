@@ -9,6 +9,7 @@ from selenium.webdriver.support.select import Select
 from Common.function_Configure import renameAndclose,borwserConfigure,getLocation,getLocation
 
 #Disconnect the DUT during the FW update [Use)X Package) [Allow downgrade)
+
 def testcase16990():
     fo = open("device.txt", "rt")
     lastingDevicename = fo.read()

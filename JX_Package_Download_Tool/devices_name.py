@@ -1,4 +1,10 @@
 items_list=[
+'Jabra SPEAK2 40',
+'Jabra SPEAK2 55',
+'Jabra SPEAK2 75',
+'Jabra EVOLVE 65 SE Mono',
+'Jabra EVOLVE 65 SE Stereo',
+'Jabra Evolve 75 SE',
 'Jabra BIZ 1500 MS USB Duo',
 'Jabra BIZ 1500 MS USB Mono',
 'Jabra BIZ 1500 USB Duo',
@@ -96,6 +102,6 @@ items_list=[
 'Jabra UC VOICE 750a Mono (Version A)',
 'Jabra UC VOICE 750a MS Duo (Version A)',
 'Jabra UC VOICE 750a MS Mono (Version A)',
-'Jabra EVOLVE2 30',
-'Jabra Speak2 40'
+'Jabra EVOLVE2 30'
+
 ]

@@ -5,9 +5,9 @@ import zipfile
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-
 from Common.function_Configure import renameAndclose,borwserConfigure,getLocation,getLocation
 
+# JX-JDU: Verify that the " Voice Language" ( Tune Pack) setting can be write to the DUT which has different FW version_Spanish.
 
 def testcase10312l():
     i=1

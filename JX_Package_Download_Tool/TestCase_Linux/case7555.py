@@ -5,7 +5,6 @@ import zipfile
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-
 from Common.function_Configure import renameAndclose,borwserConfigure,getLocation,getLocation
 
 # Install a Zip file on end user environment with a later FW and no setting change.

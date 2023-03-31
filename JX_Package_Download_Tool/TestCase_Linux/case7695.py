@@ -5,11 +5,10 @@ import zipfile
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-
+from Common.function_Judge import isElementExist, isInputExist
 from Common.function_Configure import renameAndclose,borwserConfigure,getLocation,getLocation
 
 #  All settings in the device an be hange from default value to max value with installation of zip file at the end user PC,no FW change.
-from Common.function_Judge import isElementExist, isInputExist
 
 
 def testcase7695():
