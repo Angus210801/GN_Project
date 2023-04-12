@@ -1,4 +1,5 @@
-import sys
+import sys 
+from Common.function_basic import GoToPCSoftwarePage
 import os
 import random
 from time import sleep
@@ -17,9 +18,9 @@ def testcase7196():
     #Configure driver
     driver, windowsTrack,testDeviceName,file = setup_driver()
     # 进入到选择device页
-    windowsTrack.clickNextButton()
+    windowsTrack.GoToSelectDevice()
     #输入Device
-    windowsTrack.chooseDevice()
+    windowsTrack.SelectDevicePageAction()
 
     #配置设置项为随机项
     set_table = driver.find_element(By.CLASS_NAME,'settings-table')
@@ -107,7 +108,8 @@ def testcase7196():
     # #进入softphone配置页
     driver.find_element_by_xpath("//input[@value='NEXT >']").click()
     #勾选下载JD
-    driver.find_element_by_xpath("//input[@value='true']").click()
+        # Go to PC software page
+    GoToPCSoftwarePage(driver)
      ## 选择1个随机的Preferred softphone
     setting = driver.find_element_by_css_selector(
         "select[name='PcSoftwareViewModel.DeploymentOptionGroups[2].DeploymentOptions[19].Value']")

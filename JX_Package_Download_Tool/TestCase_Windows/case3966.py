@@ -1,8 +1,9 @@
-import sys
-import os
 import random
-from time import sleep
+import sys 
+from Common.function_basic import GoToPCSoftwarePage
+
 from selenium.webdriver.support.select import Select
+
 from Common.function_configure import renameMsiFile, setup_driver, renameSummary
 
 
@@ -11,9 +12,9 @@ def testcase3966():
     currentTestcaseName = sys._getframe().f_code.co_name
     driver, windowsTrack,testDeviceName,file = setup_driver()
     # 进入到选择device页
-    windowsTrack.clickNextButton()
+    windowsTrack.GoToSelectDevice()
     #输入Device
-    windowsTrack.chooseDevice()
+    windowsTrack.SelectDevicePageAction()
     #选择FW
     fw_select = driver.find_element_by_css_selector(
         "select[name='configurationViewModel.Devices[0].SelectedFirmware.Id']")
@@ -22,7 +23,8 @@ def testcase3966():
     # #进入softphone配置页
     driver.find_element_by_xpath("//input[@value='NEXT >']").click()
     #勾选下载JD
-    driver.find_element_by_xpath("//input[@value='true']").click()
+        # Go to PC software page
+    GoToPCSoftwarePage(driver)
      ## 选择1个随机的Preferred softphone
     setting = driver.find_element_by_css_selector(
         "select[name='PcSoftwareViewModel.DeploymentOptionGroups[2].DeploymentOptions[19].Value']")

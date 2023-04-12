@@ -1,4 +1,5 @@
-import sys
+import sys 
+from Common.function_basic import GoToPCSoftwarePage
 import os
 from time import sleep
 from selenium import webdriver
@@ -15,9 +16,9 @@ def testcase10449():
     #Configure driver
     driver, windowsTrack,testDeviceName,file = setup_driver()
     # 进入到选择device页
-    windowsTrack.clickNextButton()
+    windowsTrack.GoToSelectDevice()
     #输入Device
-    windowsTrack.chooseDevice()
+    windowsTrack.SelectDevicePageAction()
 
     #选择Fw
     fw_select = driver.find_element_by_css_selector(

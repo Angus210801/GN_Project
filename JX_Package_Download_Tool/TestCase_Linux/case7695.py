@@ -1,4 +1,4 @@
-import sys
+from Common.function_basic import GoToPCSoftwarePage
 import os
 import shutil
 import zipfile

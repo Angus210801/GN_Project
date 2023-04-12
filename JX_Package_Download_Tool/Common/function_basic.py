@@ -50,12 +50,13 @@ class windowsPage(baseConfigure):
         # testadress="http://dkcphweb15/Xpress/36.X.Development/MDCT"
         driver.get(testadress+'/windows-desktop')
 
-    def clickNextButton(self):
-        ''' Click the next button'''
+    def GoToSelectDevice(self):
+        ''' Click the New button go to select device page '''
         button = (By.CLASS_NAME, 'button-container')
         self.click(*button)
 
-    def chooseDevice(self):
+    def SelectDevicePageAction(self):
+        ''' Select device and click next button '''
         fo = open("device.txt", "rt")
         lastingDevicename = fo.read()
         device=(By.XPATH,"//label[contains(text(),'" + lastingDevicename+ "')]")
@@ -65,6 +66,7 @@ class windowsPage(baseConfigure):
 
 
 def borwserConfigure():
+    ''' Configure the borwser'''
     fo = open("device.txt", "rt")
     lastingDevicename = fo.read()
     file = getLocation()
@@ -93,6 +95,14 @@ def getLocation():
     saveDir = saveDir.replace('/', '\\\\')
     return saveDir
 
+def GoToPCSoftwarePage(driver):
+    #跳转到PC Software下载页面
+    driver.find_element_by_xpath("//input[@value='NEXT >']").click()
+
+def DownloadJabraDirect(driver):
+        # Go to PC software page
+    GoToPCSoftwarePage(driver)
+
 def gotosummaryPage(driver):
     driver.find_element_by_xpath("//input[@value='NEXT >']").click()
     #跳转到Summary下载页面
@@ -107,3 +117,4 @@ def downloadmsi(driver):
     driver.find_element_by_id('eulaOk').click()
     # #点击下载
     driver.find_element_by_id('download64bit').click()
+

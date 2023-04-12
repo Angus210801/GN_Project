@@ -1,5 +1,6 @@
 import time
-import sys
+import sys 
+from Common.function_basic import GoToPCSoftwarePage
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QThread
 from PyQt5.QtGui import QIcon

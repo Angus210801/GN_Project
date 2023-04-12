@@ -1,5 +1,7 @@
 import os
-import sys
+import sys 
+from Common.function_basic import GoToPCSoftwarePage 
+from Common.function_basic import GoToPCSoftwarePage
 from time import sleep
 from selenium import webdriver
 import Common.function_basic

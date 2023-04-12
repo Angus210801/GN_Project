@@ -1,4 +1,5 @@
-import sys
+import sys 
+from Common.function_basic import GoToPCSoftwarePage
 import os
 from time import sleep
 from selenium import webdriver
@@ -14,9 +15,9 @@ def testcase5509():
     #Configure driver
     driver, windowsTrack,testDeviceName,file = setup_driver()
     # 进入到选择device页
-    windowsTrack.clickNextButton()
+    windowsTrack.GoToSelectDevice()
     #输入Device
-    windowsTrack.chooseDevice()
+    windowsTrack.SelectDevicePageAction()
     #选择FW
     fw_select = driver.find_element_by_css_selector(
         "select[name='configurationViewModel.Devices[0].SelectedFirmware.Id']")
@@ -25,7 +26,8 @@ def testcase5509():
     # #进入softphone配置页
     driver.find_element_by_xpath("//input[@value='NEXT >']").click()
     #勾选下载JD
-    driver.find_element_by_xpath("//input[@value='true']").click()
+        # Go to PC software page
+    GoToPCSoftwarePage(driver)
     #跳转到.msi下载页面
     driver.find_element_by_xpath("//input[@value='NEXT >']").click()
     #跳转到Summary下载页面

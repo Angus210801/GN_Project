@@ -1,12 +1,13 @@
-import sys
 import os
 import random
+import sys 
+from Common.function_basic import GoToPCSoftwarePage
 from time import sleep
-from selenium import webdriver
+
 from selenium.webdriver.support.select import Select
-from Common.function_configure import renameMsiFile
-from Common.function_basic import borwserConfigure, getLocation
+
 from Common.function_Judge import isElementExist, isInputExist, isUploadButton
+from Common.function_configure import renameMsiFile
 
 
 #JX-JDU: Make a package for both specified FW version update and DUT settings configuration. DUT has lower version.
@@ -16,9 +17,9 @@ def testcase4090_32b():
     #Configure driver
     driver, windowsTrack,testDeviceName,file = setup_driver()
     # 进入到选择device页
-    windowsTrack.clickNextButton()
+    windowsTrack.GoToSelectDevice()
     #输入Device
-    windowsTrack.chooseDevice()
+    windowsTrack.SelectDevicePageAction()
     #选择FW
     fw_select = driver.find_element_by_css_selector(
         "select[name='configurationViewModel.Devices[0].SelectedFirmware.Id']")

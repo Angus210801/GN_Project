@@ -1,4 +1,5 @@
-import sys
+import sys 
+from Common.function_basic import GoToPCSoftwarePage
 import os
 import random
 from time import sleep
@@ -16,9 +17,9 @@ def testcase4128_3():
     #Configure driver
     driver, windowsTrack,testDeviceName,file = setup_driver()
     # 进入到选择device页
-    windowsTrack.clickNextButton()
+    windowsTrack.GoToSelectDevice()
     #输入Device
-    windowsTrack.chooseDevice()
+    windowsTrack.SelectDevicePageAction()
     #配置设置项为随机项
     set_table = driver.find_element_by_class_name('settings-table')
     td_content = set_table.find_elements_by_tag_name('tr')

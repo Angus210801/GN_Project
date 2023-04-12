@@ -1,11 +1,9 @@
-import sys
-import os
 import random
-from time import sleep
-from selenium import webdriver
+import sys 
+from Common.function_basic import GoToPCSoftwarePage
 from selenium.webdriver.support.select import Select
-from Common.function_configure import renameMsiFile, getLocation, renameMsiFile, setup_driver, renameSummary
-from Common.function_basic import borwserConfigure, getLocation
+from Common.function_basic import GoToPCSoftwarePage
+from Common.function_configure import renameMsiFile, setup_driver, renameSummary
 
 
 # Device settings configuration with all setings and FW as LEAVE UNCHANGED but Protected.
@@ -15,9 +13,9 @@ def testcase3965_32b():
     #Configure driver
     driver, windowsTrack,testDeviceName,file = setup_driver()
     # 进入到选择device页
-    windowsTrack.clickNextButton()
+    windowsTrack.GoToSelectDevice()
     #输入Device
-    windowsTrack.chooseDevice()
+    windowsTrack.SelectDevicePageAction()
 
     #选择protect=protect
     setting = driver.find_element_by_css_selector(
@@ -27,7 +25,8 @@ def testcase3965_32b():
     # #进入softphone配置页
     driver.find_element_by_xpath("//input[@value='NEXT >']").click()
     #勾选下载JD
-    driver.find_element_by_xpath("//input[@value='true']").click()
+        # Go to PC software page
+    GoToPCSoftwarePage(driver)
      ## 选择1个随机的Preferred softphone
     setting = driver.find_element_by_css_selector(
         "select[name='PcSoftwareViewModel.DeploymentOptionGroups[2].DeploymentOptions[19].Value']")
