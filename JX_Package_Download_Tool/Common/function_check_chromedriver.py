@@ -76,10 +76,13 @@ def getLatestChromeDriver(version):
     print('\n')
     print(" 100%,downloaded!")
     # 解压
-    f = zipfile.ZipFile("Common/chromedriver.zip", 'r')
+    f = zipfile.ZipFile("chromedriver.zip", 'r')
     for file in f.namelist():
         f.extract(file)
     print(" Unzip successfully")
+    # 删除压缩包
+    os.remove("chromedriver.zip")
+
 
 
 def checkChromeDriverUpdate():
@@ -89,7 +92,13 @@ def checkChromeDriverUpdate():
     print(f'        Current chromedriver Version: {driver_version}')
     if chrome_version == driver_version:
         print("     Same Version,No need to update.")
+        if os.path.exists("LICENSE.chromedriver"):
+            os.remove("LICENSE.chromedriver")
+        if os.path.exists("chromedriver.zip"):
+            os.remove("chromedriver.zip")
         return
+
+
     print("   Lower Version for chromedriver version,updating>>>")
 
     try:
@@ -100,6 +109,9 @@ def checkChromeDriverUpdate():
     except Exception as e:
         print(f"Chromedriver Download Failed For Unknown Reason: {e}")
 
+    #判断是否存在LICENSE.chromedriver文件，如果存在则删除
 
-if __name__ == "__main__":
-    checkChromeDriverUpdate()
+
+#
+# if __name__ == "__main__":
+#     checkChromeDriverUpdate()

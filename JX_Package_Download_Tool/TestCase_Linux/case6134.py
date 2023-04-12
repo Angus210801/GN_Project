@@ -5,7 +5,9 @@ import zipfile
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.function_Configure import renameAndclose,borwserConfigure,getLocation,getLocation
+from Common.function_configure import renameMsiFile, getLocation
+from Common.function_basic import borwserConfigure, getLocation
+
 
 # 6134: JX-ThinC:All device settings and FW set to "Leave Unchange",all settings set to Protected.
 
@@ -16,7 +18,7 @@ def testcase6134():
     options = borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)
-    from Common.function_Basic import linuxindexPage
+    from Common.function_basic import linuxindexPage
     linuxindexPage = linuxindexPage(driver)
     #Select device页
     linuxindexPage.clickNextButton()

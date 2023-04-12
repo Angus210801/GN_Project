@@ -5,7 +5,8 @@ import zipfile
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.function_Configure import renameAndclose,borwserConfigure,getLocation,getLocation
+from Common.function_configure import renameMsiFile, getLocation
+from Common.function_basic import borwserConfigure, getLocation
 from Common.function_Judge import isElementExist, isInputExist,isUploadButton
 
 #JX-ThinC:All settings in the device can be change from default value to min.value with installation of .zip file at the end user PC,no FW change.
@@ -17,7 +18,7 @@ def testcase7692():
     options = borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)
-    from Common.function_Basic import linuxindexPage
+    from Common.function_basic import linuxindexPage
     linuxindexPage = linuxindexPage(driver)
     # 进入到选择device页
     linuxindexPage.clickNextButton()

@@ -4,24 +4,21 @@ import random
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.function_Configure import renameAndclose,borwserConfigure,getLocation
+from Common.function_configure import renameMsiFile
+from Common.function_basic import borwserConfigure, getLocation
 from Common.function_Judge import isElementExist, isInputExist, isUploadButton
 
 
 #JX-JDU: Make a package for both specified FW version update and DUT settings configuration. DUT has lower version.
 def testcase4128_3():
-    fo = open("device.txt", "rt")
-    lastingDevicename = fo.read()
-    file = getLocation() +lastingDevicename
-    options=borwserConfigure()
-    global driver
-    driver = webdriver.Chrome(chrome_options=options)
-    from Common.function_Basic import windowsPage
-    windowsPage = windowsPage(driver)
+    #Get current function name
+    currentTestcaseName = sys._getframe().f_code.co_name
+    #Configure driver
+    driver, windowsTrack,testDeviceName,file = setup_driver()
     # 进入到选择device页
-    windowsPage.clickNextButton()
+    windowsTrack.clickNextButton()
     #输入Device
-    windowsPage.chooseDevice()
+    windowsTrack.chooseDevice()
     #配置设置项为随机项
     set_table = driver.find_element_by_class_name('settings-table')
     td_content = set_table.find_elements_by_tag_name('tr')
@@ -103,7 +100,7 @@ def testcase4128_3():
             else:
                 i=i+1
                 continue
-    print(lastingDevicename+' '+sys._getframe().f_code.co_name+' Configure finish')
+    print(testDeviceName+' '+sys._getframe().f_code.co_name+' Configure finish')
     # #进入softphone配置页
     driver.find_element_by_xpath("//input[@value='NEXT >']").click()
     #跳转到.msi下载页面
@@ -118,7 +115,7 @@ def testcase4128_3():
     renamesummary = file + '\\4128_3.html'
     try:
         os.rename(summary, renamesummary)
-        print(lastingDevicename+ ' testcase4128_3 summary download successful')
+        print(testDeviceName+ ' testcase4128_3 summary download successful')
         summary = file + '\\JabraXPRESSx64.msi'
         renamesummary = file + '\\4128_3.msi'
     except Exception as e:
@@ -133,6 +130,6 @@ def testcase4128_3():
     # #点击下载
     driver.find_element_by_id('download64bit').click()
     #调用重命名函数
-    renameAndclose(driver,summary,renamesummary)
-    print(lastingDevicename+ ' testcase4128_3 download successful')
+    renameMsiFile(driver, summary, renamesummary)
+    print(testDeviceName+ ' testcase4128_3 download successful')
     print('\n')

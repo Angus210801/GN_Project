@@ -4,24 +4,21 @@ import random
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.function_Configure import renameAndclose,borwserConfigure,getLocation
+from Common.function_configure import renameMsiFile
+from Common.function_basic import borwserConfigure, getLocation
 from Common.function_Judge import isElementExist, isInputExist, isUploadButton
 
 
 #JX-SET: All settings in the device can be change from default value to min. value with installation of a .MSI or zip file at the end user PC, no FW change. (All JX supported Jabra device).
 def testcase5665_32b():
-    fo = open("device.txt", "rt")
-    lastingDevicename = fo.read()
-    file = getLocation() +lastingDevicename
-    options=borwserConfigure()
-    global driver
-    driver = webdriver.Chrome(chrome_options=options)
-    from Common.function_Basic import windowsPage
-    windowsPage = windowsPage(driver)
+    #Get current function name
+    currentTestcaseName = sys._getframe().f_code.co_name
+    #Configure driver
+    driver, windowsTrack,testDeviceName,file = setup_driver()
     # 进入到选择device页
-    windowsPage.clickNextButton()
+    windowsTrack.clickNextButton()
     #输入Device
-    windowsPage.chooseDevice()
+    windowsTrack.chooseDevice()
 
     set_table = driver.find_element_by_class_name('settings-table')
     td_content = set_table.find_elements_by_tag_name('tr')
@@ -94,7 +91,7 @@ def testcase5665_32b():
             else:
                 i=i+1
                 continue
-    print(lastingDevicename+' '+sys._getframe().f_code.co_name+' Configure finish')
+    print(testDeviceName+' '+sys._getframe().f_code.co_name+' Configure finish')
     # #进入softphone配置页
     driver.find_element_by_xpath("//input[@value='NEXT >']").click()
     #勾选下载JD
@@ -118,7 +115,7 @@ def testcase5665_32b():
     renamesummary = file + '\\5665.html'
     try:
         os.rename(summary, renamesummary)
-        print(lastingDevicename+ ' testcase5665_32bit summary download successful')
+        print(testDeviceName+ ' testcase5665_32bit summary download successful')
         summary = file + '\\JabraXPRESSx86.msi'
         renamesummary = file + '\\5665_32b.msi'
     except Exception as e:
@@ -133,6 +130,6 @@ def testcase5665_32b():
     # #点击下载
     driver.find_element_by_id('download32bit').click()
     #调用重命名函数
-    renameAndclose(driver,summary,renamesummary)
-    print(lastingDevicename+ ' testcase5665_32bit download successful')
+    renameMsiFile(driver, summary, renamesummary)
+    print(testDeviceName+ ' testcase5665_32bit download successful')
     print('\n')

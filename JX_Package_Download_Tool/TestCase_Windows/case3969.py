@@ -4,24 +4,21 @@ import random
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.function_Configure import renameAndclose,borwserConfigure,getLocation
+from Common.function_configure import renameMsiFile
+from Common.function_basic import borwserConfigure, getLocation
 from Common.function_Judge import isElementExist, isInputExist, isUploadButton
 
 
 # JX-Direct: Device settings configuration with all setings to random/defalut value but FW as "LEAVE UNCHANGED".(Protect Setting = Not Protected)
 def testcase3969():
-    fo = open("device.txt", "rt")
-    lastingDevicename = fo.read()
-    file = getLocation() +lastingDevicename
-    options=borwserConfigure()
-    global driver
-    driver = webdriver.Chrome(chrome_options=options)
-    from Common.function_Basic import windowsPage
-    windowsPage = windowsPage(driver)
+    #Get current function name
+    currentTestcaseName = sys._getframe().f_code.co_name
+    #Configure driver
+    driver, windowsTrack,testDeviceName,file = setup_driver()
     # 进入到选择device页
-    windowsPage.clickNextButton()
+    windowsTrack.clickNextButton()
     #输入Device
-    windowsPage.chooseDevice()
+    windowsTrack.chooseDevice()
     #设置protect=notprotect
     setting = driver.find_element_by_css_selector(
         "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[0].SelectedValue']")
@@ -61,7 +58,7 @@ def testcase3969():
             i = i + 1
             continue
 
-    print(lastingDevicename+' '+sys._getframe().f_code.co_name+' Configure finish')
+    print(testDeviceName+' '+sys._getframe().f_code.co_name+' Configure finish')
 
     #判断按钮是否可用
     nextButton=driver.find_element_by_xpath("//input[@value='NEXT >']")
@@ -125,7 +122,7 @@ def testcase3969():
     renamesummary = file + '\\3969.html'
     try:
         os.rename(summary, renamesummary)
-        print(lastingDevicename+ ' testcase3969 summary download successful')
+        print(testDeviceName+ ' testcase3969 summary download successful')
         summary = file + '\\JabraXPRESSx64.msi'
         renamesummary = file + '\\3969.msi'
     except Exception as e:
@@ -140,6 +137,6 @@ def testcase3969():
     # #点击下载
     driver.find_element_by_id('download64bit').click()
     #调用重命名函数
-    renameAndclose(driver,summary,renamesummary)
-    print(lastingDevicename+ ' testcase3969 download successful')
+    renameMsiFile(driver, summary, renamesummary)
+    print(testDeviceName+ ' testcase3969 download successful')
     print('\n')

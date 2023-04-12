@@ -6,7 +6,9 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
 
-from Common.function_Configure import renameAndclose,borwserConfigure,getLocation,getLocation
+from Common.function_configure import renameMsiFile, getLocation
+from Common.function_basic import borwserConfigure, getLocation
+
 
 #Disconnect the DUT during the FW udpate. [Use X Package) [Not allow downgrade]
 
@@ -17,7 +19,7 @@ def testcase16991():
     options = borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)
-    from Common.function_Basic import linuxindexPage
+    from Common.function_basic import linuxindexPage
     linuxindexPage = linuxindexPage(driver)
     # 进入到选择device页
     linuxindexPage.clickNextButton()

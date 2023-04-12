@@ -5,7 +5,9 @@ import zipfile
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.function_Configure import renameAndclose,borwserConfigure,getLocation,getLocation
+from Common.function_configure import renameMsiFile, getLocation
+from Common.function_basic import borwserConfigure, getLocation
+
 
 # Install a Zip file on end user environment with a later FW and no setting change.
 
@@ -16,7 +18,7 @@ def testcase7555():
     options = borwserConfigure()
     global driver
     driver = webdriver.Chrome(chrome_options=options)
-    from Common.function_Basic import linuxindexPage
+    from Common.function_basic import linuxindexPage
     linuxindexPage = linuxindexPage(driver)
     # 进入到选择device页
     linuxindexPage.clickNextButton()

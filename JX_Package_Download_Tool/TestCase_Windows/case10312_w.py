@@ -4,24 +4,25 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
 
-from Common.function_Configure import renameAndclose,borwserConfigure,getLocation,getLocation, renameAndclose
+from Common.function_configure import renameMsiFile, getLocation, renameMsiFile
+from Common.function_basic import borwserConfigure, getLocation
 
 
 def testcase10312w():
     i=1
     while i<=6:
         fo = open("device.txt", "rt")
-        lastingDevicename = fo.read()
-        file = getLocation() +lastingDevicename
+        testDeviceName = fo.read()
+        file = getLocation() +testDeviceName
         options = borwserConfigure()
         global driver
         driver = webdriver.Chrome(chrome_options=options)
-        from Common.function_Basic import windowsPage
-        windowsPage = windowsPage(driver)
+        from Common.function_basic import windowsTrack
+        windowsTrack = windowsTrack(driver)
         #Select device页
-        windowsPage.clickNextButton()
+        windowsTrack.clickNextButton()
         #输入设备名
-        windowsPage.chooseDevice()
+        windowsTrack.chooseDevice()
         #选择FW
         fw_select = driver.find_element_by_css_selector(
             "select[name='configurationViewModel.Devices[0].SelectedFirmware.Id']")
@@ -38,7 +39,7 @@ def testcase10312w():
             Select(language_select).select_by_index(i)
             language_select=Select(language_select).first_selected_option.text
             #配置完成后打印提醒消息
-            print(lastingDevicename+' '+sys._getframe().f_code.co_name+' Configure finish')
+            print(testDeviceName+' '+sys._getframe().f_code.co_name+' Configure finish')
             # #进入softphone配置页
             driver.find_element_by_xpath("//input[@value='NEXT >']").click()
             # 跳转到.msi下载页面
@@ -53,7 +54,7 @@ def testcase10312w():
             renamesummary = file + '\\10312_'+language_select+'.html'
             try:
                 os.rename(summary, renamesummary)
-                print(lastingDevicename + ' testcase4090 summary download successful')
+                print(testDeviceName + ' testcase4090 summary download successful')
                 summary = file + '\\JabraXPRESSx64.msi'
                 renamesummary = file + '\\10312_'+language_select+'.msi'
             except Exception as e:
@@ -68,7 +69,7 @@ def testcase10312w():
             # #点击下载
             driver.find_element_by_id('download64bit').click()
             # 调用重命名函数
-            renameAndclose(driver, summary, renamesummary)
+            renameMsiFile(driver, summary, renamesummary)
             i=i+1
 
         except:

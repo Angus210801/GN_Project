@@ -4,28 +4,26 @@ import random
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.function_Configure import renameAndclose,borwserConfigure,getLocation,getLocation, renameAndclose
+from Common.function_configure import renameMsiFile, getLocation, renameMsiFile, setup_driver, renameSummary
+from Common.function_basic import borwserConfigure, getLocation
+
 
 # Device settings configuration with all setings and FW as LEAVE UNCHANGED but Protected.
 def testcase3965_32b():
-    fo = open("device.txt", "rt")
-    lastingDevicename = fo.read()
-    file = getLocation() +lastingDevicename
-    options=borwserConfigure()
-    global driver
-    driver = webdriver.Chrome(chrome_options=options)
-    from Common.function_Basic import windowsPage
-    windowsPage = windowsPage(driver)
+    #Get current function name
+    currentTestcaseName = sys._getframe().f_code.co_name
+    #Configure driver
+    driver, windowsTrack,testDeviceName,file = setup_driver()
     # 进入到选择device页
-    windowsPage.clickNextButton()
+    windowsTrack.clickNextButton()
     #输入Device
-    windowsPage.chooseDevice()
+    windowsTrack.chooseDevice()
 
     #选择protect=protect
     setting = driver.find_element_by_css_selector(
         "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[0].SelectedValue']")
     Select(setting).select_by_index("1")
-    print(lastingDevicename+' '+sys._getframe().f_code.co_name+' Configure finish')
+    print(testDeviceName+' '+sys._getframe().f_code.co_name+' Configure finish')
     # #进入softphone配置页
     driver.find_element_by_xpath("//input[@value='NEXT >']").click()
     #勾选下载JD
@@ -44,19 +42,7 @@ def testcase3965_32b():
     # 下载Summary
     driver.find_element_by_xpath("//input[@value='DOWNLOAD SUMMARY']").click()
     # 重命名summary文件
-    sleep(5)
-    summary = file + '\\summary.html'
-    renamesummary = file + '\\3965_32b.html'
-    try:
-        os.rename(summary, renamesummary)
-        print(lastingDevicename+ ' testcase3965 summary download successful')
-        summary = file + '\\JabraXPRESSx86.msi'
-        renamesummary = file + '\\3965_32b.msi'
-    except Exception as e:
-        os.remove(renamesummary)
-        os.rename(summary, renamesummary)
-        summary = file + '\\JabraXPRESSx86.msi'
-        renamesummary = file + '\\3965_32b.msi'
+    renameSummary(currentTestcaseName, file, testDeviceName)
     # 返回到下载页
     driver.find_element_by_xpath("//input[@value='< PREVIOUS']").click()
     # 勾选同意协议
@@ -64,6 +50,6 @@ def testcase3965_32b():
     # #点击下载
     driver.find_element_by_id('download32bit').click()
     #调用重命名函数
-    renameAndclose(driver,summary,renamesummary)
-    print(lastingDevicename+ ' testcase3965_32bit download successful')
+    renameMsiFile(driver, file, currentTestcaseName)
+    print(testDeviceName+ ' testcase3965_32bit download successful')
     print('\n')

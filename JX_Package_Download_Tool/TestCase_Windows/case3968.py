@@ -4,29 +4,26 @@ import random
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.function_Configure import renameAndclose,borwserConfigure,getLocation,getLocation
+from Common.function_configure import renameMsiFile, getLocation
+from Common.function_basic import borwserConfigure, getLocation
 
 
 #JX-Direct : Select Device FW as "Managed by Jabra".
 
 def testcase3968():
-    fo = open("device.txt", "rt")
-    lastingDevicename = fo.read()
-    file = getLocation() +lastingDevicename
-    options=borwserConfigure()
-    global driver
-    driver = webdriver.Chrome(chrome_options=options)
-    from Common.function_Basic import windowsPage
-    windowsPage = windowsPage(driver)
+    #Get current function name
+    currentTestcaseName = sys._getframe().f_code.co_name
+    #Configure driver
+    driver, windowsTrack,testDeviceName,file = setup_driver()
     # 进入到选择device页
-    windowsPage.clickNextButton()
+    windowsTrack.clickNextButton()
     #输入Device
-    windowsPage.chooseDevice()
+    windowsTrack.chooseDevice()
     #选择FW为manage by jabra
     fw_select = driver.find_element_by_css_selector(
         "select[name='configurationViewModel.Devices[0].SelectedFirmware.Id']")
     Select(fw_select).select_by_value('2147457433')
-    print(lastingDevicename+' '+sys._getframe().f_code.co_name+' Configure finish')
+    print(testDeviceName+' '+sys._getframe().f_code.co_name+' Configure finish')
     # #进入softphone配置页
     driver.find_element_by_xpath("//input[@value='NEXT >']").click()
     #勾选下载JD
@@ -50,7 +47,7 @@ def testcase3968():
     renamesummary = file + '\\3968.html'
     try:
         os.rename(summary, renamesummary)
-        print(lastingDevicename+ ' testcase3968 summary download successful')
+        print(testDeviceName+ ' testcase3968 summary download successful')
         summary = file + '\\JabraXPRESSx64.msi'
         renamesummary = file + '\\3968.msi'
     except Exception as e:
@@ -65,6 +62,6 @@ def testcase3968():
     # #点击下载
     driver.find_element_by_id('download64bit').click()
     #调用重命名函数
-    renameAndclose(driver,summary,renamesummary)
-    print(lastingDevicename+ ' testcase3968 download successful')
+    renameMsiFile(driver, summary, renamesummary)
+    print(testDeviceName+ ' testcase3968 download successful')
     print('\n')

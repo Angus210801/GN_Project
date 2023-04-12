@@ -1,24 +1,13 @@
 import time
+import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QThread
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QFileDialog
-from Common.function_Basic import *
 from selenium import webdriver
-from Common.function_CheckIP import get_Windows_ip
+from Common.function_basic import get_Windows_ip
 from Common.function_check_chromedriver import checkChromeDriverUpdate
-from function_GetInfo import getXpressVersion
-from TestCase_Linux.case10312_L import testcase10312l
-from TestCase_Linux.case16991 import testcase16991
-from TestCase_Linux.case7692 import testcase7692
-from TestCase_Linux.case6134 import testcase6134
-from TestCase_Linux.case7551 import testcase7551
-from TestCase_Linux.case7695 import testcase7695
-from TestCase_Linux.case7555 import testcase7555
-from TestCase_Linux.case7556 import testcase7556
-from TestCase_Linux.case16990 import testcase16990
-from TestCase_Linux.case6098 import testcase6098
-from TestCase_Windows.case10449 import testcase10449
+from devices_name import items_list
 from TestCase_Windows.case3961 import testcase3961
 from TestCase_Windows.case3965 import testcase3965
 from TestCase_Windows.case3965_32b import testcase3965_32b
@@ -32,17 +21,26 @@ from TestCase_Windows.case4128_2 import testcase4128_2
 from TestCase_Windows.case4128_3 import testcase4128_3
 from TestCase_Windows.case4153_1 import testcase4153_1
 from TestCase_Windows.case4153_2 import testcase4153_2
+from TestCase_Windows.case4153_3 import testcase4153_3
 from TestCase_Windows.case5509 import testcase5509
 from TestCase_Windows.case5509_32b import testcase5509_32b
-from TestCase_Windows.case5664 import testcase5664
 from TestCase_Windows.case5665 import testcase5665
 from TestCase_Windows.case7195 import testcase7195
 from TestCase_Windows.case7196 import testcase7196
-from TestCase_Windows.case3966_32b import testcase3966_32b
-from TestCase_Windows.case5664_32b import testcase5664_32b
-from TestCase_Windows.case5665_32b import testcase5665_32b
 from TestCase_Windows.case10312_w import testcase10312w
-from devices_name import items_list
+from TestCase_Windows.case10449 import testcase10449
+from TestCase_Linux.case6098 import testcase6098
+from TestCase_Linux.case6134 import testcase6134
+from TestCase_Linux.case7551 import testcase7551
+from TestCase_Linux.case7555 import testcase7555
+from TestCase_Linux.case7556 import testcase7556
+from TestCase_Linux.case7692 import testcase7692
+from TestCase_Linux.case7695 import testcase7695
+from TestCase_Linux.case10312_L import testcase10312l
+from TestCase_Linux.case16990 import testcase16990
+from TestCase_Linux.case16991 import testcase16991
+
+
 class EmittingStr(QtCore.QObject):
     textWritten = QtCore.pyqtSignal(str) #定义一个发送str的信号
     def write(self, text):
@@ -698,7 +696,7 @@ class Ui_JX_FW(object):
         JX_FW.setWindowIcon(QIcon('jabra.ico'))
 
 if __name__ == "__main__":
-    import sys
+
     app = QtWidgets.QApplication(sys.argv)
     TesteEnviromentCheck = QtWidgets.QWidget()
     ui = Ui_TesteEnviromentCheck()
@@ -706,20 +704,18 @@ if __name__ == "__main__":
     TesteEnviromentCheck.setStyleSheet("background-image: url(Background.png);color: white;")
     TesteEnviromentCheck.show()
 
-    # Get the xpress version nned.
 
     #Define the Main Window
     app2 = QtWidgets.QApplication(sys.argv)
     JX_FW = QtWidgets.QWidget()
     JX_FW.setStyleSheet("background-image: url(Background.png);color: white;")
+
     #Check network
     ipaddress=get_Windows_ip()
     print("INTRODUCE:")
     print("     THIS TEST TOOL to help Tester download the Xpress package")
     print("\n")
     print("Before downlaod,we need check the running environment:")
-    # print("\n")
-    # time.sleep(1)
     print(" 1.Check Network : ")
 
 
@@ -727,13 +723,8 @@ if __name__ == "__main__":
         print("  Supported network")
         print("\n")
         print("2.Start check Google Chrome driver....")
-        # currentversion = getXpressVersionThread()
-        # currentversion.run()
         checkDriver=checkGoogleDriver()
         checkDriver.start()
-
-        # currentversion = getXpressVersionThread()
-        # currentversion.run()
 
     else:
         print("     Unsupported netwrok")
