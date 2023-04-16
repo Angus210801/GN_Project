@@ -1,13 +1,9 @@
-from TestCase_Linux.case7556_pre import testcase7556p
-from TestCase_Windows.case3961 import testcase3961
-from TestCase_Windows.case3966 import testcase3966
-from Common.function_basic import get_Windows_ip
-from Common.function_check_chromedriver import checkChromeDriverUpdate
+from test_scripts.testcase_windows import testcase3961
 
 if __name__ == '__main__':
     # testcase7556p()
     # testcase3966()
-    # ip_access=get_Windows_ip()
+    # ip_access=check_network_access()
     # print(ip_access)
     testcase3961()
 

@@ -1,10 +1,10 @@
-/JX_Package_Download_Tool/Common/logs/2022-03-22.log
+/JX_Package_Download_Tool/ui/logs/2022-03-22.log
 /JX_Package_Download_Tool/logs/2022-03-22.log
-/JX_Package_Download_Tool/Common/logs/2022_03_22.log
+/JX_Package_Download_Tool/ui/logs/2022_03_22.log
 /JX_Package_Download_Tool/chromedriver.exe
 /JX_Package_Download_Tool/chromedriver.zip
-/JX_Package_Download_Tool/JX Test Tool.py
+/JX_Package_Download_Tool/ui/main_window.py
 /JX_Package_Download_Tool/venv/Scripts/python3.dll
 /JX_Package_Download_Tool/venv/Scripts/python38.dll
-/JX_Package_Download_Tool/saveDir.txt
+/JX_Package_Download_Tool/config/saveDir.txt
 /JX_Package_Download_Tool/venv/Scripts/vcruntime140.dll
