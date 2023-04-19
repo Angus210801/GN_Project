@@ -1,16 +1,15 @@
-import logging
-import os
 import sys
-import time
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QThread
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QFileDialog
+from config.devices_name_list import items_list
+from log.logs import *
 from test_scripts.testcase_action import check_network_access
 from test_scripts.testcase_chromedriver_update import checkChromeDriverUpdate
-from config.devices_name_list import items_list
 from ui.controller import retranslateUi
-from log.logs import *
+from test_scripts.testcase_windows import *
+from test_scripts.testcase_linux import *
 
 
 class EmittingStr(QtCore.QObject):

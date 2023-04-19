@@ -5,8 +5,7 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from test_scripts.testcase_element_exist import isElementExist, isInputExist, isUploadButton
-from test_scripts.testcase_action import get_save_dir, browser_configure, rename_summary, rename_m, \
-    setup_driver
+from test_scripts.testcase_action import *
 from selenium.webdriver.support.select import Select
 from test_scripts.testcase_action import goto_summary_page_and_download, action_download_msi, goto_pcsoftware_page, action_download_jd
 
@@ -22,12 +21,11 @@ def testcase3961():
     # Choose device
     windowsTrack.action_selectdevice_page()
     # Configure the device page with all settings as default
-    driver.find_element_by_xpath("//input[@value='SET ALL TO DEFAULT VALUES']").click()
-    setting = driver.find_element_by_css_selector(
-        "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[0].SelectedValue']")
-    Select(setting).select_by_index("1")
+    settings_default(driver)
+    # Protect = Yes
+    config_the_protect(driver)
     # Print the configured finish message
-    print(testDeviceName + ' ' + currentTestcaseName + ' Configure finish')
+    print_the_config_finish(testDeviceName, currentTestcaseName)
     # Go to PC software page
     goto_pcsoftware_page(driver)
     # Download Jabra Direct
@@ -39,7 +37,7 @@ def testcase3961():
     # Go back to download page
     action_download_msi(driver)
     # Rename msi file
-    rename_m(driver, file, currentTestcaseName, testDeviceName)
+    rename_msi_file(driver, file, currentTestcaseName, testDeviceName)
 
 
 def testcase3965():
@@ -47,42 +45,29 @@ def testcase3965():
     currentTestcaseName = sys._getframe().f_code.co_name
     #Configure driver
     driver, windowsTrack,testDeviceName,file = setup_driver()
-    # 进入到选择device页
+    # Go to device page
     windowsTrack.goto_selectdevice_page()
-    #输入Device
+    # Input device name
     windowsTrack.action_selectdevice_page()
-    #选择protect=protect
-    setting = driver.find_element_by_css_selector("select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[0].SelectedValue']")
-    Select(setting).select_by_index("1")
-    print(testDeviceName+' '+sys._getframe().f_code.co_name+' Configure finish')
-    # #进入softphone配置页
-    driver.find_element_by_xpath("//input[@value='NEXT >']").click()
-    #勾选下载JD
-        # Go to PC software page
+    # Configure the protece=Yes
+    config_the_protect(driver)
+    # Print the configured finish message
+    print_the_config_finish(testDeviceName, currentTestcaseName)
+    # Go to the PC software page
     goto_pcsoftware_page(driver)
-     ## 选择1个随机的Preferred softphone
-    setting = driver.find_element_by_css_selector(
-        "select[name='PcSoftwareViewModel.DeploymentOptionGroups[2].DeploymentOptions[19].Value']")
-    if Select(setting):
-        select = Select(setting)
-        selectlen = len(select.options)
-        Select(setting).select_by_index(random.randint(0, selectlen - 1))
-    #跳转到.msi下载页面
-    driver.find_element_by_xpath("//input[@value='NEXT >']").click()
-    #跳转到Summary下载页面
-    driver.find_element_by_xpath("//input[@value='NEXT >']").click()
-    # 下载Summary
-    driver.find_element_by_xpath("//input[@value='DOWNLOAD SUMMARY']").click()
-    # 重命名summary文件
+     ## Configure a random softphone
+    config_random_sp(driver)
+    # Download Jabra Direct
+    action_download_jd(driver)
+    # Go to summary page
+    goto_summary_page_and_download(driver)
+    # Download summary
     rename_summary(currentTestcaseName, file, testDeviceName)
-    # 返回到下载页
-    driver.find_element_by_xpath("//input[@value='< PREVIOUS']").click()
-    # 勾选同意协议
-    driver.find_element_by_id('eulaOk').click()
-    # #点击下载
-    driver.find_element_by_id('download64bit').click()
-    #调用重命名函数
-    rename_m(driver, file, currentTestcaseName, testDeviceName)
+    # Go back to download page
+    action_download_msi(driver)
+    # Rename msi file
+    rename_msi_file(driver, file, currentTestcaseName, testDeviceName)
+
 
 
 def testcase3965_32b():
@@ -90,47 +75,28 @@ def testcase3965_32b():
     currentTestcaseName = sys._getframe().f_code.co_name
     #Configure driver
     driver, windowsTrack,testDeviceName,file = setup_driver()
-    # 进入到选择device页
+    # Go to device page
     windowsTrack.goto_selectdevice_page()
-    #输入Device
+    # Input device name
     windowsTrack.action_selectdevice_page()
-
-    #选择protect=protect
-    setting = driver.find_element_by_css_selector(
-        "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[0].SelectedValue']")
-    Select(setting).select_by_index("1")
-    print(testDeviceName+' '+sys._getframe().f_code.co_name+' Configure finish')
-    # #进入softphone配置页
-    driver.find_element_by_xpath("//input[@value='NEXT >']").click()
-    #勾选下载JD
-        # Go to PC software page
+    # Configure the protece=Yes
+    config_the_protect(driver)
+    # Print the configured finish message
+    print_the_config_finish(testDeviceName, currentTestcaseName)
+    # Go to the PC software page
     goto_pcsoftware_page(driver)
-     ## 选择1个随机的Preferred softphone
-    setting = driver.find_element_by_css_selector(
-        "select[name='PcSoftwareViewModel.DeploymentOptionGroups[2].DeploymentOptions[19].Value']")
-    if Select(setting):
-        select = Select(setting)
-        selectlen = len(select.options)
-        Select(setting).select_by_index(random.randint(0, selectlen - 1))
-    #跳转到.msi下载页面
-    driver.find_element_by_xpath("//input[@value='NEXT >']").click()
-    #跳转到Summary下载页面
-    driver.find_element_by_xpath("//input[@value='NEXT >']").click()
-    # 下载Summary
-    driver.find_element_by_xpath("//input[@value='DOWNLOAD SUMMARY']").click()
-    # 重命名summary文件
+     ## Configure a random softphone
+    config_random_sp(driver)
+    # Download Jabra Direct
+    action_download_jd(driver)
+    # Go to summary page
+    goto_summary_page_and_download(driver)
+    # Download summary
     rename_summary(currentTestcaseName, file, testDeviceName)
-    # 返回到下载页
-    driver.find_element_by_xpath("//input[@value='< PREVIOUS']").click()
-    # 勾选同意协议
-    driver.find_element_by_id('eulaOk').click()
-    # #点击下载
-    driver.find_element_by_id('download32bit').click()
-    #调用重命名函数
-    rename_m(driver, file, currentTestcaseName)
-    print(testDeviceName+ ' testcase3965_32bit download successful')
-    print('\n')
-
+    # Go back to download page
+    action_download_msi_32bit(driver)
+    # Rename msi file
+    rename_msi_file_32bit(driver, file, currentTestcaseName, testDeviceName)
 
 def testcase3966():
     currentTestcaseName = sys._getframe().f_code.co_name
@@ -139,7 +105,7 @@ def testcase3966():
     windowsTrack.goto_selectdevice_page()
     #输入Device
     windowsTrack.action_selectdevice_page()
-    #选择FW
+    # Select latest FW
     fw_select = driver.find_element_by_css_selector(
         "select[name='configurationViewModel.Devices[0].SelectedFirmware.Id']")
     Select(fw_select).select_by_index("1")
@@ -171,7 +137,7 @@ def testcase3966():
     # #点击下载
     driver.find_element_by_id('download64bit').click()
     #调用重命名函数
-    rename_m(driver, file, currentTestcaseName)
+    rename_msi_file(driver, file, currentTestcaseName)
     print(testDeviceName+ ' testcase3966 download successful')
     print('\n')
 
@@ -229,7 +195,7 @@ def testcase3966_32b():
     # #点击下载
     driver.find_element_by_id('download32bit').click()
     #调用重命名函数
-    rename_m(driver, summary, renamesummary, testDeviceName)
+    rename_msi_file(driver, summary, renamesummary, testDeviceName)
     print(testDeviceName+ ' testcase3966_32bit download successful')
     print('\n')
 
@@ -287,7 +253,7 @@ def testcase3968():
     # #点击下载
     driver.find_element_by_id('download64bit').click()
     #调用重命名函数
-    rename_m(driver, summary, renamesummary)
+    rename_msi_file(driver, summary, renamesummary)
     print(testDeviceName+ ' testcase3968 download successful')
     print('\n')
 
@@ -420,7 +386,7 @@ def testcase3969():
     # #点击下载
     driver.find_element_by_id('download64bit').click()
     #调用重命名函数
-    rename_m(driver, summary, renamesummary)
+    rename_msi_file(driver, summary, renamesummary)
     print(testDeviceName+ ' testcase3969 download successful')
     print('\n')
 
@@ -582,7 +548,7 @@ def testcase4090():
     # #点击下载
     driver.find_element_by_id('download64bit').click()
     #调用重命名函数
-    rename_m(driver, summary, renamesummary)
+    rename_msi_file(driver, summary, renamesummary)
     print(testDeviceName+ ' testcase4090 download successful')
     print('\n')
 
@@ -754,7 +720,7 @@ def testcase4090_32b():
     # #点击下载
     driver.find_element_by_id('download32bit').click()
     #调用重命名函数
-    rename_m(driver, summary, renamesummary)
+    rename_msi_file(driver, summary, renamesummary)
     print(testDeviceName+ ' testcase4090_32b download successful')
     print('\n')
 
@@ -809,7 +775,7 @@ def testcase4128_1():
     # #点击下载
     driver.find_element_by_id('download64bit').click()
     #调用重命名函数
-    rename_m(driver, summary, renamesummary)
+    rename_msi_file(driver, summary, renamesummary)
     print(testDeviceName+ ' testcase4128_1 download successful')
     print('\n')
 
@@ -863,7 +829,7 @@ def testcase4128_2():
     # #点击下载
     driver.find_element_by_id('download64bit').click()
     #调用重命名函数
-    rename_m(driver, summary, renamesummary)
+    rename_msi_file(driver, summary, renamesummary)
     print(testDeviceName+ ' testcase4128_2 download successful')
     print('\n')
 
@@ -988,7 +954,7 @@ def testcase4128_3():
     # #点击下载
     driver.find_element_by_id('download64bit').click()
     #调用重命名函数
-    rename_m(driver, summary, renamesummary)
+    rename_msi_file(driver, summary, renamesummary)
     print(testDeviceName+ ' testcase4128_3 download successful')
     print('\n')
 
@@ -1037,7 +1003,7 @@ def testcase4153_1():
     # #点击下载
     driver.find_element_by_id('download64bit').click()
     #调用重命名函数
-    rename_m(driver, summary, renamesummary)
+    rename_msi_file(driver, summary, renamesummary)
     print(testDeviceName+ ' testcase4153_1 download successful')
     print('\n')
 
@@ -1102,7 +1068,7 @@ def testcase4153_2():
         # #点击下载
         driver.find_element_by_id('download64bit').click()
         #调用重命名函数
-        rename_m(driver, summary, renamesummary)
+        rename_msi_file(driver, summary, renamesummary)
         print(testDeviceName+ ' testcase4153 '+selectedFW+' download successful')
         print('\n')
         case4153_3=testcase4153_3()
@@ -1160,7 +1126,7 @@ def testcase4153_3():
         # #点击下载
         driver.find_element_by_id('download64bit').click()
         #调用重命名函数
-        rename_m(driver, summary, renamesummary)
+        rename_msi_file(driver, summary, renamesummary)
         print(testDeviceName+ ' testcase4153 '+selectedFW+' download successful')
         print('\n')
     else:
@@ -1214,7 +1180,7 @@ def testcase5509():
     # #点击下载
     driver.find_element_by_id('download64bit').click()
     #调用重命名函数
-    rename_m(driver, summary, renamesummary)
+    rename_msi_file(driver, summary, renamesummary)
     print(testDeviceName+ ' testcase5509 download successful')
     print('\n')
 
@@ -1262,7 +1228,7 @@ def testcase5509_32b():
     # #点击下载
     driver.find_element_by_id('download32bit').click()
     #调用重命名函数
-    rename_m(driver, summary, renamesummary)
+    rename_msi_file(driver, summary, renamesummary)
     print(testDeviceName+ ' testcase5509_32bit download successful')
     print('\n')
 
@@ -1352,7 +1318,7 @@ def testcase5664():
     # #点击下载
     driver.find_element_by_id('download64bit').click()
     #调用重命名函数
-    rename_m(driver, summary, renamesummary)
+    rename_msi_file(driver, summary, renamesummary)
     print(testDeviceName+ ' testcase5664 download successful')
     print('\n')
 
@@ -1442,7 +1408,7 @@ def testcase5664_32b():
     # #点击下载
     driver.find_element_by_id('download32bit').click()
     #调用重命名函数
-    rename_m(driver, summary, renamesummary)
+    rename_msi_file(driver, summary, renamesummary)
     print(testDeviceName+ ' testcase5664_32bit download successful')
     print('\n')
 
@@ -1572,7 +1538,7 @@ def testcase5665():
     # #点击下载
     driver.find_element_by_id('download64bit').click()
     #调用重命名函数
-    rename_m(driver, summary, renamesummary)
+    rename_msi_file(driver, summary, renamesummary)
     print(testDeviceName+ ' testcase5665 download successful')
     print('\n')
 
@@ -1698,7 +1664,7 @@ def testcase5665_32b():
     # #点击下载
     driver.find_element_by_id('download32bit').click()
     #调用重命名函数
-    rename_m(driver, summary, renamesummary)
+    rename_msi_file(driver, summary, renamesummary)
     print(testDeviceName+ ' testcase5665_32bit download successful')
     print('\n')
 
@@ -1848,7 +1814,7 @@ def testcase7195():
     # #点击下载
     driver.find_element_by_id('download64bit').click()
     #调用重命名函数
-    rename_m(driver, summary, renamesummary)
+    rename_msi_file(driver, summary, renamesummary)
     print(testDeviceName+ ' testcase7195 download successful')
     print('\n')
 
@@ -1985,7 +1951,7 @@ def testcase7196():
     # #点击下载
     driver.find_element_by_id('download64bit').click()
     #调用重命名函数
-    rename_m(driver, summary, renamesummary)
+    rename_msi_file(driver, summary, renamesummary)
     print(testDeviceName+ ' testcase7196 download successful')
     print('\n')
 
@@ -2050,7 +2016,7 @@ def testcase10312w():
             # #点击下载
             driver.find_element_by_id('download64bit').click()
             # 调用重命名函数
-            rename_m(driver, summary, renamesummary)
+            rename_msi_file(driver, summary, renamesummary)
             i=i+1
 
         except:
@@ -2109,7 +2075,7 @@ def testcase10449():
         # #点击下载
         driver.find_element_by_id('download64bit').click()
         #调用重命名函数
-        rename_m(driver, summary, renamesummary)
+        rename_msi_file(driver, summary, renamesummary)
         print(testDeviceName+ ' testcase10449 '+selectedFW+' download successful')
         print('\n')
     else:

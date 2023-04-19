@@ -1,12 +1,12 @@
 import os
 import sys
+import random
 from time import sleep
-
 import urllib3
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-
+from selenium.webdriver.support.select import Select
 
 class BaseConfigure(object):
     def __init__(self, driver):
@@ -38,7 +38,7 @@ class InitLinuxTrack(BaseConfigure):
         self.click(*button)
 
     def select_device(self):
-        fo = open("device.txt", "rt")
+        fo = open("../config/device.txt", "rt")
         test_device_name = fo.read()
         device = (By.XPATH, "//label[contains(text(),'" + test_device_name + "')]")
         self.click(*device)
@@ -62,7 +62,7 @@ class InitWindowsTrack(BaseConfigure):
 
     def action_selectdevice_page(self):
         """ Select device and click next button """
-        fo = open("device.txt", "rt")
+        fo = open("../config/device.txt", "rt")
         test_device_name = fo.read()
         device = (By.XPATH, "//label[contains(text(),'" + test_device_name + "')]")
         self.click(*device)
@@ -72,7 +72,7 @@ class InitWindowsTrack(BaseConfigure):
 
 def browser_configure():
     """ Configure the browser"""
-    fo = open("device.txt", "rt")
+    fo = open("../config/device.txt", "rt")
     test_device_name = fo.read()
     file = get_save_dir()
     file = file.replace('\\\\', '\\')
@@ -96,11 +96,20 @@ def check_network_access():
 
 def get_save_dir():
     # 获取保存路径
-    fo = open("saveDir.txt", "rt")
+    fo = open("../config/saveDir.txt", "rt")
     saveDir = fo.read() + "/"
     saveDir = saveDir.replace('/', '\\\\')
     return saveDir
 
+def settings_default(driver):
+    # 选择默认配置
+    driver.find_element_by_xpath("//input[@value='SET ALL TO DEFAULT VALUES']").click()
+def config_the_protect(driver):
+    setting = driver.find_element_by_css_selector("select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[0].SelectedValue']")
+    Select(setting).select_by_index("1")
+
+def print_the_config_finish(testDeviceName, currentTestcaseName):
+    print(testDeviceName + ' ' + currentTestcaseName + ' Configure finish')
 
 def goto_pcsoftware_page(driver):
     # 跳转到PC Software下载页面
@@ -111,6 +120,13 @@ def action_download_jd(driver):
     # Choose JD
     driver.find_element_by_xpath("//input[@value='true']").click()
 
+def config_random_sp(driver):
+    setting = driver.find_element_by_css_selector(
+        "select[name='PcSoftwareViewModel.DeploymentOptionGroups[2].DeploymentOptions[19].Value']")
+    if Select(setting):
+        select = Select(setting)
+        selectlen = len(select.options)
+        Select(setting).select_by_index(random.randint(0, selectlen - 1))
 
 def goto_summary_page_and_download(driver):
     driver.find_element_by_xpath("//input[@value='NEXT >']").click()
@@ -129,6 +145,14 @@ def action_download_msi(driver):
     driver.find_element_by_id('download64bit').click()
 
 
+def action_download_msi_32bit(driver):
+    # 返回到下载页
+    driver.find_element_by_xpath("//input[@value='< PREVIOUS']").click()
+    # 勾选同意协议
+    driver.find_element_by_id('eulaOk').click()
+    # #点击下载
+    driver.find_element_by_id('download32bit').click()
+
 def configure_finish():
     print(os.path.basename(sys.argv[0]).split('.')[0])
 
@@ -144,6 +168,7 @@ def rename_summary(testcase, file, testDeviceName):
     except:
         os.remove(summary_rename)
         os.rename(summary, summary_rename)
+
 
 
 def rename_msi_file(self, file, testcaseName, testDeviceName):
@@ -162,16 +187,30 @@ def rename_msi_file(self, file, testcaseName, testDeviceName):
     print(testDeviceName + ' ' + testcaseName + ' download successful.')
     print('\n')
 
+def rename_msi_file_32bit(self, file, testcaseName, testDeviceName):
+    msiFile = file + '\\JabraXPRESSx86.msi'
+    msiFile_rename = file + '\\' + testcaseName + '.msi'
+    try:
+        while not os.path.exists(msiFile):
+            sleep(8)
+        os.rename(msiFile, msiFile_rename)
+        self.close()
+    except Exception as e:
+        print(e)
+        self.close()
+    print(testDeviceName + ' ' + testcaseName + ' download successful.')
+    print('\n')
 
 def setup_driver():
-    with open("device.txt", "rt") as f:
+    with open("../config/device.txt", "rt") as f:
         testDeviceName = f.read()
+
 
     # 获取文件位置并构建选项
     file = get_save_dir() + testDeviceName
     options = browser_configure()
 
-    with open("saveDir.txt", "rt") as f:
+    with open("../config/saveDir.txt", "rt") as f:
         file = f.read()
         file = file.replace('/', '\\') + '\\' + testDeviceName
 

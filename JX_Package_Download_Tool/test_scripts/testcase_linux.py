@@ -7,7 +7,6 @@ import os
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-from Common.function_configure import get_save_dir
 from test_scripts.testcase_action import browser_configure, get_save_dir
 from test_scripts.testcase_element_exist import isElementExist, isInputExist, isUploadButton
 
