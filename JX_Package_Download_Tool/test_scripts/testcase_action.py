@@ -8,6 +8,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
 
+from test_scripts.testcase_element_exist import isElementExist, isInputExist, isUploadButton
+
+
 class BaseConfigure(object):
     def __init__(self, driver):
         self.driver = driver
@@ -101,15 +104,229 @@ def get_save_dir():
     saveDir = saveDir.replace('/', '\\\\')
     return saveDir
 
+
 def settings_default(driver):
     # 选择默认配置
     driver.find_element_by_xpath("//input[@value='SET ALL TO DEFAULT VALUES']").click()
-def config_the_protect(driver):
-    setting = driver.find_element_by_css_selector("select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[0].SelectedValue']")
+
+
+def config_the_protect_as_yes(driver):
+    setting = driver.find_element_by_css_selector(
+        "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[0].SelectedValue']")
     Select(setting).select_by_index("1")
+
+
+def config_the_protect_as_no(driver):
+    setting = driver.find_element_by_css_selector(
+        "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[0].SelectedValue']")
+    Select(setting).select_by_index("2")
+
+
+def config_the_latest_FW(driver):
+    fw_select = driver.find_element_by_css_selector(
+        "select[name='configurationViewModel.Devices[0].SelectedFirmware.Id']")
+    Select(fw_select).select_by_index("1")
+    driver.find_element_by_css_selector("input[name='configurationViewModel.Devices[0].Downgrade']").click()
+
+def config_the_FW_as_manage_by_jabra(driver):
+    fw_select = driver.find_element_by_css_selector(
+        "select[name='configurationViewModel.Devices[0].SelectedFirmware.Id']")
+    Select(fw_select).select_by_value('2147457433')
+
+def config_settings_as_random(driver):
+    set_table = driver.find_element_by_class_name('settings-table')
+    td_content = set_table.find_elements_by_tag_name('tr')
+    table_tr_number = len(td_content)
+    i = 1
+    while i < table_tr_number:
+        flag = isElementExist(driver,
+                              "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                                  i) + "].SelectedValue']")
+        if flag:
+            setting = driver.find_element_by_css_selector(
+                "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                    i) + "].SelectedValue']")
+            if Select(setting):
+                select = Select(setting)
+                selectlen = len(select.options)
+                Select(setting).select_by_index(random.randint(1, selectlen - 1))
+                i = i + 1
+                continue
+        elif isInputExist(driver,
+                          "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                              i) + "].SelectedValue']"):
+            try:
+                driver.find_element_by_css_selector(
+                    "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                        i) + "].SelectedValue']").send_keys('2021')
+            except:
+                i = i + 1
+                continue
+            i = i + 1
+            continue
+        else:
+            i = i + 1
+            continue
+
+    nextButton = driver.find_element_by_xpath("//input[@value='NEXT >']")
+    isNextButtonEnable = nextButton.is_enabled()
+
+    if isNextButtonEnable == False:
+        i = 0
+        while i < table_tr_number:
+            flag = isElementExist(driver,
+                                  "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                                      i) + "].SelectedValue']")
+            if flag:
+                setting = driver.find_element_by_css_selector(
+                    "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                        i) + "].SelectedValue']")
+                if Select(setting):
+                    i = i + 1
+                    continue
+            elif isInputExist(driver,
+                              "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                                  i) + "].SelectedValue']"):
+                try:
+                    driver.find_element_by_css_selector(
+                        "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                            i) + "].SelectedValue']").send_keys('2021')
+                    i = i + 1
+                    continue
+                except Exception as e:
+                    i = i + 1
+                    continue
+            elif isUploadButton(driver, "input[value='Upload']"):
+                try:
+                    driver.find_element_by_css_selector(
+                        "input[id='configurationViewModel.Devices[0].SelectedFirmware.Settings[36].fileinputId']").send_keys(
+                        "C:\\download\\bat.bmp")
+                    sleep(5)
+                    i = i + 1
+                    continue
+                except Exception as e:
+                    print(e)
+            else:
+                i = i + 1
+                continue
+
+def config_settings_as_not_default(driver):
+    set_table = driver.find_element_by_class_name('settings-table')
+    td_content = set_table.find_elements_by_tag_name('tr')
+    table_tr_number = len(td_content)
+
+    i = 1
+    while i < table_tr_number:
+        flag = isElementExist(driver,
+                              "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                                  i) + "].SelectedValue']")
+        if flag:
+            setting = driver.find_element_by_css_selector(
+                "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                    i) + "].SelectedValue']")
+            if Select(setting):
+                select = Select(setting)
+                selectlen = len(select.options)
+                Select(setting).select_by_index(random.randint(1, selectlen - 1))
+                default = "*"
+                selectedValue = Select(setting).first_selected_option.text
+                chooseNotDefault = default in selectedValue
+                while chooseNotDefault:
+                    Select(setting).select_by_index(random.randint(1, selectlen - 1))
+                    selectedValue = Select(setting).first_selected_option.text
+                    chooseNotDefault = default in selectedValue
+                i = i + 1
+                continue
+            elif isInputExist(driver,
+                              "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                                  i) + "].SelectedValue']"):
+                getInputName = driver.find_element_by_css_selector(
+                    "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                        i) + "].SelectedValue']")
+                nameornumber = getInputName.get_attribute('data-val-regex')
+                if nameornumber == '[\s\S]':
+                    try:
+                        driver.find_element_by_css_selector(
+                            "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                                i) + "].SelectedValue']").send_keys('J2½§!"@#£$¤*%&/\<>[]()=?')
+                        i = i + 1
+                        continue
+                    except:
+                        i = i + 1
+                        continue
+                else:
+                    try:
+                        driver.find_element_by_css_selector(
+                            "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                                i) + "].SelectedValue']").send_keys('1*#959932881')
+                        i = i + 1
+                        continue
+                    except:
+                        i = i + 1
+                        continue
+        else:
+            i = i + 1
+            continue
+    # 判断按钮是否可用
+    nextButton = driver.find_element_by_xpath("//input[@value='NEXT >']")
+    isNextButtonEnable = nextButton.is_enabled()
+    if isNextButtonEnable == False:
+        i = 0
+        while i < table_tr_number:
+            flag = isElementExist(driver,
+                                  "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                                      i) + "].SelectedValue']")
+            if flag:
+                setting = driver.find_element_by_css_selector(
+                    "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                        i) + "].SelectedValue']")
+                if Select(setting):
+                    i = i + 1
+                    continue
+            elif isInputExist(driver,
+                              "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                                  i) + "].SelectedValue']"):
+                getInputName = driver.find_element_by_css_selector(
+                    "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                        i) + "].SelectedValue']")
+                nameornumber = getInputName.get_attribute('data-val-regex')
+                if nameornumber == '[\s\S]':
+                    try:
+                        driver.find_element_by_css_selector(
+                            "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                                i) + "].SelectedValue']").send_keys('J2½§!"@#£$¤*%&/\<>[]()=?')
+                        i = i + 1
+                        continue
+                    except:
+                        i = i + 1
+                        continue
+                else:
+                    try:
+                        driver.find_element_by_css_selector(
+                            "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                                i) + "].SelectedValue']").send_keys('1*#959932881')
+                        i = i + 1
+                        continue
+                    except:
+                        i = i + 1
+                        continue
+            elif isUploadButton(driver, "input[value='Upload']"):
+                try:
+                    driver.find_element_by_css_selector(
+                        "input[id='configurationViewModel.Devices[0].SelectedFirmware.Settings[36].fileinputId']").send_keys(
+                        "C:\\download\\bat.bmp")
+                    sleep(5)
+                    i = i + 1
+                    continue
+                except Exception as e:
+                    print(e)
+            else:
+                i = i + 1
+                continue
 
 def print_the_config_finish(testDeviceName, currentTestcaseName):
     print(testDeviceName + ' ' + currentTestcaseName + ' Configure finish')
+
 
 def goto_pcsoftware_page(driver):
     # 跳转到PC Software下载页面
@@ -120,13 +337,16 @@ def action_download_jd(driver):
     # Choose JD
     driver.find_element_by_xpath("//input[@value='true']").click()
 
+
 def config_random_sp(driver):
+    """ Configure the SP randomly"""
     setting = driver.find_element_by_css_selector(
         "select[name='PcSoftwareViewModel.DeploymentOptionGroups[2].DeploymentOptions[19].Value']")
     if Select(setting):
         select = Select(setting)
         selectlen = len(select.options)
         Select(setting).select_by_index(random.randint(0, selectlen - 1))
+
 
 def goto_summary_page_and_download(driver):
     driver.find_element_by_xpath("//input[@value='NEXT >']").click()
@@ -153,6 +373,7 @@ def action_download_msi_32bit(driver):
     # #点击下载
     driver.find_element_by_id('download32bit').click()
 
+
 def configure_finish():
     print(os.path.basename(sys.argv[0]).split('.')[0])
 
@@ -168,7 +389,6 @@ def rename_summary(testcase, file, testDeviceName):
     except:
         os.remove(summary_rename)
         os.rename(summary, summary_rename)
-
 
 
 def rename_msi_file(self, file, testcaseName, testDeviceName):
@@ -187,6 +407,7 @@ def rename_msi_file(self, file, testcaseName, testDeviceName):
     print(testDeviceName + ' ' + testcaseName + ' download successful.')
     print('\n')
 
+
 def rename_msi_file_32bit(self, file, testcaseName, testDeviceName):
     msiFile = file + '\\JabraXPRESSx86.msi'
     msiFile_rename = file + '\\' + testcaseName + '.msi'
@@ -201,10 +422,10 @@ def rename_msi_file_32bit(self, file, testcaseName, testDeviceName):
     print(testDeviceName + ' ' + testcaseName + ' download successful.')
     print('\n')
 
+
 def setup_driver():
     with open("../config/device.txt", "rt") as f:
         testDeviceName = f.read()
-
 
     # 获取文件位置并构建选项
     file = get_save_dir() + testDeviceName
