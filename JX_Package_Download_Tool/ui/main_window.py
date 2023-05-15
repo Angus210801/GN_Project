@@ -197,7 +197,6 @@ class Ui_JX_FW(object):
                 Ui_JX_FW.excuteTestCase.append('case10312w')
         else:
             Ui_JX_FW.excuteTestCase.append(testcase)
-        # print(Ui_JX_FW.excuteTestCase)
 
     # Define the download function - - Start the new Thread.
     def startNewThread(self):

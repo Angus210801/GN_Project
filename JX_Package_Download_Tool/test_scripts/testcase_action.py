@@ -1,6 +1,9 @@
 import os
+import re
+import shutil
 import sys
 import random
+import zipfile
 from time import sleep
 import urllib3
 from selenium import webdriver
@@ -132,6 +135,21 @@ def config_the_FW_as_manage_by_jabra(driver):
     fw_select = driver.find_element_by_css_selector(
         "select[name='configurationViewModel.Devices[0].SelectedFirmware.Id']")
     Select(fw_select).select_by_value('2147457433')
+
+def config_the_FW_as_lower_than_latest(driver):
+    fw_select = driver.find_element_by_css_selector(
+        "select[name='configurationViewModel.Devices[0].SelectedFirmware.Id']")
+    fwList = Select(fw_select)
+    fwNum = len(fwList.options)
+    i = 3
+    if i != fwNum - 1:
+        i = fwNum - 1
+        Select(fw_select).select_by_index(i)
+        driver.find_element_by_css_selector("input[name='configurationViewModel.Devices[0].Downgrade']").click()
+
+
+def config_allow_downgrade(driver):
+    driver.find_element_by_css_selector("input[name='configurationViewModel.Devices[0].Downgrade']").click()
 
 def config_settings_as_random(driver):
     set_table = driver.find_element_by_class_name('settings-table')
@@ -324,8 +342,119 @@ def config_settings_as_not_default(driver):
                 i = i + 1
                 continue
 
-def print_the_config_finish(testDeviceName, currentTestcaseName):
-    print(testDeviceName + ' ' + currentTestcaseName + ' Configure finish')
+def config_settings_as_MAX(driver):
+    set_table = driver.find_element_by_class_name('settings-table')
+    td_content = set_table.find_elements_by_tag_name('tr')
+    table_tr_number = len(td_content)
+    i = 1
+    while i < table_tr_number:
+        flag = isElementExist(driver,
+                              "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                                  i) + "].SelectedValue']")
+        if flag:
+            setting = driver.find_element_by_css_selector(
+                "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                    i) + "].SelectedValue']")
+            if Select(setting):
+                select = Select(setting)
+                selectlen = len(select.options)
+                Select(setting).select_by_index(selectlen - 1)
+                i = i + 1
+                continue
+        elif isInputExist(driver,
+                          "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                              i) + "].SelectedValue']"):
+            try:
+                driver.find_element_by_css_selector(
+                    "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                        i) + "].SelectedValue']").send_keys('2023')
+                i = i + 1
+                continue
+            except:
+                i = i + 1
+                continue
+        else:
+            i = i + 1
+            continue
+
+def config_settings_as_Min(driver):
+    set_table = driver.find_element_by_class_name('settings-table')
+    td_content = set_table.find_elements_by_tag_name('tr')
+    table_tr_number = len(td_content)
+
+    i = 1
+    while i < table_tr_number:
+        flag = isElementExist(driver,
+                              "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                                  i) + "].SelectedValue']")
+        if flag:
+            setting = driver.find_element_by_css_selector(
+                "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                    i) + "].SelectedValue']")
+            if Select(setting):
+                Select(setting).select_by_index("1")
+                i = i + 1
+                continue
+        elif isInputExist(driver,
+                          "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                              i) + "].SelectedValue']"):
+            try:
+                driver.find_element_by_css_selector(
+                    "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                        i) + "].SelectedValue']").send_keys('2020')
+                i = i + 1
+                continue
+            except:
+                i = i + 1
+                continue
+        else:
+            i = i + 1
+            continue
+
+    # 判断按钮是否可用
+    nextButton = driver.find_element_by_xpath("//input[@value='NEXT >']")
+    isNextButtonEnable = nextButton.is_enabled()
+    if isNextButtonEnable == False:
+        i = 0
+        while i < table_tr_number:
+            flag = isElementExist(driver,
+                                  "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                                      i) + "].SelectedValue']")
+            if flag:
+                setting = driver.find_element_by_css_selector(
+                    "select[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                        i) + "].SelectedValue']")
+                if Select(setting):
+                    i = i + 1
+                    continue
+            elif isInputExist(driver,
+                              "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                                  i) + "].SelectedValue']"):
+                try:
+                    driver.find_element_by_css_selector(
+                        "input[name='configurationViewModel.Devices[0].SelectedFirmware.Settings[" + str(
+                            i) + "].SelectedValue']").send_keys('2021')
+                    i = i + 1
+                    continue
+                except Exception as e:
+                    i = i + 1
+                    continue
+            elif isUploadButton(driver, "input[value='Upload']"):
+                try:
+                    driver.find_element_by_css_selector(
+                        "input[id='configurationViewModel.Devices[0].SelectedFirmware.Settings[36].fileinputId']").send_keys(
+                        "C:\\download\\bat.bmp")
+                    sleep(5)
+                    i = i + 1
+                    continue
+                except Exception as e:
+                    print(e)
+            else:
+                i = i + 1
+                continue
+
+def print_the_config_finish(currentTestcaseName, testDeviceName):
+    print(testDeviceName + ' ' +currentTestcaseName  + ' Configure finish')
 
 
 def goto_pcsoftware_page(driver):
@@ -357,22 +486,31 @@ def goto_summary_page_and_download(driver):
 
 
 def action_download_msi(driver):
-    # 返回到下载页
+    # Go back to download zip package
     driver.find_element_by_xpath("//input[@value='< PREVIOUS']").click()
-    # 勾选同意协议
+    # check the agreement
     driver.find_element_by_id('eulaOk').click()
-    # #点击下载
+    # Click download
     driver.find_element_by_id('download64bit').click()
 
 
 def action_download_msi_32bit(driver):
-    # 返回到下载页
+    # Go back to download zip package
     driver.find_element_by_xpath("//input[@value='< PREVIOUS']").click()
-    # 勾选同意协议
+    # check the agreement
     driver.find_element_by_id('eulaOk').click()
-    # #点击下载
+    # Click download
     driver.find_element_by_id('download32bit').click()
 
+def action_download_zip_file(driver):
+    # Go back to download zip package
+    driver.find_element_by_xpath("//input[@value='< PREVIOUS']").click()
+    # check the agreement
+    driver.find_element_by_id('eulaOk').click()
+    # Input the website
+    driver.find_element_by_css_selector("input[name='localServerUrl']").send_keys('http://my.gn.com/')
+    # Click download
+    driver.find_element_by_id('downloadZip').click()
 
 def configure_finish():
     print(os.path.basename(sys.argv[0]).split('.')[0])
@@ -385,7 +523,7 @@ def rename_summary(testcase, file, testDeviceName):
         while not os.path.exists(summary):
             sleep(8)
         os.rename(summary, summary_rename)
-        print(testDeviceName + testcase + ' summary download successful')
+        print(testDeviceName + ' ' + testcase + ' summary download successful')
     except:
         os.remove(summary_rename)
         os.rename(summary, summary_rename)
@@ -422,8 +560,27 @@ def rename_msi_file_32bit(self, file, testcaseName, testDeviceName):
     print(testDeviceName + ' ' + testcaseName + ' download successful.')
     print('\n')
 
+def rename_linux_zip(self, file, testcaseName, testDeviceName):
+    testcaseName = testcaseName[len('testcase'):]
+    zipFile = file + '\\JabraXpressFiles.zip'
+    zipFile_rename = file + '\\' + testcaseName
+    try:
+        while os.path.exists(zipFile)==False:
+            sleep(10)
+        with zipfile.ZipFile(zipFile, "r") as zip_ref:
+            zip_ref.extractall(file)
+        local_server_dir = file +'\\Files_to_place_on_local_server'
+        os.rename(local_server_dir, zipFile_rename)
+        shutil.rmtree(file + '\\Files_to_install_on_end-user_computers')
+        os.remove(file + '\\JabraXpressFiles.zip')
+        os.remove(file + '\\readme.txt')
+        print(testDeviceName + ' ' + testcaseName + '  download successful')
+        self.close()
 
-def setup_driver():
+    except Exception as e:
+        print(e)
+
+def setup_driver_windows():
     with open("../config/device.txt", "rt") as f:
         testDeviceName = f.read()
 
@@ -444,3 +601,24 @@ def setup_driver():
 
     windowsTrack = InitWindowsTrack(driver)
     return driver, windowsTrack, testDeviceName, file
+
+def setup_driver_linux(testcasename):
+    with open("../config/device.txt", "rt") as f:
+        testDeviceName = f.read()
+
+    # 获取文件位置并构建选项
+    options = browser_configure()
+
+    with open("../config/saveDir.txt", "rt") as f:
+        file = f.read()
+        file = file.replace('/', '\\') + '\\' + testDeviceName+'\\'+testcasename
+
+    # 创建并返回WebDriver对象和windowsPage对象
+    driver = webdriver.Chrome(chrome_options=options)
+    driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
+    params = {'cmd': 'Page.setDownloadBehavior',
+              'params': {'behavior': 'allow', 'downloadPath': file}}
+    driver.execute("send_command", params=params)
+
+    linuxtrack = InitLinuxTrack(driver)
+    return driver, linuxtrack, testDeviceName, file
