@@ -1,5 +1,4 @@
 import os
-import re
 import shutil
 import sys
 import random
@@ -131,10 +130,12 @@ def config_the_latest_FW(driver):
     Select(fw_select).select_by_index("1")
     driver.find_element_by_css_selector("input[name='configurationViewModel.Devices[0].Downgrade']").click()
 
+
 def config_the_FW_as_manage_by_jabra(driver):
     fw_select = driver.find_element_by_css_selector(
         "select[name='configurationViewModel.Devices[0].SelectedFirmware.Id']")
     Select(fw_select).select_by_value('2147457433')
+
 
 def config_the_FW_as_lower_than_latest(driver):
     fw_select = driver.find_element_by_css_selector(
@@ -150,6 +151,7 @@ def config_the_FW_as_lower_than_latest(driver):
 
 def config_allow_downgrade(driver):
     driver.find_element_by_css_selector("input[name='configurationViewModel.Devices[0].Downgrade']").click()
+
 
 def config_settings_as_random(driver):
     set_table = driver.find_element_by_class_name('settings-table')
@@ -227,6 +229,7 @@ def config_settings_as_random(driver):
             else:
                 i = i + 1
                 continue
+
 
 def config_settings_as_not_default(driver):
     set_table = driver.find_element_by_class_name('settings-table')
@@ -342,6 +345,7 @@ def config_settings_as_not_default(driver):
                 i = i + 1
                 continue
 
+
 def config_settings_as_MAX(driver):
     set_table = driver.find_element_by_class_name('settings-table')
     td_content = set_table.find_elements_by_tag_name('tr')
@@ -453,8 +457,24 @@ def config_settings_as_Min(driver):
                 i = i + 1
                 continue
 
+def config_display_lanuage_settings_for_Engage75(driver):
+    '''
+    Engage75 has 4 options for language settings
+    Update device to firmware version	5.11.0
+    Language pack
+    Display language
+    Voice language pack
+    Voice language
+    '''
+    print("Start config_lanuage_settings_for_Engage75")
+    language_pack = driver.find_element_by_css_selector(
+        "select[name='configurationViewModel.Devices[0].SelectedFirmware.RegionSettings.SelectedRegionId']")
+    Select(language_pack).select_by_index("1")
+
+
+
 def print_the_config_finish(currentTestcaseName, testDeviceName):
-    print(testDeviceName + ' ' +currentTestcaseName  + ' Configure finish')
+    print(testDeviceName + ' ' + currentTestcaseName + ' Configure finish')
 
 
 def goto_pcsoftware_page(driver):
@@ -502,6 +522,7 @@ def action_download_msi_32bit(driver):
     # Click download
     driver.find_element_by_id('download32bit').click()
 
+
 def action_download_zip_file(driver):
     # Go back to download zip package
     driver.find_element_by_xpath("//input[@value='< PREVIOUS']").click()
@@ -511,6 +532,7 @@ def action_download_zip_file(driver):
     driver.find_element_by_css_selector("input[name='localServerUrl']").send_keys('http://my.gn.com/')
     # Click download
     driver.find_element_by_id('downloadZip').click()
+
 
 def configure_finish():
     print(os.path.basename(sys.argv[0]).split('.')[0])
@@ -560,16 +582,17 @@ def rename_msi_file_32bit(self, file, testcaseName, testDeviceName):
     print(testDeviceName + ' ' + testcaseName + ' download successful.')
     print('\n')
 
+
 def rename_linux_zip(self, file, testcaseName, testDeviceName):
     testcaseName = testcaseName[len('testcase'):]
     zipFile = file + '\\JabraXpressFiles.zip'
     zipFile_rename = file + '\\' + testcaseName
     try:
-        while os.path.exists(zipFile)==False:
+        while os.path.exists(zipFile) == False:
             sleep(10)
         with zipfile.ZipFile(zipFile, "r") as zip_ref:
             zip_ref.extractall(file)
-        local_server_dir = file +'\\Files_to_place_on_local_server'
+        local_server_dir = file + '\\Files_to_place_on_local_server'
         os.rename(local_server_dir, zipFile_rename)
         shutil.rmtree(file + '\\Files_to_install_on_end-user_computers')
         os.remove(file + '\\JabraXpressFiles.zip')
@@ -579,6 +602,7 @@ def rename_linux_zip(self, file, testcaseName, testDeviceName):
 
     except Exception as e:
         print(e)
+
 
 def setup_driver_windows():
     with open("../config/device.txt", "rt") as f:
@@ -602,6 +626,7 @@ def setup_driver_windows():
     windowsTrack = InitWindowsTrack(driver)
     return driver, windowsTrack, testDeviceName, file
 
+
 def setup_driver_linux(testcasename):
     with open("../config/device.txt", "rt") as f:
         testDeviceName = f.read()
@@ -611,7 +636,7 @@ def setup_driver_linux(testcasename):
 
     with open("../config/saveDir.txt", "rt") as f:
         file = f.read()
-        file = file.replace('/', '\\') + '\\' + testDeviceName+'\\'+testcasename
+        file = file.replace('/', '\\') + '\\' + testDeviceName + '\\' + testcasename
 
     # 创建并返回WebDriver对象和windowsPage对象
     driver = webdriver.Chrome(chrome_options=options)
