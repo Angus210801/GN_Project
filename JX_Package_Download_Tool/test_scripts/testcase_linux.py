@@ -24,11 +24,11 @@ Group02 :FW Update & Settings Configure case:
     7556 JX-ThinC:Install a ZIP file on end user environment with a later FW and set all settings set to default.
 
 Group03 :Prepare package for 01:
-    16990p: use 7556p package.
-    16991p: use 7556p package.
-    16992p: use 7556p package.
-    17950p: use 7556p package.
-    17951p: use 7556p package.
+    16990p: Lower FW and not settings change,downgrade==allow.
+    16991p: same with 16990p
+    16992p: same with 16990p
+    17950p: same with 16990p
+    17951p:same with 16990p
 
 Group04 :Prepare testcase for 02:
     6134p: Latest FW and Random settings, Protect = Not.
@@ -396,6 +396,30 @@ def testcase16990():
     action_download_zip_file(driver)
     # Download zip file and rename
     rename_linux_zip(driver, file, currentTestcaseName, testDeviceName)
+
+def testcase16990p():
+    # Get current function name
+    currentTestcaseName = sys._getframe().f_code.co_name
+    driver, linuxtrack, testDeviceName, file = setup_driver_linux(currentTestcaseName)
+    # Go to select device page
+    linuxtrack.click_next_button()
+    # Input device name
+    linuxtrack.select_device()
+    # Configure the latest FW
+    config_the_FW_as_lower_than_latest(driver)
+    # Configure all settings as default
+    config_allow_downgrade(driver)
+    # Print configure finish
+    print_the_config_finish(currentTestcaseName, testDeviceName)
+    # Download summary
+    goto_summary_page_and_download(driver)
+    # Rename summary file
+    rename_summary(currentTestcaseName, file, testDeviceName)
+    # Go to download page
+    action_download_zip_file(driver)
+    # Download zip file and rename
+    rename_linux_zip(driver, file, currentTestcaseName, testDeviceName)
+
 
 
 def testcase16991():
