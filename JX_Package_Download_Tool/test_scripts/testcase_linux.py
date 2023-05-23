@@ -407,8 +407,6 @@ def testcase16990p():
     linuxtrack.select_device()
     # Configure the latest FW
     config_the_FW_as_lower_than_latest(driver)
-    # Configure all settings as default
-    config_allow_downgrade(driver)
     # Print configure finish
     print_the_config_finish(currentTestcaseName, testDeviceName)
     # Download summary
