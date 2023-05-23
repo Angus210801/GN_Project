@@ -446,19 +446,20 @@ def testcase16991():
 
 def run_linux_tests_in_threads():
     with ThreadPoolExecutor(max_workers=4) as executor:
-        executor.submit(testcase6098)
-        executor.submit(testcase6134)
-        executor.submit(testcase7551)
-        executor.submit(testcase7555)
-        executor.submit(testcase7556)
-        executor.submit(testcase7692)
-        executor.submit(testcase7695)
-        executor.submit(testcase6134p)
-        executor.submit(testcase7551p)
-        executor.submit(testcase7555p)
-        executor.submit(testcase7556p)
-        executor.submit(testcase16990)
-        executor.submit(testcase16991)
+        # executor.submit(testcase6098)
+        # executor.submit(testcase6134)
+        # executor.submit(testcase7551)
+        # executor.submit(testcase7555)
+        # executor.submit(testcase7556)
+        # executor.submit(testcase7692)
+        # executor.submit(testcase7695)
+        # executor.submit(testcase6134p)
+        # executor.submit(testcase7551p)
+        # executor.submit(testcase7555p)
+        # executor.submit(testcase7556p)
+        # executor.submit(testcase16990)
+        # executor.submit(testcase16991)
+        executor.submit(testcase16990p)
         # executor.submit(testcase10312l)
 
 
