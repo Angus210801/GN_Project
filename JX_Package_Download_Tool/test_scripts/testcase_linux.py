@@ -441,9 +441,71 @@ def testcase16991():
     # Download zip file and rename
     rename_linux_zip(driver, file, currentTestcaseName, testDeviceName)
 
+def testcase16992():
+    # Get current function name
+    currentTestcaseName = sys._getframe().f_code.co_name
+    driver, linuxtrack, testDeviceName, file = setup_driver_linux(currentTestcaseName)
+    # Go to select device page
+    linuxtrack.click_next_button()
+    # Input device name
+    linuxtrack.select_device()
+    # Configure the latest FW
+    config_the_latest_FW(driver)
+    # Print configure finish
+    print_the_config_finish(currentTestcaseName, testDeviceName)
+    # Download summary
+    goto_summary_page_and_download(driver)
+    # Rename summary file
+    rename_summary(currentTestcaseName, file, testDeviceName)
+    # Go to download page
+    action_download_zip_file(driver)
+    # Download zip file and rename
+    rename_linux_zip(driver, file, currentTestcaseName, testDeviceName)
+
+def testcase17950():
+    # Get current function name
+    currentTestcaseName = sys._getframe().f_code.co_name
+    driver, linuxtrack, testDeviceName, file = setup_driver_linux(currentTestcaseName)
+    # Go to select device page
+    linuxtrack.click_next_button()
+    # Input device name
+    linuxtrack.select_device()
+    # Configure the latest FW
+    config_the_latest_FW(driver)
+    # Print configure finish
+    print_the_config_finish(currentTestcaseName, testDeviceName)
+    # Download summary
+    goto_summary_page_and_download(driver)
+    # Rename summary file
+    rename_summary(currentTestcaseName, file, testDeviceName)
+    # Go to download page
+    action_download_zip_file(driver)
+    # Download zip file and rename
+    rename_linux_zip(driver, file, currentTestcaseName, testDeviceName)
+
+def testcase17951():
+    # Get current function name
+    currentTestcaseName = sys._getframe().f_code.co_name
+    driver, linuxtrack, testDeviceName, file = setup_driver_linux(currentTestcaseName)
+    # Go to select device page
+    linuxtrack.click_next_button()
+    # Input device name
+    linuxtrack.select_device()
+    # Configure the latest FW
+    config_the_latest_FW(driver)
+    # Print configure finish
+    print_the_config_finish(currentTestcaseName, testDeviceName)
+    # Download summary
+    goto_summary_page_and_download(driver)
+    # Rename summary file
+    rename_summary(currentTestcaseName, file, testDeviceName)
+    # Go to download page
+    action_download_zip_file(driver)
+    # Download zip file and rename
+    rename_linux_zip(driver, file, currentTestcaseName, testDeviceName)
 
 def run_linux_tests_in_threads():
-    with ThreadPoolExecutor(max_workers=4) as executor:
+    with ThreadPoolExecutor(max_workers=5) as executor:
         executor.submit(testcase6098)
         executor.submit(testcase6134)
         executor.submit(testcase7551)
@@ -457,6 +519,9 @@ def run_linux_tests_in_threads():
         executor.submit(testcase7556p)
         executor.submit(testcase16990)
         executor.submit(testcase16991)
+        executor.submit(testcase16992)
+        executor.submit(testcase17950)
+        executor.submit(testcase17951)
         executor.submit(testcase16990p)
         # executor.submit(testcase10312l)
 

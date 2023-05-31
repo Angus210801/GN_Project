@@ -79,6 +79,7 @@ def browser_configure():
     """ Configure the browser"""
     fo = open("../config/device.txt", "rt")
     test_device_name = fo.read()
+    test_device_name = test_device_name.replace("Jabra", "").replace(" ", "").lower()
     file = get_save_dir()
     file = file.replace('\\\\', '\\')
     file = file + test_device_name
@@ -142,9 +143,12 @@ def config_the_FW_as_lower_than_latest(driver):
         "select[name='configurationViewModel.Devices[0].SelectedFirmware.Id']")
     fwList = Select(fw_select)
     fwNum = len(fwList.options)
-    i = 3
-    if i != fwNum - 1:
-        i = fwNum - 1
+    if fwNum == 4:
+        i = fwNum - 2
+        Select(fw_select).select_by_index(i)
+        driver.find_element_by_css_selector("input[name='configurationViewModel.Devices[0].Downgrade']").click()
+    elif fwNum == 3:
+        i= fwNum - 1
         Select(fw_select).select_by_index(i)
         driver.find_element_by_css_selector("input[name='configurationViewModel.Devices[0].Downgrade']").click()
 
@@ -631,14 +635,12 @@ def setup_driver_linux(testcasename):
     with open("../config/device.txt", "rt") as f:
         testDeviceName = f.read()
 
-    # 获取文件位置并构建选项
     options = browser_configure()
 
     with open("../config/saveDir.txt", "rt") as f:
         file = f.read()
-        file = file.replace('/', '\\') + '\\' + testDeviceName + '\\' + testcasename
+        file = file.replace('/', '\\') + '\\' + testDeviceName.replace("Jabra", "").replace(" ", "").lower() + '\\' + testcasename
 
-    # 创建并返回WebDriver对象和windowsPage对象
     driver = webdriver.Chrome(chrome_options=options)
     driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
     params = {'cmd': 'Page.setDownloadBehavior',
