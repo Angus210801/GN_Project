@@ -1,3 +1,22 @@
+"""
+#-------------------------------------------------------------------
+#                   CONFIDENTIAL --- JX FW Download Tool
+#-------------------------------------------------------------------
+#
+#                   @Project Name : Sisyphus
+#
+#                   @File Name    : testcase_chromedriver_update
+#
+#                   @Programmer   : Ella
+#
+#                   @Start Date   : 2022/03/25
+#
+#                   @Last Update  : 2022/12/23
+#
+#                   @Note: This is for the chromedriver update.
+#-------------------------------------------------------------------
+"""
+
 import os
 import re
 import winreg
