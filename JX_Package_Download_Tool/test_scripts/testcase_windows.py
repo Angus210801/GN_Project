@@ -1,3 +1,22 @@
+"""
+#-------------------------------------------------------------------
+#                   CONFIDENTIAL --- JX FW Download Tool
+#-------------------------------------------------------------------
+#
+#                   @Project Name : Sisyphus
+#
+#                   @File Name    : main windows
+#
+#                   @Programmer   : Angus
+#
+#                   @Start Date   : 2021/02/25
+#
+#                   @Last Update  : 2023/05/23
+#
+#
+#-------------------------------------------------------------------
+"""
+
 from test_scripts.testcase_action import *
 from selenium.webdriver.support.select import Select
 from test_scripts.testcase_action import goto_summary_page_and_download, action_download_msi, goto_pcsoftware_page, \

@@ -1,3 +1,21 @@
+"""
+#-------------------------------------------------------------------
+#                   CONFIDENTIAL --- JX FW Download Tool
+#-------------------------------------------------------------------
+#
+#                   @Project Name : Sisyphus
+#
+#                   @File Name    : main windows
+#
+#                   @Programmer   : Angus
+#
+#                   @Start Date   : 2021/02/25
+#
+#                   @Last Update  : 2023/05/23
+#
+#                   @Note: This is the UI windows for download.
+#-------------------------------------------------------------------
+"""
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *

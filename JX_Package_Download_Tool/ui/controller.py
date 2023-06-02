@@ -1,3 +1,21 @@
+"""
+#-------------------------------------------------------------------
+#                   CONFIDENTIAL --- Linux JDU auto test script
+#-------------------------------------------------------------------
+#
+#                   @Project Name : Sisyphus
+#
+#                   @File Name    : main windows
+#
+#                   @Programmer   : Angus
+#
+#                   @Start Date   : 2022/03/25
+#
+#                   @Last Update  : 2023/05/23
+#
+#                   @Note: This is the UI windows for download.
+#-------------------------------------------------------------------
+"""
 from PyQt5 import QtCore
 from PyQt5.QtGui import QIcon
 from PyQt5.uic.properties import QtWidgets, QtGui

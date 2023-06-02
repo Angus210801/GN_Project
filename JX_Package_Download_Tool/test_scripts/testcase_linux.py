@@ -1,3 +1,22 @@
+"""
+#-------------------------------------------------------------------
+#                   CONFIDENTIAL --- JX FW Download Tool
+#-------------------------------------------------------------------
+#
+#                   @Project Name : Sisyphus
+#
+#                   @File Name    : main windows
+#
+#                   @Programmer   : Angus
+#
+#                   @Start Date   : 2021/02/25
+#
+#                   @Last Update  : 2023/05/23
+#
+#                   @Note: This is the UI windows for download.
+#-------------------------------------------------------------------
+"""
+
 import time
 from test_scripts.testcase_action import *
 from concurrent.futures import ThreadPoolExecutor
@@ -506,29 +525,30 @@ def testcase17951():
 
 def run_linux_tests_in_threads():
     with ThreadPoolExecutor(max_workers=5) as executor:
-        # executor.submit(testcase6098)
-        # executor.submit(testcase6134)
-        # executor.submit(testcase7551)
-        # executor.submit(testcase7555)
-        # executor.submit(testcase7556)
-        # executor.submit(testcase7692)
-        # executor.submit(testcase7695)
-        # executor.submit(testcase6134p)
-        # executor.submit(testcase7551p)
-        # executor.submit(testcase7555p)
-        # executor.submit(testcase7556p)
-        # executor.submit(testcase16990)
-        # executor.submit(testcase16991)
-        # executor.submit(testcase16992)
-        # executor.submit(testcase17950)
-        # executor.submit(testcase17951)
-        # executor.submit(testcase16990p)
-        # executor.submit(testcase10312l)
+        executor.submit(testcase6098)
+        executor.submit(testcase6134)
+        executor.submit(testcase7551)
+        executor.submit(testcase7555)
+        executor.submit(testcase7556)
+        executor.submit(testcase7692)
+        executor.submit(testcase7695)
+        executor.submit(testcase6134p)
+        executor.submit(testcase7551p)
+        executor.submit(testcase7555p)
+        executor.submit(testcase7556p)
+        executor.submit(testcase16990)
+        executor.submit(testcase16991)
+        executor.submit(testcase16992)
+        executor.submit(testcase17950)
+        executor.submit(testcase17951)
+        executor.submit(testcase16990p)
+        executor.submit(testcase10312l)
         print("Download finish")
 
 
 if __name__ == '__main__':
 
+    start_time = time.time()
     # run_linux_tests_in_threads()
     run_linux_tests_in_threads()
 
@@ -555,3 +575,7 @@ if __name__ == '__main__':
                     dst_dir = os.path.join(folder, subsubdir)
                     shutil.move(src_dir, dst_dir)
             shutil.rmtree(subdir_path)
+
+    end_time = time.time()
+    total_time = end_time - start_time
+    print("Test finish, the test run time is: "+ str(total_time))
