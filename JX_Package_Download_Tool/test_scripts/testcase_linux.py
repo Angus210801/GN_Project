@@ -525,34 +525,40 @@ def testcase17951():
 
 def run_linux_tests_in_threads():
     with ThreadPoolExecutor(max_workers=5) as executor:
-        executor.submit(testcase6098)
-        executor.submit(testcase6134)
-        executor.submit(testcase7551)
-        executor.submit(testcase7555)
-        executor.submit(testcase7556)
-        executor.submit(testcase7692)
-        executor.submit(testcase7695)
-        executor.submit(testcase6134p)
-        executor.submit(testcase7551p)
-        executor.submit(testcase7555p)
-        executor.submit(testcase7556p)
-        executor.submit(testcase16990)
-        executor.submit(testcase16991)
-        executor.submit(testcase16992)
-        executor.submit(testcase17950)
-        executor.submit(testcase17951)
-        executor.submit(testcase16990p)
-        executor.submit(testcase10312l)
-        print("Download finish")
-
+        # executor.submit(testcase6098)
+        # executor.submit(testcase6134)
+        # executor.submit(testcase7551)
+        # executor.submit(testcase7555)
+        # executor.submit(testcase7556)
+        # executor.submit(testcase7692)
+        # executor.submit(testcase7695)
+        # executor.submit(testcase6134p)
+        # executor.submit(testcase7551p)
+        # executor.submit(testcase7555p)
+        # executor.submit(testcase7556p)
+        # executor.submit(testcase16990)
+        # executor.submit(testcase16991)
+        # executor.submit(testcase16992)
+        # executor.submit(testcase17950)
+        # executor.submit(testcase17951)
+        # executor.submit(testcase16990p)
+        # executor.submit(testcase10312l)
+        print("Download start!")
 
 if __name__ == '__main__':
 
     start_time = time.time()
+
+    # Ask user what device to test, and save its name to the device.txt file
+    test_device_name = input("Please input the device name: ")
+    with open("../config/device.txt", "wt") as f:
+        f.write(test_device_name)
+
     # run_linux_tests_in_threads()
     run_linux_tests_in_threads()
 
     time.sleep(3)
+    print("Download finish!")
     #
     with open("../config/device.txt", "rt") as f:
         testDeviceName = f.read()
@@ -560,7 +566,6 @@ if __name__ == '__main__':
     with open("../config/saveDir.txt", "rt") as f:
         file = f.read()
         folder = file.replace('/', '\\') + '\\' + testDeviceName.replace("Jabra", "").replace(" ", "").lower()
-        print(folder)
 
     for root, dirs, files in os.walk(folder):
         for subdir in dirs:
@@ -578,4 +583,6 @@ if __name__ == '__main__':
 
     end_time = time.time()
     total_time = end_time - start_time
+    # Transfer the time to minutes
+    total_time = round(total_time / 60, 1)
     print("Test finish, the test run time is: "+ str(total_time))
