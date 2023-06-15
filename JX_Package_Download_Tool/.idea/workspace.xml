@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f34928-f1b9-46e5-9fed-a2522cce0d42" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TestCase_Linux/001.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestCase_Windows/001.bmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/JX_FW_Download.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/JX_FW_Download.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/JX_Package_Download_Tool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JX_Package_Download_Tool.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_15_2022_9_38_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_15_2022_9_38_AM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/chromedriver.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Common/chromedriver.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/function_Basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Common/function_Basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/function_Configure.py" beforeDir="false" afterPath="$PROJECT_DIR$/Common/function_Configure.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JX Test Tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/JX Test Tool.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCase_Linux/case6134.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase_Linux/case6134.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCase_Linux/case7551.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase_Linux/case7551.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCase_Linux/case7692.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase_Linux/case7692.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCase_Windows/case3969.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase_Windows/case3969.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCase_Windows/case4090.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase_Windows/case4090.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCase_Windows/case4090_32b.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase_Windows/case4090_32b.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCase_Windows/case4128_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase_Windows/case4128_3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCase_Windows/case5665.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase_Windows/case5665.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCase_Windows/case5665_32b.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase_Windows/case5665_32b.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCase_Windows/case7195.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase_Windows/case7195.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCase_Windows/case7196.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase_Windows/case7196.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/device.txt" beforeDir="false" afterPath="$PROJECT_DIR$/device.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/function_GetInfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/function_GetInfo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saveDir.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saveDir.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/device.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config/device.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/saveDir.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config/saveDir.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_scripts/testcase_action.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_scripts/testcase_action.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_scripts/testcase_linux.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_scripts/testcase_linux.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_scripts/testcase_windows.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_scripts/testcase_windows.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/.idea/Jama_jira_script.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/.idea/Jama_jira_script.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/Config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/Config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/REST_Jama20201207.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/REST_Jama20201207.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/api/api_common.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/api/api_common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/data_reshape.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/data_reshape.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,14 +61,16 @@
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/00Archieve/00Develop/ProjectDashboardData&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/00Archieve/00Develop/ProjectDashboard_New",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\00Archieve\00Code\GN_Project\JX_Package_Download_Tool\TestCase_Windows" />
@@ -86,7 +80,7 @@
       <recent name="C:\00Archieve\00Code\GN_Project\JX_Package_Download_Tool" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.JX Test Tool">
+  <component name="RunManager" selected="Python.testcase_windows">
     <configuration name="Cases" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="JX_Package_Download_Tool" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -150,19 +144,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="JX_Package_Download_Tool" />
+    <configuration name="REST_Jama20201207" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Jama_jira_script" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/REST_Jama20201207.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -171,28 +165,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="JX_Package_Download_Tool" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\extalin\PycharmProjects\JX_FW_Download\JX FW Download\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="function_GetInfo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="testcase_windows" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="JX_Package_Download_Tool" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -200,11 +173,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_scripts" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/function_GetInfo.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_scripts/testcase_windows.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -214,20 +187,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Unnamed" />
+      <item itemvalue="Python.testcase_windows" />
+      <item itemvalue="Python.REST_Jama20201207" />
       <item itemvalue="Python.OpenAI" />
       <item itemvalue="Python.JX Test Tool" />
-      <item itemvalue="Python.Test" />
-      <item itemvalue="Python.function_GetInfo" />
       <item itemvalue="Python.Cases" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.testcase_windows" />
+        <item itemvalue="Python.REST_Jama20201207" />
         <item itemvalue="Python.JX Test Tool" />
         <item itemvalue="Python.OpenAI" />
         <item itemvalue="Python.Cases" />
-        <item itemvalue="Python.Test" />
-        <item itemvalue="Python.function_GetInfo" />
       </list>
     </recent_temporary>
   </component>
@@ -241,6 +213,9 @@
       <updated>1652865158029</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.ini" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

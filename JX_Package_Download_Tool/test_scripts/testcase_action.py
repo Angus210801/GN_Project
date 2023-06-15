@@ -53,8 +53,9 @@ class BaseConfigure(object):
 class InitLinuxTrack(BaseConfigure):
     def __init__(self, driver):
         BaseConfigure.__init__(self, driver)
-        driver.get('http://dkcphweb15/')
-        test_address = driver.find_element(By.LINK_TEXT, 'Start Page').get_attribute("href")
+        # driver.get('http://dkcphweb15/')
+        # test_address = driver.find_element(By.LINK_TEXT, 'Start Page').get_attribute("href")
+        test_address = "http://dkcphweb15.corp.intra-gnn.com/Xpress/40.X.Development/MDCT"
         driver.get(test_address + '/thin-client')
 
     def click_next_button(self):
@@ -74,9 +75,9 @@ class InitWindowsTrack(BaseConfigure):
 
     def __init__(self, driver):
         BaseConfigure.__init__(self, driver)
-        driver.get('http://dkcphweb15/')
-        test_address = driver.find_element(By.LINK_TEXT, 'Start Page').get_attribute("href")
-        # test_address="http://dkcphweb15/Xpress/36.X.Development/MDCT"
+        # driver.get('http://dkcphweb15/')
+        # test_address = driver.find_element(By.LINK_TEXT, 'Start Page').get_attribute("href")
+        test_address="http://dkcphweb15.corp.intra-gnn.com/Xpress/40.X.Development/MDCT"
         driver.get(test_address + '/windows-desktop')
 
     def goto_selectdevice_page(self):
@@ -627,7 +628,7 @@ def rename_linux_zip(self, file, testcaseName, testDeviceName):
         print(e)
 
 
-def setup_driver_windows():
+def setup_driver_windows(testcasename):
     with open("../config/device.txt", "rt") as f:
         testDeviceName = f.read()
 
@@ -637,7 +638,7 @@ def setup_driver_windows():
 
     with open("../config/saveDir.txt", "rt") as f:
         file = f.read()
-        file = file.replace('/', '\\') + '\\' + testDeviceName
+        file = file.replace('/', '\\') + '\\' + testDeviceName.replace("Jabra", "").replace(" ", "").lower() + '\\' + testcasename
 
     # 创建并返回WebDriver对象和windowsPage对象
     driver = webdriver.Chrome(chrome_options=options)

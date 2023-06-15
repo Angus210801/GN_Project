@@ -16,9 +16,11 @@
 #
 #-------------------------------------------------------------------
 """
+import time
 
 from test_scripts.testcase_action import *
 from selenium.webdriver.support.select import Select
+from concurrent.futures import ThreadPoolExecutor
 from test_scripts.testcase_action import goto_summary_page_and_download, action_download_msi, goto_pcsoftware_page, \
     action_download_jd
 
@@ -28,7 +30,7 @@ def testcase3961():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # Go to device page
     windowsTrack.goto_selectdevice_page()
     # Choose device
@@ -57,7 +59,7 @@ def testcase3965():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # Go to device page
     windowsTrack.goto_selectdevice_page()
     # Input device name
@@ -86,7 +88,7 @@ def testcase3965_32b():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # Go to device page
     windowsTrack.goto_selectdevice_page()
     # Input device name
@@ -113,7 +115,7 @@ def testcase3965_32b():
 
 def testcase3966():
     currentTestcaseName = sys._getframe().f_code.co_name
-    driver, windowsTrack,testDeviceName,file = setup_driver_windows()
+    driver, windowsTrack,testDeviceName,file = setup_driver_windows(currentTestcaseName)
     # Go to device page
     windowsTrack.goto_selectdevice_page()
     # Input device name
@@ -140,7 +142,7 @@ def testcase3966():
 
 def testcase3966_32b():
     currentTestcaseName = sys._getframe().f_code.co_name
-    driver, windowsTrack,testDeviceName,file = setup_driver_windows()
+    driver, windowsTrack,testDeviceName,file = setup_driver_windows(currentTestcaseName)
     # Go to device page
     windowsTrack.goto_selectdevice_page()
     # Input device name
@@ -171,7 +173,7 @@ def testcase3968():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # Go to device page
     windowsTrack.goto_selectdevice_page()
     # Input device name
@@ -201,7 +203,7 @@ def testcase3969():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # Go to device page
     windowsTrack.goto_selectdevice_page()
     # Input device name
@@ -233,7 +235,7 @@ def testcase4090():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # Go to device page
     windowsTrack.goto_selectdevice_page()
     # Input device name
@@ -262,7 +264,7 @@ def testcase4090_32b():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # Go to device page
     windowsTrack.goto_selectdevice_page()
     # Input device name
@@ -291,7 +293,7 @@ def testcase4128_1():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # Go to device page
     windowsTrack.goto_selectdevice_page()
     # Input device name
@@ -317,7 +319,7 @@ def testcase4128_2():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # Go to device page
     windowsTrack.goto_selectdevice_page()
     #  Input device name
@@ -342,7 +344,7 @@ def testcase4128_3():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # 进入到选择device页
     windowsTrack.goto_selectdevice_page()
     # 输入Device
@@ -367,7 +369,7 @@ def testcase4153_1():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # Go to device page
     windowsTrack.goto_selectdevice_page()
     # Input device name
@@ -392,7 +394,7 @@ def testcase4153_2():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # 进入到选择device页
     windowsTrack.goto_selectdevice_page()
     # 输入Device
@@ -431,7 +433,7 @@ def testcase4153_3():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # Go to configure page
     windowsTrack.goto_selectdevice_page()
     # Input device name
@@ -471,7 +473,7 @@ def testcase5509():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # Go to select device page
     windowsTrack.goto_selectdevice_page()
     # Input device name
@@ -493,7 +495,7 @@ def testcase5509_32b():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # Go to select device page
     windowsTrack.goto_selectdevice_page()
     # Input device name
@@ -516,7 +518,7 @@ def testcase5664():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # 进入到选择device页
     windowsTrack.goto_selectdevice_page()
     # 输入Device
@@ -543,7 +545,7 @@ def testcase5664_32b():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # 进入到选择device页
     windowsTrack.goto_selectdevice_page()
     # 输入Device
@@ -570,7 +572,7 @@ def testcase5665():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # go to select device page
     windowsTrack.goto_selectdevice_page()
     # input device name
@@ -599,7 +601,7 @@ def testcase5665_32b():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # go to select device page
     windowsTrack.goto_selectdevice_page()
     # input device name
@@ -628,7 +630,7 @@ def testcase7195():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # Go to select device page
     windowsTrack.goto_selectdevice_page()
     # Input device name
@@ -659,7 +661,7 @@ def testcase7196():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # Go to select device page
     windowsTrack.goto_selectdevice_page()
     #  Input device name
@@ -688,7 +690,7 @@ def testcase10312w():
         # Get current test case name
         currentTestcaseName = sys._getframe().f_code.co_name
         # Configure driver
-        driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+        driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
         # Select device page
         windowsTrack.goto_selectdevice_page()
         # Input device name
@@ -732,7 +734,7 @@ def testcase10449():
     # Get current function name
     currentTestcaseName = sys._getframe().f_code.co_name
     # Configure driver
-    driver, windowsTrack, testDeviceName, file = setup_driver_windows()
+    driver, windowsTrack, testDeviceName, file = setup_driver_windows(currentTestcaseName)
     # 进入到选择device页
     windowsTrack.goto_selectdevice_page()
     # 输入Device
@@ -764,3 +766,76 @@ def testcase10449():
     else:
         print(testDeviceName + "just has 1 version in JX,so this case will pass")
         driver.close()
+
+def run_windows_tests_in_threads():
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        # 将所有的测试用例函数都放到线程池中
+        executor.submit(testcase3965)
+        executor.submit(testcase3966)
+        executor.submit(testcase3965_32b)
+        executor.submit(testcase3966_32b)
+        executor.submit(testcase3968)
+        executor.submit(testcase3969)
+        executor.submit(testcase4090)
+        executor.submit(testcase4090_32b)
+        executor.submit(testcase4128_1)
+        executor.submit(testcase4128_2)
+        executor.submit(testcase4128_3)
+        executor.submit(testcase4153_1)
+        executor.submit(testcase4153_2)
+        executor.submit(testcase4153_3)
+        executor.submit(testcase5509)
+        executor.submit(testcase5509_32b)
+        executor.submit(testcase5664)
+        executor.submit(testcase5664_32b)
+        executor.submit(testcase5665)
+        executor.submit(testcase5665_32b)
+        executor.submit(testcase7195)
+        executor.submit(testcase7196)
+        executor.submit(testcase10312w)
+        executor.submit(testcase10449)
+
+        # executor.submit(testcase10312l)
+        print("Download start!")
+
+def copy_files_to_folder(folder):
+   #将子文件夹中的所有文件都复制到folder下后，删除子文件夹
+    for root, dirs, files in os.walk(folder):
+        for file in files:
+            if file.endswith('.msi') or file.endswith('html'):
+                shutil.copy(os.path.join(root, file), folder)
+    for root, dirs, files in os.walk(folder):
+        for dir in dirs:
+            shutil.rmtree(os.path.join(root, dir))
+
+if __name__ == '__main__':
+
+    start_time = time.time()
+
+    # Ask user what device to test, and save its name to the device.txt file
+    test_device_name = input("Please input the device name: ")
+    with open("../config/device.txt", "wt") as f:
+        f.write(test_device_name)
+
+    # run_linux_tests_in_threads()
+    run_windows_tests_in_threads()
+
+    time.sleep(3)
+    print("Download finish!")
+    #
+    with open("../config/device.txt", "rt") as f:
+        testDeviceName = f.read()
+
+    with open("../config/saveDir.txt", "rt") as f:
+        file = f.read()
+        folder = file.replace('/', '\\') + '\\' + testDeviceName.replace("Jabra", "").replace(" ", "").lower()
+        
+    ## 下载完成后，folder下会有多个子文件夹，将子文件夹中的所有文件都复制到folder下，然后删除子文件夹
+    copy_files_to_folder(folder)
+
+
+    end_time = time.time()
+    total_time = end_time - start_time
+    # Transfer the time to minutes
+    total_time = round(total_time / 60, 1)
+    print("Test finish, the test run time is: "+ str(total_time))
