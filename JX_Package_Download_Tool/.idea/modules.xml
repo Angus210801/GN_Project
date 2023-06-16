@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/JX_Package_Download_Tool.iml" filepath="$PROJECT_DIR$/.idea/JX_Package_Download_Tool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/.idea/Jama_jira_script.iml" filepath="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/.idea/Jama_jira_script.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../00Develop/jdu_auto_test/.idea/jdu_auto_test.iml" filepath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/.idea/jdu_auto_test.iml" />
     </modules>
   </component>
 </project>
