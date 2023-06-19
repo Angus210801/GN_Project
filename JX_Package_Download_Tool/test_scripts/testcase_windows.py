@@ -768,8 +768,8 @@ def testcase10449():
         driver.close()
 
 def run_windows_tests_in_threads():
-    with ThreadPoolExecutor(max_workers=5) as executor:
-        # 将所有的测试用例函数都放到线程池中
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        executor.submit(testcase3961)
         executor.submit(testcase3965)
         executor.submit(testcase3966)
         executor.submit(testcase3965_32b)
@@ -794,8 +794,7 @@ def run_windows_tests_in_threads():
         executor.submit(testcase7196)
         executor.submit(testcase10312w)
         executor.submit(testcase10449)
-
-        # executor.submit(testcase10312l)
+        executor.submit(testcase10312w)
         print("Download start!")
 
 def copy_files_to_folder(folder):
