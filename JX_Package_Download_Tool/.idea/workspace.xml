@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3f34928-f1b9-46e5-9fed-a2522cce0d42" name="Changes" comment="Correct:change the command to get the OS version.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/device.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config/device.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_run.py" afterDir="false" />
+    <list default="true" id="b3f34928-f1b9-46e5-9fed-a2522cce0d42" name="Changes" comment="Update: fetch the get OS version command as a function.">
       <change beforePath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -271,7 +268,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687230801618</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Update: fetch the get OS version command as a function.">
+      <created>1687238181836</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1687238181836</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Update: fetch the get OS version command as a function.">
+      <created>1687238339594</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1687238339594</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -299,7 +310,8 @@
     <MESSAGE value="Correct:Add the OS info to the logs." />
     <MESSAGE value="Correct:Add the send email attachment as txt." />
     <MESSAGE value="Correct:change the command to get the OS version." />
-    <option name="LAST_COMMIT_MESSAGE" value="Correct:change the command to get the OS version." />
+    <MESSAGE value="Update: fetch the get OS version command as a function." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update: fetch the get OS version command as a function." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
