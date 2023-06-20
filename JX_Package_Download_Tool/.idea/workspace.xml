@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3f34928-f1b9-46e5-9fed-a2522cce0d42" name="Changes" comment="Correct:Add the send email attachment as txt.">
+    <list default="true" id="b3f34928-f1b9-46e5-9fed-a2522cce0d42" name="Changes" comment="Correct:change the command to get the OS version.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/device.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config/device.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687228544576</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Correct:change the command to get the OS version.">
+      <created>1687230801618</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1687230801618</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -289,7 +298,8 @@
     <MESSAGE value="Update:Add the OS info to the logs." />
     <MESSAGE value="Correct:Add the OS info to the logs." />
     <MESSAGE value="Correct:Add the send email attachment as txt." />
-    <option name="LAST_COMMIT_MESSAGE" value="Correct:Add the send email attachment as txt." />
+    <MESSAGE value="Correct:change the command to get the OS version." />
+    <option name="LAST_COMMIT_MESSAGE" value="Correct:change the command to get the OS version." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
