@@ -102,6 +102,11 @@ items_list=[
 'Jabra UC VOICE 750a Mono (Version A)',
 'Jabra UC VOICE 750a MS Duo (Version A)',
 'Jabra UC VOICE 750a MS Mono (Version A)',
-'Jabra EVOLVE2 30'
+'Jabra EVOLVE2 30',
+'Jabra EVOLVE2 50 Mono',
+'Jabra EVOLVE2 50 Stereo',
+'Jabra EVOLVE2 55 Mono',
+'Jabra EVOLVE2 55 Stereo',
+'Jabra EVOLVE2 65 Flex',
 
 ]

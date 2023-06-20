@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3f34928-f1b9-46e5-9fed-a2522cce0d42" name="Changes" comment="Update:Add the wait time to 80s after every update finish.">
+    <list default="true" id="b3f34928-f1b9-46e5-9fed-a2522cce0d42" name="Changes" comment="Update:Add the OS info to the logs.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/device.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config/device.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_scripts/testcase_windows.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_scripts/testcase_windows.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/devices_name_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/devices_name_list.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_sendlog_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_sendlog_email.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +69,7 @@
       <recent name="C:\00Archieve\00Code\GN_Project\JX_Package_Download_Tool" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.testcase_windows">
+  <component name="RunManager" selected="Python.testcase_linux">
     <configuration name="JX Test Tool" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="JX_Package_Download_Tool" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -185,8 +184,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.testcase_windows" />
         <item itemvalue="Python.testcase_linux" />
+        <item itemvalue="Python.testcase_windows" />
         <item itemvalue="Python.REST_Jama20201207" />
         <item itemvalue="Python.JX Test Tool" />
         <item itemvalue="Python.OpenAI" />
@@ -244,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687141182280</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update:Add the OS info to the logs.">
+      <created>1687158899281</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687158899281</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -268,7 +274,8 @@
     <MESSAGE value="update: Add a pause time after prepare case complete." />
     <MESSAGE value="update: Add a pause time after every update complete." />
     <MESSAGE value="Update:Add the wait time to 80s after every update finish." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update:Add the wait time to 80s after every update finish." />
+    <MESSAGE value="Update:Add the OS info to the logs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update:Add the OS info to the logs." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
