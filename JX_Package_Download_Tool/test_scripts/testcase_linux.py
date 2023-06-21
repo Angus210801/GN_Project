@@ -78,8 +78,15 @@ def testcase6098():
     rename_summary(currentTestcaseName, file, test_deviceName)
     # Go to download page
     action_download_zip_file(driver)
+
     # Download zip file and rename
-    rename_linux_zip(driver, file, currentTestcaseName, test_deviceName)
+    testcaseName = currentTestcaseName[len('testcase'):]
+    zipFile = file + '\\JabraXpressFiles.zip'
+    while os.path.exists(zipFile) == False:
+        sleep(10)
+    zipFile_rename = file + '\\' + testcaseName
+    os.rename(zipFile, zipFile_rename)
+    print(testDeviceName + ' ' + testcaseName + '  download successful')
 
 
 def testcase6134():
@@ -362,12 +369,12 @@ def testcase10312l():
         # 判断是否存在Language setting
         try:
             language_region_select = driver.find_element_by_css_selector(
-                "select[name='configurationViewModel.Devices[0].SelectedFirmware.TunePackRegionSettings.SelectedTunePackRegionId']")
+                "select[name='configurationViewModel.Devices[0].SelectedFirmware.VoicePromptSettings.SelectedLanguageId']")
             if language_region_select is not None:
                 print("Language setting is exist")
             Select(language_region_select).select_by_index("1")
             language_select = driver.find_element_by_css_selector(
-                "select[name='configurationViewModel.Devices[0].SelectedFirmware.TunePackRegionSettings.SelectedTunePackRegionLanguageId']")
+                "select[name='configurationViewModel.Devices[0].SelectedFirmware.VoicePromptSettings.SelectedLanguageId']")
             languageList = Select(language_select)
             languageNum = len(languageList.options)
             print(testDeviceName+ " has " + str(languageNum) + " language setting")
@@ -384,6 +391,7 @@ def testcase10312l():
             action_download_zip_file(driver)
             # Download zip file and rename
             rename_linux_zip(driver, file, currentTestcaseName, testDeviceName)
+            i += 1
 
 
         except:
@@ -526,23 +534,23 @@ def testcase17951():
 def run_linux_tests_in_threads():
     with ThreadPoolExecutor(max_workers=5) as executor:
         executor.submit(testcase6098)
-        executor.submit(testcase6134)
-        executor.submit(testcase7551)
-        executor.submit(testcase7555)
-        executor.submit(testcase7556)
-        executor.submit(testcase7692)
-        executor.submit(testcase7695)
-        executor.submit(testcase6134p)
-        executor.submit(testcase7551p)
-        executor.submit(testcase7555p)
-        executor.submit(testcase7556p)
-        executor.submit(testcase16990)
-        executor.submit(testcase16991)
-        executor.submit(testcase16992)
-        executor.submit(testcase17950)
-        executor.submit(testcase17951)
-        executor.submit(testcase16990p)
-        # executor.submit(testcase10312l)
+        # executor.submit(testcase6134)
+        # executor.submit(testcase7551)
+        # executor.submit(testcase7555)
+        # executor.submit(testcase7556)
+        # executor.submit(testcase7692)
+        # executor.submit(testcase7695)
+        # executor.submit(testcase6134p)
+        # executor.submit(testcase7551p)
+        # executor.submit(testcase7555p)
+        # executor.submit(testcase7556p)
+        # executor.submit(testcase16990)
+        # executor.submit(testcase16991)
+        # executor.submit(testcase16992)
+        # executor.submit(testcase17950)
+        # executor.submit(testcase17951)
+        # executor.submit(testcase16990p)
+        executor.submit(testcase10312l)
         print("Download start!")
 
 if __name__ == '__main__':

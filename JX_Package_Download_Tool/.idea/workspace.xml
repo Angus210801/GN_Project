@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b3f34928-f1b9-46e5-9fed-a2522cce0d42" name="Changes" comment="Update: add the new update logic for the new device.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/device.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config/device.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/saveDir.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config/saveDir.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_scripts/testcase_linux.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_scripts/testcase_linux.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_run.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -353,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687245741772</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Update: add the new update logic for the new device.">
+      <created>1687249963017</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1687249963017</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="UnknownFeatures">
