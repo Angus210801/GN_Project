@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3f34928-f1b9-46e5-9fed-a2522cce0d42" name="Changes" comment="Update: add the new update logic for the new device.">
+    <list default="true" id="b3f34928-f1b9-46e5-9fed-a2522cce0d42" name="Changes" comment="Update: add the wait time before settings compare.">
+      <change afterPath="$PROJECT_DIR$/test_scripts/testcase_action_uplpad package.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/device.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config/device.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/saveDir.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config/saveDir.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_scripts/testcase_linux.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_scripts/testcase_linux.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/Subprogress.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/Subprogress.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_sendlog_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_sendlog_email.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_usb_box_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../00Develop/jdu_auto_test/linux_jdu_autotest_usb_box_new.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,49 +71,7 @@
       <recent name="C:\00Archieve\00Code\GN_Project\JX_Package_Download_Tool" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.testcase_linux">
-    <configuration name="JX Test Tool" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="JX_Package_Download_Tool" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Python310\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/JX Test Tool.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="OpenAI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="JX_Package_Download_Tool" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/OpenAI.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.testcase_action_uplpad package">
     <configuration name="REST_Jama20201207" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Jama_jira_script" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -126,6 +85,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/REST_Jama20201207.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="testcase_action_uplpad package" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="JX_Package_Download_Tool" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_scripts/testcase_action_uplpad package.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -176,20 +156,41 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="video_process" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Jama_jira_script" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../00Develop/ProjectDashboard_New/video_process.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Python.testcase_action_uplpad package" />
+      <item itemvalue="Python.video_process" />
       <item itemvalue="Python.testcase_linux" />
       <item itemvalue="Python.testcase_windows" />
       <item itemvalue="Python.REST_Jama20201207" />
-      <item itemvalue="Python.OpenAI" />
-      <item itemvalue="Python.JX Test Tool" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.testcase_action_uplpad package" />
+        <item itemvalue="Python.video_process" />
         <item itemvalue="Python.testcase_linux" />
         <item itemvalue="Python.testcase_windows" />
         <item itemvalue="Python.REST_Jama20201207" />
-        <item itemvalue="Python.JX Test Tool" />
-        <item itemvalue="Python.OpenAI" />
       </list>
     </recent_temporary>
   </component>
@@ -363,7 +364,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687249963017</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Update: add the wait time before settings compare.">
+      <created>1687326025009</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1687326025009</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Update: add the wait time before settings compare.">
+      <created>1687326043218</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1687326043218</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -394,7 +409,8 @@
     <MESSAGE value="Update: fetch the get OS version command as a function." />
     <MESSAGE value="Update: add the os version info to the log." />
     <MESSAGE value="Update: add the new update logic for the new device." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update: add the new update logic for the new device." />
+    <MESSAGE value="Update: add the wait time before settings compare." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update: add the wait time before settings compare." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
