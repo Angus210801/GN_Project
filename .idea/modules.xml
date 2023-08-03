@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/JX_FW_Download.iml" filepath="$PROJECT_DIR$/.idea/JX_FW_Download.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../00Develop/jdu_auto_test/.idea/jdu_auto_test.iml" filepath="$PROJECT_DIR$/../../00Develop/jdu_auto_test/.idea/jdu_auto_test.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/smallscript/.idea/smallscript.iml" filepath="$USER_HOME$/Downloads/smallscript/.idea/smallscript.iml" />
     </modules>
   </component>
 </project>

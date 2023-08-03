@@ -86,7 +86,7 @@ def testcase6098():
         sleep(10)
     zipFile_rename = file + '\\' + testcaseName
     os.rename(zipFile, zipFile_rename)
-    print(testDeviceName + ' ' + testcaseName + '  download successful')
+    print(test_deviceName + ' ' + testcaseName + '  download successful')
 
 
 def testcase6134():
@@ -534,22 +534,22 @@ def testcase17951():
 def run_linux_tests_in_threads():
     with ThreadPoolExecutor(max_workers=5) as executor:
         executor.submit(testcase6098)
-        # executor.submit(testcase6134)
-        # executor.submit(testcase7551)
-        # executor.submit(testcase7555)
-        # executor.submit(testcase7556)
-        # executor.submit(testcase7692)
-        # executor.submit(testcase7695)
-        # executor.submit(testcase6134p)
-        # executor.submit(testcase7551p)
-        # executor.submit(testcase7555p)
-        # executor.submit(testcase7556p)
-        # executor.submit(testcase16990)
-        # executor.submit(testcase16991)
-        # executor.submit(testcase16992)
-        # executor.submit(testcase17950)
-        # executor.submit(testcase17951)
-        # executor.submit(testcase16990p)
+        executor.submit(testcase6134)
+        executor.submit(testcase7551)
+        executor.submit(testcase7555)
+        executor.submit(testcase7556)
+        executor.submit(testcase7692)
+        executor.submit(testcase7695)
+        executor.submit(testcase6134p)
+        executor.submit(testcase7551p)
+        executor.submit(testcase7555p)
+        executor.submit(testcase7556p)
+        executor.submit(testcase16990)
+        executor.submit(testcase16991)
+        executor.submit(testcase16992)
+        executor.submit(testcase17950)
+        executor.submit(testcase17951)
+        executor.submit(testcase16990p)
         executor.submit(testcase10312l)
         print("Download start!")
 
@@ -587,6 +587,8 @@ if __name__ == '__main__':
                     src_dir = os.path.join(subroot, subsubdir)
                     dst_dir = os.path.join(folder, subsubdir)
                     shutil.move(src_dir, dst_dir)
+
+    print("Please also prepare the lowerfw and higherfw for the test device and upload them to the server too.")
 
 
     end_time = time.time()

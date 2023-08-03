@@ -17,10 +17,12 @@
 #-------------------------------------------------------------------
 """
 import sys
+import threading
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QThread
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtWidgets import QFileDialog, QWidget, QPushButton
 from config.devices_name_list import items_list
 from log.logs import *
 from test_scripts.testcase_action import check_network_access
@@ -29,6 +31,21 @@ from ui.controller import retranslateUi
 from test_scripts.testcase_windows import *
 from test_scripts.testcase_linux import *
 
+
+class DownloadComplete(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        self.setGeometry(300, 300, 250, 150)
+        self.setWindowTitle('Download Complete')
+
+        button = QPushButton('OK', self)
+        button.move(85, 100)
+        button.clicked.connect(self.close)
+
+        self.show()
 
 class EmittingStr(QtCore.QObject):
     textWritten = QtCore.pyqtSignal(str)  # 定义一个发送str的信号
@@ -62,10 +79,16 @@ class startdownloadThread(QThread):
 
     def run(self):
         testcaselist = Ui_JX_FW.excuteTestCase
+        threads = []
         for testcase in testcaselist:
             testcase = "test" + testcase
             print('Start configure ' + testcase)
-            eval(testcase)()
+            thread = threading.Thread(target=eval(testcase))
+            threads.append(thread)
+            thread.start()
+
+        for thread in threads:
+            thread.join()
         print("All the test package that you choose is downloaded!")
 
 
@@ -78,7 +101,7 @@ class saveLocation(QThread):
         dir_choose = QFileDialog.getExistingDirectory()  # 起始路径
         file = dir_choose
         if dir_choose == " ":
-            file = "../"
+            file = "/"
             saveDir = open("../config/saveDir.txt", "wt")
             saveDir.write(file)
             saveDir.close()
@@ -110,7 +133,7 @@ class Ui_TesteEnviromentCheck(object):
         dir_choose = QFileDialog.getExistingDirectory()  # 起始路径
         file = dir_choose
         if dir_choose == " ":
-            file = "../"
+            file = "/"
             saveDir = open("../config/saveDir.txt", "wt")
             saveDir.write(file)
             saveDir.close()
@@ -213,6 +236,21 @@ class Ui_JX_FW(object):
                 Ui_JX_FW.excuteTestCase.remove('case10312w')
             else:
                 Ui_JX_FW.excuteTestCase.append('case10312w')
+        elif(testcase == 'case6134'):
+            Ui_JX_FW.excuteTestCase.append('case6134p')
+            Ui_JX_FW.excuteTestCase.append(testcase)
+        elif(testcase == 'case7551'):
+            Ui_JX_FW.excuteTestCase.append('case7551p')
+            Ui_JX_FW.excuteTestCase.append(testcase)
+        elif(testcase == 'case7555'):
+            Ui_JX_FW.excuteTestCase.append('case7555p')
+            Ui_JX_FW.excuteTestCase.append(testcase)
+        elif(testcase == 'case7556'):
+            Ui_JX_FW.excuteTestCase.append('case7556p')
+            Ui_JX_FW.excuteTestCase.append(testcase)
+        elif(testcase == 'case16990'):
+            Ui_JX_FW.excuteTestCase.append('case16990p')
+            Ui_JX_FW.excuteTestCase.append(testcase)
         else:
             Ui_JX_FW.excuteTestCase.append(testcase)
 

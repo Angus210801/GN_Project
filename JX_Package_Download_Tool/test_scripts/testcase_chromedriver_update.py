@@ -132,5 +132,5 @@ def checkChromeDriverUpdate():
 
 
 #
-# if __name__ == "__main__":
-#     checkChromeDriverUpdate()
+if __name__ == "__main__":
+    checkChromeDriverUpdate()
