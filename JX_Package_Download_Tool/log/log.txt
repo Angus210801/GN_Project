@@ -1,0 +1,3 @@
+2023-09-28 16:28:22,217 - INFO - Start the APP
+2023-09-28 16:28:22,221 - DEBUG - Starting new HTTP connection (1): dkcphweb15.corp.intra-gnn.com:80
+2023-09-28 16:28:23,142 - DEBUG - http://dkcphweb15.corp.intra-gnn.com:80 "GET / HTTP/1.1" 200 13562

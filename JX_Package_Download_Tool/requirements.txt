@@ -1,3 +1,2 @@
-self==2020.12.3
-selenium==3.141.0
-PyQt5==5.15.4
+Requests==2.31.0
+urllib3==1.26.9
